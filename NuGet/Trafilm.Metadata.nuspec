@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+
+  <metadata>
+    <id>Trafilm.Metadata</id>
+    <version>1.0.0</version>
+    <title>Trafilm.Metadata</title>
+    <authors>birbilis</authors>
+    <owners>birbilis</owners>
+    <licenseUrl>https://github.com/Zoomicon/Trafilm.Metadata/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/Zoomicon/Trafilm.Metadata</projectUrl>
+    <iconUrl>http://zoomicon.com/logo.jpg</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <developmentDependency>true</developmentDependency>
+    <description>Library for manipulating Trafilm (http://Trafilm.net) Gallery Metadata in Collection XML (CXML) format (as defined for PivotViewer control)</description>
+    <releaseNotes />
+    <copyright>Copyright 2013-2016</copyright>
+    <tags>Trafilm Gallery Metadata CXML PivotViewer</tags>
+
+    <dependencies>
+      <group targetFramework="portable-net403+sl5+win8+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10">
+        <dependency id="Metadata.CXML" version="1.0.0" />
+      </group>
+    </dependencies>    
+    
+  </metadata>
+
+  <files>
+    <!-- portable-net403+sl5+win8+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10 (see https://msdn.microsoft.com/en-us/magazine/mt590972.aspx) -->
+    <file src="..\bin\Release\Trafilm.Metadata.dll" target="lib\portable-net403+sl5+win8+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Trafilm.Metadata.dll" />
+  </files>
+
+</package>
