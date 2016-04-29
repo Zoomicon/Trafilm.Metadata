@@ -18,7 +18,7 @@ namespace Trafilm.Metadata
     #region --- Properties ---
    
     //Facets//
-    public string Code { get; set; }
+    public string ReferenceId { get; set; }
     public DateTime InfoCreated { get; set; }
     public DateTime InfoUpdated { get; set; }
     public string[] Keywords { get; set; }
@@ -26,7 +26,28 @@ namespace Trafilm.Metadata
 
     #endregion
 
-    #region --- Load ---
+    #region --- Methods ---
+
+    public override ICXMLMetadata Fix()
+    {
+      if (string.IsNullOrWhiteSpace(Id)) //also checks for empty string
+        Id = ReferenceId;
+
+      return this;
+    }
+
+    public override void Clear()
+    {
+      base.Clear();
+
+      //Facets//
+      ReferenceId = "";
+      InfoCreated = DateTime.UtcNow;
+      InfoUpdated = DateTime.UtcNow;
+
+      Keywords = new string[] { };
+      Comments = "";
+    }
 
     public override ICXMLMetadata Load(XElement item)
     {
@@ -34,7 +55,7 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
-      Code = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_CODE);
+      ReferenceId = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_REFERENCE_ID);
       InfoCreated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_CREATED);
       InfoUpdated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_UPDATED);
 
@@ -65,34 +86,34 @@ namespace Trafilm.Metadata
       return ((ITrafilmMetadata)base.Load(key, cxml, cxmlFallback));
     }
 
-    public override ICXMLMetadata Fix()
+    public override IEnumerable<XElement> GetCXMLFacets()
     {
-      if (string.IsNullOrWhiteSpace(Id)) //also checks for empty string
-        Id = Code;
-            
-      return this;
+      return GetCXMLFacets(null);
+    }
+
+    public virtual IEnumerable<XElement> GetCXMLFacets(IList<XElement> facets = null)
+    {
+      if (facets == null)
+        facets = new List<XElement>();
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REFERENCE_ID, ReferenceId));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_COMMENTS, Comments));
+
+      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
+      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));
+
+      return facets;
     }
 
     #endregion
-
-    public override void Clear()
-    {
-      base.Clear();
-
-      //Facets//
-      Code = "";
-      InfoCreated = DateTime.UtcNow;
-      InfoUpdated = DateTime.UtcNow;
-
-      Keywords = new string[] { };
-      Comments = "";
-    }
 
     #region --- Helpers ---
 
     public static XElement FindItem(string key, XDocument doc)
     {
-      return doc.Root.Elements(CXML.NODE_ITEMS).Elements(CXML.NODE_ITEM).CXMLFirstItemWithStringValue(TrafilmMetadataFacets.FACET_CODE, key);
+      return doc.Root.Elements(CXML.NODE_ITEMS).Elements(CXML.NODE_ITEM).CXMLFirstItemWithStringValue(TrafilmMetadataFacets.FACET_REFERENCE_ID, key);
     }
 
     #endregion

@@ -15,7 +15,7 @@ namespace Trafilm.Metadata
     #region --- Properties ---
 
     //Facets//
-    string Code { get; set; } //PivotViewer collection tools seem to generate sequential IDs, so we need a separate Code to reference an item
+    string ReferenceId { get; set; } //PivotViewer collection tools seem to generate sequential IDs, so we need a separate Code to reference an item
 
     DateTime InfoCreated { get; set; }
     DateTime InfoUpdated { get; set; }

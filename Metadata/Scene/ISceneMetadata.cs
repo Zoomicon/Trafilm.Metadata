@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://Trafilm.codeplex.com)
 //Filename: ISceneMetadata.cs
-//Version: 20160428
+//Version: 20160429
 
 namespace Trafilm.Metadata
 {
@@ -11,6 +11,8 @@ namespace Trafilm.Metadata
     #region --- Properties ---
 
     //...
+
+    string UtteranceCount { get; set; }
 
     #endregion
 

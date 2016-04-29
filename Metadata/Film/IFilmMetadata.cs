@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://Trafilm.codeplex.com)
 //Filename: IFilmMetadata.cs
-//Version: 20160428
+//Version: 20160429
 
 namespace Trafilm.Metadata
 {
@@ -26,6 +26,8 @@ namespace Trafilm.Metadata
     string[] SourceLanguage { get; set; }
     string[] DubbedLanguage { get; set; }
     string[] SubtitledLanguage { get; set; }
+
+    string SceneCount { get; set; }
 
     #endregion
 

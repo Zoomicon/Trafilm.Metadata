@@ -3,7 +3,7 @@
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
     <Position X="3.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAABACAAAIgAAAAAAAAAAAAAAAAAABAoBA=</HashCode>
+      <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAoBA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,7 +11,7 @@
   <Class Name="Trafilm.Metadata.TrafilmMetadataFacets">
     <Position X="7.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgAAACAAAAAAACAAAAAAAACAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAgAAACAAAAAAAAAIAAAAAACAAEAAAAAAAAAA=</HashCode>
       <FileName>Metadata\TrafilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -19,49 +19,59 @@
     <Position X="3.5" Y="4" Width="3.5" />
     <InheritanceLine Type="Trafilm.Metadata.TrafilmMetadata" FixedToPoint="true">
       <Path>
-        <Point X="4.875" Y="3.134" />
+        <Point X="4.875" Y="3.298" />
         <Point X="4.875" Y="4" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAgBEAABACAAiEAAAAIAgAAAAAAAAEAgAgAABgAAI=</HashCode>
+      <HashCode>AAAAgBEAABACAAiEAAAAIAgAAAAAAAAEAoAgAABgAAI=</HashCode>
       <FileName>Metadata\Film\FilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.179" />
   </Class>
   <Class Name="Trafilm.Metadata.FilmMetadataFacets">
-    <Position X="7.5" Y="2.75" Width="3" />
+    <Position X="7.5" Y="2.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAASCAAAAAAAABAgDAAAAAAAAAAAQAAACQAAA=</HashCode>
+      <HashCode>QAAAAAAAASCAAAAAAAABAgDAAAAAAAAAAASAAACQAAA=</HashCode>
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.SceneMetadataFacets">
     <Position X="7.5" Y="5.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAggCAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Scene\SceneMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.UtteranceMetadataFacets">
     <Position X="7.5" Y="7.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAggCAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Utterance\UtteranceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.SceneMetadata">
     <Position X="3.5" Y="8.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>BAAAgAAAABACAAgAAJIAAAAAAAAAAAAABAAAAABAAAA=</HashCode>
+      <HashCode>BAAAgAAAABAAAAggAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Metadata\Scene\SceneMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.29" />
   </Class>
   <Class Name="Trafilm.Metadata.UtteranceMetadata">
-    <Position X="3.5" Y="12" Width="3.5" />
+    <Position X="3.5" Y="12" Width="3.75" />
+    <InheritanceLine Type="Trafilm.Metadata.TrafilmMetadata" ManuallyRouted="true">
+      <Path>
+        <Point X="4.875" Y="3.298" />
+        <Point X="4.875" Y="3.625" />
+        <Point X="3.25" Y="3.625" />
+        <Point X="3.25" Y="11.625" />
+        <Point X="5.375" Y="11.625" />
+        <Point X="5.375" Y="12" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAgAAAABACAAgAAJIAAIAAAAAAAAAABAAAAABAAAA=</HashCode>
+      <HashCode>AAAAgAAAABAAAAgAAAAAAIAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Metadata\Utterance\UtteranceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.315" />
@@ -69,7 +79,7 @@
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
     <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAoBA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAoBA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -82,21 +92,21 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAABEAAAACAAAEAAAAIAgAAAAAAAAEAgAgAAAgAAI=</HashCode>
+      <HashCode>AAAAABEAAAACAAAEAAAAIAgAAAAAAAAEAoAgAAAgAAI=</HashCode>
       <FileName>Metadata\Film\IFilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ISceneMetadata">
     <Position X="0.5" Y="6.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Scene\ISceneMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.IUtteranceMetadata">
     <Position X="0.5" Y="8.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAAJIAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Utterance\IUtteranceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
