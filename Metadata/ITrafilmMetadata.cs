@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://Trafilm.codeplex.com)
 //Filename: ITrafilmMetadata.cs
-//Version: 20131101
+//Version: 20160429
 
 using Metadata.CXML;
 
@@ -15,14 +15,13 @@ namespace Trafilm.Metadata
     #region --- Properties ---
 
     //Facets//
-    string Filename { get; set; }
-    DateTime FirstPublished { get; set; }
-    DateTime LastUpdated { get; set; }
+    string Code { get; set; } //PivotViewer collection tools seem to generate sequential IDs, so we need a separate Code to reference an item
 
-    string[] AgeGroup { get; set; }
+    DateTime InfoCreated { get; set; }
+    DateTime InfoUpdated { get; set; }
+
     string[] Keywords { get; set; }
-    string[] AuthorSource { get; set; }
-    string License { get; set; }
+    string Comments { get; set; }
 
     #endregion
 

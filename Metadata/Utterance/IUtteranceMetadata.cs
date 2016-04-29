@@ -10,11 +10,7 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    string[] AudioLanguage { get; set; }
-    string[] CaptionsLanguage { get; set; }
-    string[] Genre { get; set; }
-    string Duration { get; set; }
-    string[] AudiovisualRichness { get; set; }
+    //...
 
     #endregion
 
