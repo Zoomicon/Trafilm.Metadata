@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://Trafilm.codeplex.com)
 //Filename: UtteranceMetadata.cs
-//Version: 20160428
+//Version: 20160429
 
 using Metadata.CXML;
 
@@ -44,19 +44,14 @@ namespace Trafilm.Metadata
       return MakeUtteranceFacetCategories();
     }
 
-    public override IEnumerable<XElement> GetCXMLFacets()
+    public override IEnumerable<XElement> GetCXMLFacets(IList<XElement> facets = null)
     {
-      IList<XElement> facets = new List<XElement>();
+      if (facets == null)
+        facets = new List<XElement>();
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_CODE, Code));
+      base.GetCXMLFacets(facets);
 
       //...
-
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_COMMENTS, Comments));
-
-      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
-      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));
 
       return facets;
     }
@@ -69,7 +64,7 @@ namespace Trafilm.Metadata
     {
       IList<XElement> result = new List<XElement>();
 
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_CODE, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
 
       //...
 

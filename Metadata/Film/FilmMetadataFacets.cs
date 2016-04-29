@@ -1,13 +1,13 @@
 ﻿//Project: Trafilm (http://Trafilm.codeplex.com)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160428
+//Version: 20160429
 
 namespace Trafilm.Metadata
 {
 
   public static class FilmMetadataFacets
   {
-    public const string FACET_TITLE_SOURCE = "Source Title";
+    public const string FACET_TITLE_SOURCE = "Source title";
     public const string FACET_TITLE_ES = "Title in Spanish";
     public const string FACET_TITLE_CA = "Title in Catalan";
     //...
@@ -20,9 +20,11 @@ namespace Trafilm.Metadata
 
     public const string FACET_DURATION = "Duration (hh:mm:ss)";
 
-    public const string FACET_SOURCE_LANGUAGE = "Source Language";
-    public const string FACET_DUBBED_LANGUAGE = "Dubbed Language";
-    public const string FACET_SUBTITLED_LANGUAGE = "Subtitled Language";
+    public const string FACET_SOURCE_LANGUAGE = "Source language";
+    public const string FACET_DUBBED_LANGUAGE = "Dubbed language";
+    public const string FACET_SUBTITLED_LANGUAGE = "Subtitled language";
+
+    public const string FACET_SCENE_COUNT = "Scene count";
   }
 
 }

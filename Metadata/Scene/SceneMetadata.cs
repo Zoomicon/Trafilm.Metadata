@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://Trafilm.codeplex.com)
 //Filename: SceneMetadata.cs
-//Version: 20160428
+//Version: 20160429
 
 using Metadata.CXML;
 
@@ -17,6 +17,8 @@ namespace Trafilm.Metadata
 
     //...
 
+    public string UtteranceCount { get; set; }
+
     #endregion
 
     #region --- Methods ---
@@ -26,6 +28,8 @@ namespace Trafilm.Metadata
       base.Clear();
 
       //...
+
+      UtteranceCount = "0";
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -36,6 +40,8 @@ namespace Trafilm.Metadata
 
       //...
 
+      UtteranceCount = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_UTTERANCE_COUNT);
+
       return this;
     }
 
@@ -44,19 +50,16 @@ namespace Trafilm.Metadata
       return MakeSceneFacetCategories();
     }
 
-    public override IEnumerable<XElement> GetCXMLFacets()
+    public override IEnumerable<XElement> GetCXMLFacets(IList<XElement> facets = null)
     {
-      IList<XElement> facets = new List<XElement>();
+      if (facets == null)
+        facets = new List<XElement>();
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_CODE, Code));
+      base.GetCXMLFacets(facets);
 
       //...
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_COMMENTS, Comments));
-
-      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
-      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_UTTERANCE_COUNT, UtteranceCount));
 
       return facets;
     }
@@ -69,9 +72,11 @@ namespace Trafilm.Metadata
     {
       IList<XElement> result = new List<XElement>();
 
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_CODE, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
 
       //...
+
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_UTTERANCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_KEYWORDS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_COMMENTS, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
