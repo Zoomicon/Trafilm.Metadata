@@ -15,11 +15,22 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public string[] AudioLanguage { get; set; }
-    public string[] CaptionsLanguage { get; set; }
-    public string[] Genre { get; set; }
+    public string Title_source { get; set; }
+    public string Title_es { get; set; }
+    public string Title_ca { get; set; }
+    //...
+
+    public string Director { get; set; }
+    public string Scriptwriter { get; set; }
+
+    public string ProductionCountry { get; set; }
+    public string ProductionCompany { get; set; }
+
     public string Duration { get; set; }
-    public string[] AudiovisualRichness { get; set; }
+
+    public string[] SourceLanguage { get; set; }
+    public string[] DubbedLanguage { get; set; }
+    public string[] SubtitledLanguage { get; set; }
 
     #endregion
 
@@ -29,11 +40,22 @@ namespace Trafilm.Metadata
     {
       base.Clear();
 
-      AudioLanguage = new string[] { };
-      CaptionsLanguage = new string[] { };
-      Genre = new string[] { };
+      Title_source = "";
+      Title_es = "";
+      Title_ca = "";
+      //...
+
+      Director = "";
+      Scriptwriter = "";
+
+      ProductionCountry = "";
+      ProductionCompany = "";
+
       Duration = "0:0:0";
-      AudiovisualRichness = new string[] { };
+
+      SourceLanguage = new string[] { };
+      DubbedLanguage = new string[] { };
+      SubtitledLanguage = new string[] { };
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -42,11 +64,22 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
-      AudioLanguage = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_AUDIO_LANGUAGE);
-      CaptionsLanguage = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_CAPTIONS_LANGUAGE);
-      Genre = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_GENRE);
+      Title_source = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_SOURCE);
+      Title_es = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_ES);
+      Title_ca = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_CA);
+      //...
+
+      Director = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DIRECTOR);
+      Scriptwriter = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCRIPTWRITER);
+
+      ProductionCountry = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_PRODUCTION_COUNTRY);
+      ProductionCompany = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_PRODUCTION_COMPANY);
+
       Duration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DURATION);
-      AudiovisualRichness = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_AUDIOVISUAL_RICHNESS);
+
+      SourceLanguage = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SOURCE_LANGUAGE);
+      DubbedLanguage = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DUBBED_LANGUAGE);
+      SubtitledLanguage = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGE);
 
       return this;
     }
@@ -56,25 +89,34 @@ namespace Trafilm.Metadata
       return MakeFilmFacetCategories();
     }
 
-    public override IEnumerable<XElement> GetCXMLFacets()
+    public override IEnumerable<XElement> GetCXMLFacets() //not calling some ancestor method for this since we want a specific order of facets for better CXML readability - adding ancestor's facets (from TrafilmMetadataFacets) too instead here - note that the order shown in PivotViewer is defined by MakeXXCategories method below
     {
       IList<XElement> facets = new List<XElement>();
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_FILENAME, Filename));
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_CODE, Code));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_AUDIO_LANGUAGE, AudioLanguage));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_CAPTIONS_LANGUAGE, CaptionsLanguage));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_GENRE, Genre));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_SOURCE, Title_source));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_ES, Title_es));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_CA, Title_ca));
+      //...
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTOR, Director));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCRIPTWRITER, Scriptwriter));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COUNTRY, ProductionCountry));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COMPANY, ProductionCompany));
+
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DURATION, Duration));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_AUDIOVISUAL_RICHNESS, AudiovisualRichness));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_AGE_GROUP, AgeGroup)); 
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SOURCE_LANGUAGE, SourceLanguage));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DUBBED_LANGUAGE, DubbedLanguage));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGE, SubtitledLanguage));
+
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_AUTHORS_SOURCE, AuthorSource));
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_LICENSE, License));
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_COMMENTS, Comments));
 
-      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_FIRST_PUBLISHED, FirstPublished));
-      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_LAST_UPDATED, LastUpdated));
+      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
+      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));
 
       return facets;
     }
@@ -86,21 +128,31 @@ namespace Trafilm.Metadata
     public static IEnumerable<XElement> MakeFilmFacetCategories() //the following also defines the order in which filters appear in PivotViewer's filter pane
     {
       IList<XElement> result = new List<XElement>();
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_FILENAME, CXML.VALUE_STRING, null,isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
 
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_AUDIO_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_CAPTIONS_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_GENRE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_CODE, CXML.VALUE_STRING, null,isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TITLE_SOURCE, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TITLE_ES, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TITLE_CA, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
+      //...
+
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DIRECTOR, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SCRIPTWRITER, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_PRODUCTION_COUNTRY, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_PRODUCTION_COMPANY, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_AUDIOVISUAL_RICHNESS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(MakeAgeGroupFacetCategory());
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SOURCE_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DUBBED_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_KEYWORDS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_AUTHORS_SOURCE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_LICENSE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_COMMENTS, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
 
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_FIRST_PUBLISHED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_LAST_UPDATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_CREATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_UPDATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       return result;
     }

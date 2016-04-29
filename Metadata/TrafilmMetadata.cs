@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://Trafilm.codeplex.com)
 //Filename: TrafilmMetadtata.cs
-//Version: 20140410
+//Version: 20160429
 
 using Metadata.CXML;
 
@@ -18,13 +18,11 @@ namespace Trafilm.Metadata
     #region --- Properties ---
    
     //Facets//
-    public string Filename { get; set; }
-    public DateTime FirstPublished { get; set; }
-    public DateTime LastUpdated { get; set; }
-    public string[] AgeGroup { get; set; }
+    public string Code { get; set; }
+    public DateTime InfoCreated { get; set; }
+    public DateTime InfoUpdated { get; set; }
     public string[] Keywords { get; set; }
-    public string[] AuthorSource { get; set; }
-    public string License { get; set; }
+    public string Comments { get; set; }
 
     #endregion
 
@@ -36,14 +34,12 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
-      Filename = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_FILENAME);
-      FirstPublished = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_FIRST_PUBLISHED);
-      LastUpdated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_LAST_UPDATED);
+      Code = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_CODE);
+      InfoCreated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_CREATED);
+      InfoUpdated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_UPDATED);
 
-      AgeGroup = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_AGE_GROUP);
       Keywords = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_KEYWORDS);
-      AuthorSource = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_AUTHORS_SOURCE);
-      License = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_LICENSE);
+      Comments = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_COMMENTS);
 
       return this;
     }
@@ -72,11 +68,8 @@ namespace Trafilm.Metadata
     public override ICXMLMetadata Fix()
     {
       if (string.IsNullOrWhiteSpace(Id)) //also checks for empty string
-        Id = Filename;
-      
-      if (string.IsNullOrWhiteSpace(Title)) //also checks for empty string
-        Title = Filename;
-      
+        Id = Code;
+            
       return this;
     }
 
@@ -85,52 +78,21 @@ namespace Trafilm.Metadata
     public override void Clear()
     {
       base.Clear();
- 
-      //Facets//
-      Filename = "";
-      FirstPublished = DateTime.UtcNow;
-      LastUpdated = DateTime.UtcNow;
 
-      AgeGroup = new string[] { };
+      //Facets//
+      Code = "";
+      InfoCreated = DateTime.UtcNow;
+      InfoUpdated = DateTime.UtcNow;
+
       Keywords = new string[] { };
-      AuthorSource = new string[] { };
-      License = "";
+      Comments = "";
     }
 
     #region --- Helpers ---
 
     public static XElement FindItem(string key, XDocument doc)
     {
-      return doc.Root.Elements(CXML.NODE_ITEMS).Elements(CXML.NODE_ITEM).CXMLFirstItemWithStringValue(TrafilmMetadataFacets.FACET_FILENAME, key);
-    }
-
-    public static XElement MakeAgeGroupFacetCategory()
-    {
-      return
-        new XElement(CXML.NODE_FACET_CATEGORY,
-          new XAttribute(CXML.ATTRIB_NAME, TrafilmMetadataFacets.FACET_AGE_GROUP),
-          new XAttribute(CXML.ATTRIB_TYPE, "String"),
-          new XAttribute(CXML.ATTRIB_IS_FILTER_VISIBLE, "True"),
-          new XAttribute(CXML.ATTRIB_IS_METADATA_VISIBLE, "True"),
-          new XAttribute(CXML.ATTRIB_IS_WORD_WHEEL_VISIBLE, "True"),
-
-          new XElement(CXML.NODE_EXTENSION,
-            new XElement(CXML.NODE_SORT_ORDER,
-              new XAttribute(CXML.ATTRIB_NAME, TrafilmMetadataFacets.FACET_AGE_GROUP),
-
-              new XElement(CXML.NODE_SORT_VALUE,
-                new XAttribute(CXML.ATTRIB_VALUE, "All ages")),
-              new XElement(CXML.NODE_SORT_VALUE,
-                new XAttribute(CXML.ATTRIB_VALUE, "< 13 years old")),
-              new XElement(CXML.NODE_SORT_VALUE,
-                new XAttribute(CXML.ATTRIB_VALUE, "13 - 18 years old")),
-              new XElement(CXML.NODE_SORT_VALUE,
-                new XAttribute(CXML.ATTRIB_VALUE, "18 - 35 years old")),
-              new XElement(CXML.NODE_SORT_VALUE,
-                new XAttribute(CXML.ATTRIB_VALUE, "> 35 years old"))
-            )
-          )
-        );
+      return doc.Root.Elements(CXML.NODE_ITEMS).Elements(CXML.NODE_ITEM).CXMLFirstItemWithStringValue(TrafilmMetadataFacets.FACET_CODE, key);
     }
 
     #endregion
