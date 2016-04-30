@@ -12,17 +12,17 @@ namespace Trafilm.Metadata
     public const string FACET_TITLE_CA = "Title in Catalan";
     //...
 
-    public const string FACET_DIRECTOR = "Director";
-    public const string FACET_SCRIPTWRITER = "Scriptwriter";
+    public const string FACET_DIRECTORS = "Directors";
+    public const string FACET_SCRIPTWRITERS = "Scriptwriters";
 
-    public const string FACET_PRODUCTION_COUNTRY = "Production country";
-    public const string FACET_PRODUCTION_COMPANY = "Production company";
+    public const string FACET_PRODUCTION_COUNTRIES = "Production countries";
+    public const string FACET_PRODUCTION_COMPANIES = "Production companies";
 
     public const string FACET_DURATION = "Duration (hh:mm:ss)";
 
-    public const string FACET_SOURCE_LANGUAGE = "Source language";
-    public const string FACET_DUBBED_LANGUAGE = "Dubbed language";
-    public const string FACET_SUBTITLED_LANGUAGE = "Subtitled language";
+    public const string FACET_SOURCE_LANGUAGES = "Source languages";
+    public const string FACET_DUBBED_LANGUAGES = "Dubbed languages";
+    public const string FACET_SUBTITLED_LANGUAGES = "Subtitled languages";
 
     public const string FACET_SCENE_COUNT = "Scene count";
   }

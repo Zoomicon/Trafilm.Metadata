@@ -20,17 +20,17 @@ namespace Trafilm.Metadata
     public string Title_ca { get; set; }
     //...
 
-    public string Director { get; set; }
-    public string Scriptwriter { get; set; }
+    public string[] Directors { get; set; }
+    public string[] Scriptwriters { get; set; }
 
-    public string ProductionCountry { get; set; }
-    public string ProductionCompany { get; set; }
+    public string[] ProductionCountries { get; set; }
+    public string[] ProductionCompanies { get; set; }
 
     public string Duration { get; set; }
 
-    public string[] SourceLanguage { get; set; }
-    public string[] DubbedLanguage { get; set; }
-    public string[] SubtitledLanguage { get; set; }
+    public string[] SourceLanguages { get; set; }
+    public string[] DubbedLanguages { get; set; }
+    public string[] SubtitledLanguages { get; set; }
 
     public string SceneCount { get; set; }
 
@@ -47,17 +47,17 @@ namespace Trafilm.Metadata
       Title_ca = "";
       //...
 
-      Director = "";
-      Scriptwriter = "";
+      Directors = new string[] { };
+      Scriptwriters = new string[] { };
 
-      ProductionCountry = "";
-      ProductionCompany = "";
+      ProductionCountries = new string[] { };
+      ProductionCompanies = new string[] { };
 
       Duration = "0:0:0";
 
-      SourceLanguage = new string[] { };
-      DubbedLanguage = new string[] { };
-      SubtitledLanguage = new string[] { };
+      SourceLanguages = new string[] { };
+      DubbedLanguages = new string[] { };
+      SubtitledLanguages = new string[] { };
 
       SceneCount = "0";
     }
@@ -73,17 +73,17 @@ namespace Trafilm.Metadata
       Title_ca = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_CA);
       //...
 
-      Director = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DIRECTOR);
-      Scriptwriter = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCRIPTWRITER);
+      Directors = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DIRECTORS);
+      Scriptwriters = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SCRIPTWRITERS);
 
-      ProductionCountry = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_PRODUCTION_COUNTRY);
-      ProductionCompany = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_PRODUCTION_COMPANY);
+      ProductionCountries = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_PRODUCTION_COUNTRIES);
+      ProductionCompanies = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES);
 
       Duration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DURATION);
 
-      SourceLanguage = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SOURCE_LANGUAGE);
-      DubbedLanguage = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DUBBED_LANGUAGE);
-      SubtitledLanguage = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGE);
+      SourceLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SOURCE_LANGUAGES);
+      DubbedLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DUBBED_LANGUAGES);
+      SubtitledLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES);
 
       SceneCount = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENE_COUNT);
 
@@ -107,17 +107,17 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_CA, Title_ca));
       //...
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTOR, Director));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCRIPTWRITER, Scriptwriter));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTORS, Directors));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCRIPTWRITERS, Scriptwriters));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COUNTRY, ProductionCountry));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COMPANY, ProductionCompany));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COUNTRIES, ProductionCountries));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES, ProductionCompanies));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DURATION, Duration));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SOURCE_LANGUAGE, SourceLanguage));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DUBBED_LANGUAGE, DubbedLanguage));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGE, SubtitledLanguage));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SOURCE_LANGUAGES, SourceLanguages));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DUBBED_LANGUAGES, DubbedLanguages));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES, SubtitledLanguages));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENE_COUNT, SceneCount));
 
@@ -139,17 +139,17 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TITLE_CA, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
       //...
 
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DIRECTOR, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SCRIPTWRITER, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DIRECTORS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SCRIPTWRITERS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_PRODUCTION_COUNTRY, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_PRODUCTION_COMPANY, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_PRODUCTION_COUNTRIES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SOURCE_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DUBBED_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SOURCE_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DUBBED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SCENE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
