@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: TrafilmMetadataFacets.cs
-//Version: 20160429
+//Version: 20160430
 
 namespace Trafilm.Metadata
 {
@@ -11,7 +11,6 @@ namespace Trafilm.Metadata
     public const string FACET_INFO_CREATED = "InfoCreated";
     public const string FACET_INFO_UPDATED = "InfoUpdated";
     public const string FACET_KEYWORDS = "Keywords";
-    public const string FACET_COMMENTS = "Comments";
   }
 
 }

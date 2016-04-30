@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: ITrafilmMetadata.cs
-//Version: 20160429
+//Version: 20160430
 
 using Metadata.CXML;
 
@@ -21,7 +21,6 @@ namespace Trafilm.Metadata
     DateTime InfoUpdated { get; set; }
 
     string[] Keywords { get; set; }
-    string Comments { get; set; }
 
     #endregion
 
