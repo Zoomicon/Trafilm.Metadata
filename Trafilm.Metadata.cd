@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
-    <Position X="3.5" Y="0.5" Width="2.75" />
+    <Position X="4" Y="0.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAoBA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
@@ -9,49 +9,59 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.TrafilmMetadataFacets">
-    <Position X="7.5" Y="0.5" Width="2.5" />
+    <Position X="8" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAACAAAAAAAAAIAAAAAACAAEAAAAAAAAAA=</HashCode>
       <FileName>Metadata\TrafilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.FilmMetadata">
-    <Position X="3.5" Y="4" Width="3.5" />
+    <Position X="4.25" Y="4" Width="3.5" />
     <InheritanceLine Type="Trafilm.Metadata.TrafilmMetadata" FixedToPoint="true">
       <Path>
-        <Point X="4.875" Y="3.298" />
-        <Point X="4.875" Y="4" />
+        <Point X="5.875" Y="3.298" />
+        <Point X="5.875" Y="4" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAgBEAABACAAiEAAAAIAgAAAAAAAAEAoAgAABgAAI=</HashCode>
       <FileName>Metadata\Film\FilmMetadata.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="2.179" />
+    <Lollipop Position="2.492" />
   </Class>
   <Class Name="Trafilm.Metadata.FilmMetadataFacets">
-    <Position X="7.5" Y="2.5" Width="3" />
+    <Position X="8" Y="2.5" Width="3" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAASCAAAAAAAABAgDAAAAAAAAAAASAAACQAAA=</HashCode>
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.SceneMetadataFacets">
-    <Position X="7.5" Y="5.75" Width="3" />
+    <Position X="8" Y="5.75" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Scene\SceneMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.UtteranceMetadataFacets">
-    <Position X="7.5" Y="7.75" Width="2.5" />
+    <Position X="8" Y="7.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Utterance\UtteranceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.SceneMetadata">
-    <Position X="3.5" Y="8.75" Width="3.5" />
+    <Position X="4.25" Y="8.75" Width="3.5" />
+    <InheritanceLine Type="Trafilm.Metadata.TrafilmMetadata" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.875" Y="3.298" />
+        <Point X="5.875" Y="3.76" />
+        <Point X="4.083" Y="3.76" />
+        <Point X="4.083" Y="8.375" />
+        <Point X="5.75" Y="8.375" />
+        <Point X="5.75" Y="8.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>BAAAgAAAABAAAAggAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Metadata\Scene\SceneMetadata.cs</FileName>
@@ -59,15 +69,15 @@
     <Lollipop Position="2.29" />
   </Class>
   <Class Name="Trafilm.Metadata.UtteranceMetadata">
-    <Position X="3.5" Y="12" Width="3.75" />
+    <Position X="4" Y="12.25" Width="3.75" />
     <InheritanceLine Type="Trafilm.Metadata.TrafilmMetadata" ManuallyRouted="true">
       <Path>
-        <Point X="4.875" Y="3.298" />
-        <Point X="4.875" Y="3.625" />
-        <Point X="3.25" Y="3.625" />
-        <Point X="3.25" Y="11.625" />
-        <Point X="5.375" Y="11.625" />
-        <Point X="5.375" Y="12" />
+        <Point X="5.875" Y="3.298" />
+        <Point X="5.875" Y="3.771" />
+        <Point X="4.088" Y="3.771" />
+        <Point X="4.088" Y="11.625" />
+        <Point X="5.875" Y="11.625" />
+        <Point X="5.875" Y="12.25" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -77,18 +87,24 @@
     <Lollipop Position="2.315" />
   </Class>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
-    <Position X="0.5" Y="0.5" Width="2" />
+    <Position X="0.5" Y="4" Width="2" />
+    <InheritanceLine Type="Metadata.CXML.ICXMLMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.562" Y="3.506" />
+        <Point X="1.562" Y="4" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAoBA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.IFilmMetadata">
-    <Position X="0.5" Y="3" Width="2.5" />
-    <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" FixedToPoint="true">
+    <Position X="0.5" Y="6.5" Width="2.5" />
+    <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="1.5" Y="2.259" />
-        <Point X="1.5" Y="3" />
+        <Point X="1.5" Y="5.759" />
+        <Point X="1.5" Y="6.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -97,18 +113,42 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ISceneMetadata">
-    <Position X="0.5" Y="6.25" Width="2.25" />
+    <Position X="0.5" Y="10" Width="2.25" />
+    <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="5.759" />
+        <Point X="1.5" Y="6.125" />
+        <Point X="0.25" Y="6.125" />
+        <Point X="0.25" Y="9.7" />
+        <Point X="1.625" Y="9.7" />
+        <Point X="1.625" Y="10" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Scene\ISceneMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.IUtteranceMetadata">
-    <Position X="0.5" Y="8.5" Width="2" />
+    <Position X="0.5" Y="12.25" Width="2" />
+    <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="5.759" />
+        <Point X="1.5" Y="6.125" />
+        <Point X="0.25" Y="6.125" />
+        <Point X="0.25" Y="11.875" />
+        <Point X="1.5" Y="11.875" />
+        <Point X="1.5" Y="12.25" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Utterance\IUtteranceMetadata.cs</FileName>
     </TypeIdentifier>
+  </Interface>
+  <Interface Name="Metadata.CXML.ICXMLMetadata">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier />
   </Interface>
   <Font Name="Tahoma" Size="8.25" />
 </ClassDiagram>
