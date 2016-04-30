@@ -10,7 +10,6 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    string Title_source { get; set; }
     string Title_es { get; set; }
     string Title_ca { get; set; }
     //...

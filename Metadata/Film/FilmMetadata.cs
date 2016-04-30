@@ -15,7 +15,6 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public string Title_source { get; set; }
     public string Title_es { get; set; }
     public string Title_ca { get; set; }
     //...
@@ -42,7 +41,6 @@ namespace Trafilm.Metadata
     {
       base.Clear();
 
-      Title_source = "";
       Title_es = "";
       Title_ca = "";
       //...
@@ -68,7 +66,6 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
-      Title_source = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_SOURCE);
       Title_es = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_ES);
       Title_ca = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_CA);
       //...
@@ -102,7 +99,6 @@ namespace Trafilm.Metadata
 
       base.GetCXMLFacets(facets);
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_SOURCE, Title_source));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_ES, Title_es));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_CA, Title_ca));
       //...
@@ -134,7 +130,6 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null,isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
 
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TITLE_SOURCE, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TITLE_ES, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TITLE_CA, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
       //...
