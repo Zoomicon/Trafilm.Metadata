@@ -15,17 +15,17 @@ namespace Trafilm.Metadata
     string Title_ca { get; set; }
     //...
 
-    string Director { get; set; }
-    string Scriptwriter { get; set; }
+    string[] Directors { get; set; }
+    string[] Scriptwriters { get; set; }
 
-    string ProductionCountry { get; set; }
-    string ProductionCompany { get; set; }
+    string[] ProductionCountries { get; set; }
+    string[] ProductionCompanies { get; set; }
 
     string Duration { get; set; }
 
-    string[] SourceLanguage { get; set; }
-    string[] DubbedLanguage { get; set; }
-    string[] SubtitledLanguage { get; set; }
+    string[] SourceLanguages { get; set; }
+    string[] DubbedLanguages { get; set; }
+    string[] SubtitledLanguages { get; set; }
 
     string SceneCount { get; set; }
 
