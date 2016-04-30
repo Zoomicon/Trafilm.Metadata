@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: TrafilmMetadtata.cs
-//Version: 20160429
+//Version: 20160430
 
 using Metadata.CXML;
 
@@ -22,7 +22,6 @@ namespace Trafilm.Metadata
     public DateTime InfoCreated { get; set; }
     public DateTime InfoUpdated { get; set; }
     public string[] Keywords { get; set; }
-    public string Comments { get; set; }
 
     #endregion
 
@@ -46,7 +45,6 @@ namespace Trafilm.Metadata
       InfoUpdated = DateTime.UtcNow;
 
       Keywords = new string[] { };
-      Comments = "";
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -60,7 +58,6 @@ namespace Trafilm.Metadata
       InfoUpdated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_UPDATED);
 
       Keywords = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_KEYWORDS);
-      Comments = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_COMMENTS);
 
       return this;
     }
@@ -99,7 +96,6 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REFERENCE_ID, ReferenceId));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_COMMENTS, Comments));
 
       AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
       AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));

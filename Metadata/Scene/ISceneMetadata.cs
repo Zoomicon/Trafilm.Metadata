@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: ISceneMetadata.cs
-//Version: 20160429
+//Version: 20160430
 
 namespace Trafilm.Metadata
 {

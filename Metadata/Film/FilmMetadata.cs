@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: FilmMetadata.cs
-//Version: 20160429
+//Version: 20160430
 
 using Metadata.CXML;
 
@@ -154,7 +154,6 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SCENE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_KEYWORDS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_COMMENTS, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
 
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_CREATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_UPDATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
