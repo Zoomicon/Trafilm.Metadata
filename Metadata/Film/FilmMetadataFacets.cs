@@ -7,7 +7,6 @@ namespace Trafilm.Metadata
 
   public static class FilmMetadataFacets
   {
-    public const string FACET_TITLE_SOURCE = "Source title";
     public const string FACET_TITLE_ES = "Title in Spanish";
     public const string FACET_TITLE_CA = "Title in Catalan";
     //...
