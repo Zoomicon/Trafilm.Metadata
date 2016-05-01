@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: UtteranceMetadata.cs
-//Version: 20160430
+//Version: 20160501
 
 using Metadata.CXML;
 
@@ -15,6 +15,8 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
+    public string SceneReferenceId { get; set; }
+
     //...
 
     #endregion
@@ -25,6 +27,8 @@ namespace Trafilm.Metadata
     {
       base.Clear();
 
+      SceneReferenceId = "";
+
       //...
     }
 
@@ -33,6 +37,8 @@ namespace Trafilm.Metadata
       base.Load(item);
 
       IEnumerable<XElement> facets = FindFacets(item);
+
+      SceneReferenceId = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID);
 
       //...
 
@@ -51,6 +57,9 @@ namespace Trafilm.Metadata
 
       base.GetCXMLFacets(facets);
 
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID, SceneReferenceId));
+
       //...
 
       return facets;
@@ -65,6 +74,8 @@ namespace Trafilm.Metadata
       IList<XElement> result = new List<XElement>();
 
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       //...
 
