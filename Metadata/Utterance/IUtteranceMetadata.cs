@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: IUtteranceMetadata.cs
-//Version: 20160430
+//Version: 20160501
 
 namespace Trafilm.Metadata
 {
@@ -9,6 +9,8 @@ namespace Trafilm.Metadata
   {
 
     #region --- Properties ---
+
+    string SceneReferenceId { get; set; }
 
     //...
 
