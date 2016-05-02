@@ -55,6 +55,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Converters.cs" />
     <Compile Include="Metadata\Scene\SceneMetadata.cs" />
     <Compile Include="Metadata\Scene\SceneMetadataFacets.cs" />
     <Compile Include="Metadata\Scene\ISceneMetadata.cs" />

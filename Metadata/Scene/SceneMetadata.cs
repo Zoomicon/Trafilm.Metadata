@@ -1,9 +1,9 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: SceneMetadata.cs
-//Version: 20160501
+//Version: 20160503
 
 using Metadata.CXML;
-
+using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
@@ -17,9 +17,18 @@ namespace Trafilm.Metadata
 
     public string FilmReferenceId { get; set; }
 
-    //...
+    public TimeSpan? StartTime { get; set; }
+    public TimeSpan? Duration { get; set; }
 
-    public string UtteranceCount { get; set; }
+    public bool L1sourceLanguagePresent { get; set; }
+    public bool L2translatedLanguagePresent { get; set; }
+
+    //Calculatable//
+
+    public int L3otherLanguagesCount { get; set; }
+    public string[] L3otherLanguages { get; set; }
+
+    public int UtteranceCount { get; set; }
 
     #endregion
 
@@ -31,9 +40,16 @@ namespace Trafilm.Metadata
 
       FilmReferenceId = "";
 
-      //...
+      StartTime = null;
+      Duration = null;
 
-      UtteranceCount = "0";
+      L1sourceLanguagePresent = true; //this is the most usual case
+      L2translatedLanguagePresent = true; //this is the most usual case
+
+      L3otherLanguagesCount = 0;
+      L3otherLanguages = new string[] { };
+
+      UtteranceCount = 0;
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -44,9 +60,16 @@ namespace Trafilm.Metadata
 
       FilmReferenceId = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_FILM_REFERENCE_ID);
 
-      //...
+      StartTime = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_START_TIME).ToNullableTimeSpan("HH:MM:SS.FF");
+      Duration = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_DURATION).ToNullableTimeSpan("MM:SS.FF");
 
-      UtteranceCount = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_UTTERANCE_COUNT);
+      L1sourceLanguagePresent = facets.CXMLFacetBoolValue(SceneMetadataFacets.FACET_L1_SOURCE_LANGUAGE_PRESENT);
+      L2translatedLanguagePresent = facets.CXMLFacetBoolValue(SceneMetadataFacets.FACET_L2_TRANSLATED_LANGUAGE_PRESENT);
+
+      L3otherLanguagesCount = int.Parse(facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES_COUNT));
+      L3otherLanguages = facets.CXMLFacetStringValues(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES);
+
+      UtteranceCount = int.Parse(facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_UTTERANCE_COUNT));
 
       return this;
     }
@@ -65,9 +88,16 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
 
-      //...
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_START_TIME, StartTime.ToString("HH:MM:SS.FF")));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_DURATION, Duration.ToString("MM:SS.FF")));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_UTTERANCE_COUNT, UtteranceCount));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L1_SOURCE_LANGUAGE_PRESENT, L1sourceLanguagePresent.ToString())); //this will give True/False (not Yes/No)
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L2_TRANSLATED_LANGUAGE_PRESENT, L2translatedLanguagePresent.ToString())); //this will give True/False (not Yes/No)
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES_COUNT, L3otherLanguagesCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES, L3otherLanguages));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_UTTERANCE_COUNT, UtteranceCount.ToString()));
 
       return facets;
     }
@@ -84,7 +114,14 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
-      //...
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_START_TIME, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L1_SOURCE_LANGUAGE_PRESENT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L2_TRANSLATED_LANGUAGE_PRESENT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_UTTERANCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 

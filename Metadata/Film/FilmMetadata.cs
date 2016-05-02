@@ -1,9 +1,9 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: FilmMetadata.cs
-//Version: 20160501
+//Version: 20160502
 
 using Metadata.CXML;
-
+using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
@@ -19,7 +19,7 @@ namespace Trafilm.Metadata
     public string Title_ca { get; set; }
     //...
 
-    public string Duration { get; set; }
+    public TimeSpan? Duration { get; set; }
 
     public string[] Directors { get; set; }
     public string[] Scriptwriters { get; set; }
@@ -28,16 +28,18 @@ namespace Trafilm.Metadata
     public string[] ProductionCompanies { get; set; }
 
     public string BoxOffice { get; set; }
-    public string Year { get; set; }
+    public int? Year { get; set; }
 
     public string[] SourceLanguages { get; set; }
 
-    public string YearTranslated { get; set; }
+    public int? YearTranslated { get; set; }
     public string[] DubbedLanguages { get; set; }
     public string[] SubtitledLanguages { get; set; }
 
-    public string SceneCount { get; set; }
-    public string ScenesDuration { get; set; }
+    //Calculatable//
+
+    public int SceneCount { get; set; }
+    public TimeSpan ScenesDuration { get; set; }
 
     #endregion
 
@@ -51,7 +53,7 @@ namespace Trafilm.Metadata
       Title_ca = "";
       //...
 
-      Duration = "0:0:0";
+      Duration = null;
 
       Directors = new string[] { };
       Scriptwriters = new string[] { };
@@ -60,16 +62,16 @@ namespace Trafilm.Metadata
       ProductionCompanies = new string[] { };
 
       BoxOffice = "";
-      Year = "";
+      Year = null;
 
       SourceLanguages = new string[] { };
 
-      YearTranslated = "";
+      YearTranslated = null;
       DubbedLanguages = new string[] { };
       SubtitledLanguages = new string[] { };
 
-      SceneCount = "0";
-      ScenesDuration = "0:0:0";
+      SceneCount = 0;
+      ScenesDuration = TimeSpan.Zero;
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -82,7 +84,7 @@ namespace Trafilm.Metadata
       Title_ca = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_CA);
       //...
 
-      Duration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DURATION);
+      Duration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DURATION).ToNullableTimeSpan("HH:MM:SS");
 
       Directors = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DIRECTORS);
       Scriptwriters = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SCRIPTWRITERS);
@@ -91,16 +93,16 @@ namespace Trafilm.Metadata
       ProductionCompanies = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES);
 
       BoxOffice = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_BOX_OFFICE);
-      Year = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR);
+      Year = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR).ToNullableInt();
 
       SourceLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SOURCE_LANGUAGES);
 
-      YearTranslated = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR_TRANSLATED);
+      YearTranslated = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR_TRANSLATED).ToNullableInt();
       DubbedLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DUBBED_LANGUAGES);
       SubtitledLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES);
 
-      SceneCount = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENE_COUNT);
-      ScenesDuration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENES_DURATION);
+      SceneCount = int.Parse(facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENE_COUNT));
+      ScenesDuration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENES_DURATION).ToTimeSpan("HH:MM:SS");
 
       return this;
     }
@@ -121,7 +123,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_CA, Title_ca));
       //...
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DURATION, Duration));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DURATION, Duration.ToString("HH:MM:SS"))); //for nullable types, ToString() method returns "" if HasValue is false
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTORS, Directors));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCRIPTWRITERS, Scriptwriters));
@@ -130,16 +132,16 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES, ProductionCompanies));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_BOX_OFFICE, BoxOffice));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR, Year));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR, Year.ToString())); //for nullable types, ToString() method returns "" if HasValue is false
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SOURCE_LANGUAGES, SourceLanguages));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR_TRANSLATED, YearTranslated));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR_TRANSLATED, YearTranslated.ToString())); //for nullable types, ToString() method returns "" if HasValue is false
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DUBBED_LANGUAGES, DubbedLanguages));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES, SubtitledLanguages));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENE_COUNT, SceneCount));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENES_DURATION, ScenesDuration));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENE_COUNT, SceneCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENES_DURATION, ScenesDuration.ToString("HH:MM:SS")));
 
       return facets;
     }
