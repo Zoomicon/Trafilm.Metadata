@@ -33,6 +33,8 @@ namespace Trafilm.Metadata
     string[] DubbedLanguages { get; set; }
     string[] SubtitledLanguages { get; set; }
 
+    //Calculatable//
+
     int SceneCount { get; set; }
     TimeSpan ScenesDuration { get; set; }
 

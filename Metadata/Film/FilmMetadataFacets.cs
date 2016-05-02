@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160501
+//Version: 20160502
 
 namespace Trafilm.Metadata
 {
@@ -27,6 +27,8 @@ namespace Trafilm.Metadata
     public const string FACET_YEAR_TRANSLATED = "Year translated";
     public const string FACET_DUBBED_LANGUAGES = "Dubbed languages";
     public const string FACET_SUBTITLED_LANGUAGES = "Subtitled languages";
+
+    //Calculatable//
 
     public const string FACET_SCENE_COUNT = "Scene count";
     public const string FACET_SCENES_DURATION = "Scenes duration (hh:mm:ss)";

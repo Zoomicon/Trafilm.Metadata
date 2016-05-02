@@ -36,6 +36,8 @@ namespace Trafilm.Metadata
     public string[] DubbedLanguages { get; set; }
     public string[] SubtitledLanguages { get; set; }
 
+    //Calculatable//
+
     public int SceneCount { get; set; }
     public TimeSpan ScenesDuration { get; set; }
 
@@ -51,7 +53,7 @@ namespace Trafilm.Metadata
       Title_ca = "";
       //...
 
-      Duration = TimeSpan.Zero;
+      Duration = null;
 
       Directors = new string[] { };
       Scriptwriters = new string[] { };
