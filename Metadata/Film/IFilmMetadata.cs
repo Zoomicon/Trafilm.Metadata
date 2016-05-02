@@ -1,6 +1,8 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: IFilmMetadata.cs
-//Version: 20160501
+//Version: 20160502
+
+using System;
 
 namespace Trafilm.Metadata
 {
@@ -14,7 +16,7 @@ namespace Trafilm.Metadata
     string Title_ca { get; set; }
     //...
 
-    string Duration { get; set; }
+    TimeSpan? Duration { get; set; }
 
     string[] Directors { get; set; }
     string[] Scriptwriters { get; set; }
@@ -23,16 +25,16 @@ namespace Trafilm.Metadata
     string[] ProductionCompanies { get; set; }
 
     string BoxOffice { get; set; }
-    string Year { get; set; }
+    int? Year { get; set; }
 
     string[] SourceLanguages { get; set; }
 
-    string YearTranslated { get; set; }
+    int? YearTranslated { get; set; }
     string[] DubbedLanguages { get; set; }
     string[] SubtitledLanguages { get; set; }
 
-    string SceneCount { get; set; }
-    string ScenesDuration { get; set; }
+    int SceneCount { get; set; }
+    TimeSpan ScenesDuration { get; set; }
 
     #endregion
 

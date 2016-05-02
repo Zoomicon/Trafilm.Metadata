@@ -30,21 +30,21 @@
     <Lollipop Position="2.492" />
   </Class>
   <Class Name="Trafilm.Metadata.FilmMetadataFacets">
-    <Position X="8" Y="2.5" Width="3" />
+    <Position X="8" Y="2.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>wAAAAAAAAAAAAQAAAgABAgBAAAAAFAAABACBAAAAIIA=</HashCode>
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.SceneMetadataFacets">
-    <Position X="8" Y="6.25" Width="3" />
+    <Position X="8" Y="6.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Scene\SceneMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.UtteranceMetadataFacets">
-    <Position X="8" Y="7.75" Width="2.5" />
+    <Position X="8" Y="9" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Metadata\Utterance\UtteranceMetadataFacets.cs</FileName>
@@ -65,6 +65,13 @@
       <FileName>Metadata\Utterance\UtteranceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.315" />
+  </Class>
+  <Class Name="Trafilm.Metadata.Converters">
+    <Position X="8" Y="12.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Converters.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
     <Position X="0.5" Y="4" Width="2" />

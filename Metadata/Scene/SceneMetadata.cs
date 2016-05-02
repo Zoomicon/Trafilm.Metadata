@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: SceneMetadata.cs
-//Version: 20160501
+//Version: 20160502
 
 using Metadata.CXML;
 
@@ -19,7 +19,7 @@ namespace Trafilm.Metadata
 
     //...
 
-    public string UtteranceCount { get; set; }
+    public int UtteranceCount { get; set; }
 
     #endregion
 
@@ -33,7 +33,7 @@ namespace Trafilm.Metadata
 
       //...
 
-      UtteranceCount = "0";
+      UtteranceCount = 0;
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -46,7 +46,7 @@ namespace Trafilm.Metadata
 
       //...
 
-      UtteranceCount = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_UTTERANCE_COUNT);
+      UtteranceCount = int.Parse(facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_UTTERANCE_COUNT));
 
       return this;
     }
@@ -67,7 +67,7 @@ namespace Trafilm.Metadata
 
       //...
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_UTTERANCE_COUNT, UtteranceCount));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_UTTERANCE_COUNT, UtteranceCount.ToString()));
 
       return facets;
     }

@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: ISceneMetadata.cs
-//Version: 20160501
+//Version: 20160502
 
 namespace Trafilm.Metadata
 {
@@ -14,7 +14,7 @@ namespace Trafilm.Metadata
 
     //...
 
-    string UtteranceCount { get; set; }
+    int UtteranceCount { get; set; }
 
     #endregion
 
