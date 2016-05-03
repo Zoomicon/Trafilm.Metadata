@@ -28,7 +28,7 @@ namespace Trafilm.Metadata
     public const string FACET_DUBBED_LANGUAGES = "Dubbed languages";
     public const string FACET_SUBTITLED_LANGUAGES = "Subtitled languages";
 
-    //Calculatable//
+    //Calculatable from Scenes//
 
     public const string FACET_SCENE_COUNT = "Scene count";
     public const string FACET_SCENES_DURATION = "Scenes duration (hh:mm:ss)";

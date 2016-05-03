@@ -36,7 +36,7 @@ namespace Trafilm.Metadata
     public string[] DubbedLanguages { get; set; }
     public string[] SubtitledLanguages { get; set; }
 
-    //Calculatable//
+    //Calculatable from Scenes//
 
     public int SceneCount { get; set; }
     public TimeSpan ScenesDuration { get; set; }
