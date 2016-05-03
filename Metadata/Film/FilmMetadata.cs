@@ -1,8 +1,10 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: FilmMetadata.cs
-//Version: 20160502
+//Version: 20160503
 
 using Metadata.CXML;
+using Trafilm.Metadata.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;

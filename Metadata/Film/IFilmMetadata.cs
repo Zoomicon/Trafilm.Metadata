@@ -1,10 +1,10 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: IFilmMetadata.cs
-//Version: 20160502
+//Version: 20160503
 
 using System;
 
-namespace Trafilm.Metadata
+namespace Trafilm.Metadata.Models
 {
 
   public interface IFilmMetadata : ITrafilmMetadata

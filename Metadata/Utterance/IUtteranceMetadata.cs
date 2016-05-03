@@ -2,7 +2,7 @@
 //Filename: IUtteranceMetadata.cs
 //Version: 20160501
 
-namespace Trafilm.Metadata
+namespace Trafilm.Metadata.Models
 {
 
   public interface IUtteranceMetadata : ITrafilmMetadata
