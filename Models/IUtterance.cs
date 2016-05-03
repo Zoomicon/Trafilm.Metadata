@@ -1,16 +1,16 @@
 ﻿//Project: Trafilm (http://trafilm.net)
-//Filename: ILinkedUtteranceMetadata.cs
+//Filename: IUtterance.cs
 //Version: 20160503
 
 namespace Trafilm.Metadata.Models
 {
 
-  public interface ILinkedUtteranceMetadata : IUtteranceMetadata
+  public interface IUtterance : IUtteranceMetadata
   {
 
     #region --- Properties ---
 
-    ISceneMetadata Scene { get; set; }
+    IScene Scene { get; set; }
 
     #endregion
 

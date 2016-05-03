@@ -1,5 +1,5 @@
 ﻿//Project: Trafilm (http://trafilm.net)
-//Filename: ILinkedFilmMetadata.cs
+//Filename: IScene.cs
 //Version: 20160503
 
 using System.Collections.Generic;
@@ -7,12 +7,13 @@ using System.Collections.Generic;
 namespace Trafilm.Metadata.Models
 {
 
-  public interface ILinkedFilmMetadata : IFilmMetadata
+  public interface IScene : ISceneMetadata
   {
 
     #region --- Properties ---
 
-    IEnumerable<ISceneMetadata> Scenes { get; set; }
+    IFilm Film { get; set; }
+    IEnumerable<IUtterance> Utterances { get; set; }
 
     #endregion
 

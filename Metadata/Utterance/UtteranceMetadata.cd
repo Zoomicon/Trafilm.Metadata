@@ -35,11 +35,11 @@
       <FileName>Metadata\Utterance\IUtteranceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Trafilm.Metadata.Models.ILinkedUtteranceMetadata">
+  <Interface Name="Trafilm.Metadata.Models.IUtterance">
     <Position X="6.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Metadata\Utterance\ILinkedUtteranceMetadata.cs</FileName>
+      <FileName>Metadata\Utterance\IUtterance.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">

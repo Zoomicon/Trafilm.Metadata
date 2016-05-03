@@ -35,11 +35,11 @@
       <FileName>Metadata\Film\IFilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Trafilm.Metadata.Models.ILinkedFilmMetadata">
+  <Interface Name="Trafilm.Metadata.Models.IFilm">
     <Position X="6.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Metadata\Film\ILinkedFilmMetadata.cs</FileName>
+      <FileName>Metadata\Film\IFilm.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
