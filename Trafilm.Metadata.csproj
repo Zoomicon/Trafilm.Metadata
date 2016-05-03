@@ -90,12 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Metadata\TrafilmMetadata.cd" />
-    <None Include="Trafilm.Metadata.Facets.cd" />
-    <None Include="Trafilm.Metadata.Models.cd" />
+    <None Include="Facets.cd" />
+    <None Include="Models.cd" />
     <None Include="Metadata\Film\FilmMetadata.cd" />
     <None Include="Metadata\Scene\SceneMetadata.cd" />
     <None Include="Metadata\Utterance\UtteranceMetadata.cd" />
-    <None Include="Trafilm.Metadata.cd" />
+    <None Include="Objects.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
