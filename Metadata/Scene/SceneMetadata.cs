@@ -3,6 +3,8 @@
 //Version: 20160503
 
 using Metadata.CXML;
+using Trafilm.Metadata.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;

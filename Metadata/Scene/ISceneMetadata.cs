@@ -4,7 +4,7 @@
 
 using System;
 
-namespace Trafilm.Metadata
+namespace Trafilm.Metadata.Models
 {
 
   public interface ISceneMetadata : ITrafilmMetadata

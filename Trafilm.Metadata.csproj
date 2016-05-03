@@ -56,12 +56,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Converters.cs" />
+    <Compile Include="Metadata\Film\ILinkedFilmMetadata.cs" />
+    <Compile Include="Metadata\Scene\ILinkedSceneMetadata.cs" />
     <Compile Include="Metadata\Scene\SceneMetadata.cs" />
     <Compile Include="Metadata\Scene\SceneMetadataFacets.cs" />
     <Compile Include="Metadata\Scene\ISceneMetadata.cs" />
     <Compile Include="Metadata\TrafilmMetadata.cs" />
     <Compile Include="Metadata\TrafilmMetadataFacets.cs" />
     <Compile Include="Metadata\ITrafilmMetadata.cs" />
+    <Compile Include="Metadata\Utterance\ILinkedUtteranceMetadata.cs" />
     <Compile Include="Metadata\Utterance\UtteranceMetadata.cs" />
     <Compile Include="Metadata\Utterance\UtteranceMetadataFacets.cs" />
     <Compile Include="Metadata\Utterance\IUtteranceMetadata.cs" />
@@ -83,6 +86,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Metadata\TrafilmMetadata.cd" />
+    <None Include="Trafilm.Metadata.Facets.cd" />
+    <None Include="Trafilm.Metadata.Models.cd" />
+    <None Include="Metadata\Film\FilmMetadata.cd" />
+    <None Include="Metadata\Scene\SceneMetadata.cd" />
+    <None Include="Metadata\Utterance\UtteranceMetadata.cd" />
     <None Include="Trafilm.Metadata.cd" />
     <None Include="packages.config" />
   </ItemGroup>

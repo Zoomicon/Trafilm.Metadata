@@ -1,8 +1,9 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: UtteranceMetadata.cs
-//Version: 20160501
+//Version: 20160503
 
 using Metadata.CXML;
+using Trafilm.Metadata.Models;
 
 using System.Collections.Generic;
 using System.Xml.Linq;
