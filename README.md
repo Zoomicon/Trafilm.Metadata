@@ -3,11 +3,11 @@ Library for manipulating hierarchical Trafilm (http://Trafilm.net) Gallery Metad
 
 # Class Diagrams
 
-*Class Diagram for Objects*
-![Class Diagram for Objects](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/Objects.png)
-
 *Class Diagram for Models*
 ![Class Diagram for Models](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/Models.png)
+
+*Class Diagram for Objects*
+![Class Diagram for Objects](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/Objects.png)
 
 *Class Diagram for Facets*
 ![Class Diagram for Facets](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/Facets.png)

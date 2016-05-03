@@ -6,7 +6,7 @@
       <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgBA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.TrafilmMetadataFacets">
     <Position X="6" Y="0.5" Width="2" />
