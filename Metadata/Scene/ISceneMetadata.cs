@@ -20,10 +20,16 @@ namespace Trafilm.Metadata
     bool L1sourceLanguagePresent { get; set; }
     bool L2translatedLanguagePresent { get; set; }
 
-    //Calculatable//
+    string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
+    string L3speakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
+
+    //Calculatable from Utterances//
 
     int L3otherLanguagesCount { get; set; }
     string[] L3otherLanguages { get; set; }
+
+    int L3otherTypesCount { get; set; }
+    string[] L3otherTypes { get; set; }
 
     int UtteranceCount { get; set; }
 
