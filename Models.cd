@@ -9,10 +9,10 @@
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IFilm">
     <Position X="2.75" Y="7.25" Width="1.75" />
-    <InheritanceLine Type="Trafilm.Metadata.Models.IFilmMetadata" FixedToPoint="true">
+    <InheritanceLine Type="Trafilm.Metadata.Models.IFilmMetadata" FixedFromPoint="true">
       <Path>
-        <Point X="3.75" Y="6.822" />
-        <Point X="3.75" Y="7.25" />
+        <Point X="3.625" Y="6.883" />
+        <Point X="3.625" Y="7.25" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -22,12 +22,6 @@
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IScene">
     <Position X="5.25" Y="7.25" Width="1.75" />
-    <InheritanceLine Type="Trafilm.Metadata.Models.ISceneMetadata" FixedToPoint="true">
-      <Path>
-        <Point X="6.125" Y="6.245" />
-        <Point X="6.125" Y="7.25" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAAAAAAAAAAA=</HashCode>
       <FileName>Models\IScene.cs</FileName>
@@ -37,7 +31,7 @@
     <Position X="7.5" Y="7.25" Width="2" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IUtteranceMetadata" FixedToPoint="true">
       <Path>
-        <Point X="8.375" Y="4.129" />
+        <Point X="8.375" Y="4.191" />
         <Point X="8.375" Y="7.25" />
       </Path>
     </InheritanceLine>
@@ -50,7 +44,7 @@
     <Position X="5" Y="3" Width="2.25" />
     <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" FixedToPoint="true">
       <Path>
-        <Point X="6" Y="2.206" />
+        <Point X="6" Y="2.268" />
         <Point X="6" Y="3" />
       </Path>
     </InheritanceLine>
