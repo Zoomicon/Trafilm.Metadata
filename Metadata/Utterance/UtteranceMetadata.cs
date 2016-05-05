@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: UtteranceMetadata.cs
-//Version: 20160503
+//Version: 20160504
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -16,9 +16,27 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
+    public string FilmReferenceId { get; set; }
     public string SceneReferenceId { get; set; }
 
-    //...
+    public string L3type { get; set; } //L3ST, L3TT
+
+    public string LmainLanguage { get; set; } //for L1ST or L2TT
+
+    public string L3languageType { get; set; } //e.g. real, constructed, variety (real dialect, slang or other)
+    public string L3language { get; set; }
+
+    public string[] L3constructedBasedOn { get; set; }
+
+    public string L3audienceUnderstanding { get; set; }
+    public string L3messageUnderstanding { get; set; }
+
+    public string L3speakerPerformance { get; set; }
+
+    public string[] L3mode { get; set; } //oral, written (or both)
+    public string L3STmodeChange { get; set; } //Only for L3TT type, for L3ST should always be "Does not apply"
+
+    public string[] L3represented { get; set; }
 
     #endregion
 
@@ -28,9 +46,28 @@ namespace Trafilm.Metadata
     {
       base.Clear();
 
+      FilmReferenceId = "";
       SceneReferenceId = "";
 
-      //...
+      L3type = "";
+
+      LmainLanguage = "";
+
+      L3languageType = "";
+      L3language = "";
+
+      L3constructedBasedOn = new string[] { };
+
+      L3audienceUnderstanding = "";
+      L3messageUnderstanding = "";
+
+      L3speakerPerformance = "";
+
+      L3mode = new string[] { };
+
+      L3STmodeChange = "";
+
+      L3represented = new string[] { };
     }
 
     public override ICXMLMetadata Load(XElement item)
