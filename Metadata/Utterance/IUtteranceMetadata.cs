@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: IUtteranceMetadata.cs
-//Version: 20160504
+//Version: 20160506
 
 namespace Trafilm.Metadata.Models
 {
@@ -28,7 +28,7 @@ namespace Trafilm.Metadata.Models
     string L3speakerPerformance { get; set; }
 
     string[] L3mode { get; set; } //oral, written (or both)
-    string L3STmodeChange { get; set; } //Only for L3TT type, for L3ST should always be "Does not apply"
+    string L3STmodeChange { get; set; } //for L3 type = L3ST this should always be "Not applicable"
 
     string[] L3represented { get; set; }
 

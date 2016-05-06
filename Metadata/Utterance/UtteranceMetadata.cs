@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: UtteranceMetadata.cs
-//Version: 20160504
+//Version: 20160506
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -34,7 +34,7 @@ namespace Trafilm.Metadata
     public string L3speakerPerformance { get; set; }
 
     public string[] L3mode { get; set; } //oral, written (or both)
-    public string L3STmodeChange { get; set; } //Only for L3TT type, for L3ST should always be "Does not apply"
+    public string L3STmodeChange { get; set; } //for L3 type = L3ST this should always be "Not applicable"
 
     public string[] L3represented { get; set; }
 
@@ -64,7 +64,6 @@ namespace Trafilm.Metadata
       L3speakerPerformance = "";
 
       L3mode = new string[] { };
-
       L3STmodeChange = "";
 
       L3represented = new string[] { };
@@ -76,9 +75,27 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
+      FilmReferenceId = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_FILM_REFERENCE_ID);
       SceneReferenceId = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID);
 
-      //...
+      L3type = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3_TYPE);
+
+      LmainLanguage = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L_MAIN_LANGUAGE);
+
+      L3languageType = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3_LANGUAGE_TYPE);
+      L3language = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3_LANGUAGE);
+
+      L3constructedBasedOn = facets.CXMLFacetStringValues(UtteranceMetadataFacets.FACET_L3_CONSTRUCTED_BASED_ON);
+
+      L3audienceUnderstanding = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3_AUDIENCE_UNDERSTANDING);
+      L3messageUnderstanding = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3_MESSAGE_UNDERSTANDING);
+
+      L3speakerPerformance = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3_SPEAKER_PERFORMANCE);
+
+      L3mode = facets.CXMLFacetStringValues(UtteranceMetadataFacets.FACET_L3_MODE);
+      L3STmodeChange = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3ST_MODE_CHANGE); //for L3 type = L3ST this should always be "Not applicable" 
+
+      L3represented = facets.CXMLFacetStringValues(UtteranceMetadataFacets.FACET_L3_REPRESENTED);
 
       return this;
     }
@@ -95,10 +112,27 @@ namespace Trafilm.Metadata
 
       base.GetCXMLFacets(facets);
 
-
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
       AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID, SceneReferenceId));
 
-      //...
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_TYPE, L3type));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L_MAIN_LANGUAGE, LmainLanguage));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_LANGUAGE_TYPE, L3languageType));
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_LANGUAGE, L3language));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_CONSTRUCTED_BASED_ON, L3constructedBasedOn));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_AUDIENCE_UNDERSTANDING, L3audienceUnderstanding));
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_MESSAGE_UNDERSTANDING, L3messageUnderstanding));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_SPEAKER_PERFORMANCE, L3speakerPerformance));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_MODE, L3mode));
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3ST_MODE_CHANGE, L3STmodeChange));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_REPRESENTED, L3represented));
 
       return facets;
     }
@@ -111,11 +145,33 @@ namespace Trafilm.Metadata
     {
       IList<XElement> result = new List<XElement>();
 
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      //
 
-      //...
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L_MAIN_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_LANGUAGE_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_CONSTRUCTED_BASED_ON, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_AUDIENCE_UNDERSTANDING, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_MESSAGE_UNDERSTANDING, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_SPEAKER_PERFORMANCE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_MODE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3ST_MODE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_REPRESENTED, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      //
 
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_KEYWORDS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 

@@ -89,12 +89,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Metadata\Scene\SceneMetadata.cd" />
     <None Include="Metadata\TrafilmMetadata.cd" />
     <None Include="Facets.cd" />
+    <None Include="Metadata\Utterance\UtteranceMetadata.cd" />
     <None Include="Models.cd" />
     <None Include="Metadata\Film\FilmMetadata.cd" />
-    <None Include="Metadata\Scene\SceneMetadata.cd" />
-    <None Include="Metadata\Utterance\UtteranceMetadata.cd" />
     <None Include="Objects.cd" />
     <None Include="packages.config" />
   </ItemGroup>

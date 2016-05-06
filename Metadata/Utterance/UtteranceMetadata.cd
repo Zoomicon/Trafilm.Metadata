@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Trafilm.Metadata.UtteranceMetadata">
-    <Position X="5.25" Y="4.5" Width="2.5" />
+    <Position X="8.25" Y="5.25" Width="4" />
     <TypeIdentifier>
       <HashCode>AAgEwAAAEBAQAAgAAEEAAIAAAAAAAADAAAEAAAFAAQA=</HashCode>
       <FileName>Metadata\Utterance\UtteranceMetadata.cs</FileName>
@@ -9,14 +9,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.UtteranceMetadataFacets">
-    <Position X="8.75" Y="0.5" Width="3" />
+    <Position X="4.25" Y="2.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAACBAAAAAAAAAAAAAAAUAAAGAAAAAEAAQABAAACBCA=</HashCode>
+      <HashCode>AAACBAAACAAAAAAAAAAAUAAAGAAAAAEAAQABAAACBCA=</HashCode>
       <FileName>Metadata\Utterance\UtteranceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
-    <Position X="2.75" Y="4.5" Width="2.25" />
+    <Position X="4" Y="7" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgBA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
@@ -24,12 +24,18 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="4.5" Width="2" />
+    <Position X="0.5" Y="5.75" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.Utterance">
-    <Position X="8" Y="4.5" Width="1.5" />
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="Trafilm.Metadata.UtteranceMetadata" FixedFromPoint="true">
+      <Path>
+        <Point X="11.5" Y="5.25" />
+        <Point X="11.5" Y="4.733" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\Utterance.cs</FileName>
@@ -37,29 +43,29 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Trafilm.Metadata.Models.IUtteranceMetadata">
-    <Position X="4.5" Y="0.5" Width="2" />
+    <Position X="8.25" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAgEQAAAEAAQAAAAAEEAAAAAAAAAAADAAAEAAAEAAQA=</HashCode>
       <FileName>Metadata\Utterance\IUtteranceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Trafilm.Metadata.Models.IUtterance">
-    <Position X="6.75" Y="0.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\IUtterance.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
-    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Position X="5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgBA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Metadata.CXML.ICXMLMetadata">
-    <Position X="0.5" Y="0.5" Width="2" />
+    <Position X="0.5" Y="0.5" Width="3.25" />
     <TypeIdentifier />
+  </Interface>
+  <Interface Name="Trafilm.Metadata.Models.IUtterance">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IUtterance.cs</FileName>
+    </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
