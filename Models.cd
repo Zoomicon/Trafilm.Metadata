@@ -16,11 +16,11 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IFilm">
-    <Position X="4" Y="7.25" Width="2.25" />
+    <Position X="4" Y="8.25" Width="2.25" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IFilmMetadata" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="5" Y="6.925" />
-        <Point X="5" Y="7.25" />
+        <Point X="5" Y="8.25" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -29,11 +29,11 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IScene">
-    <Position X="6.5" Y="7.25" Width="2.5" />
+    <Position X="6.5" Y="8.25" Width="2.5" />
     <InheritanceLine Type="Trafilm.Metadata.Models.ISceneMetadata" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="7.625" Y="6.348" />
-        <Point X="7.625" Y="7.25" />
+        <Point X="7.625" Y="8.25" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -42,11 +42,11 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IUtterance">
-    <Position X="9.5" Y="7.25" Width="1.5" />
-    <InheritanceLine Type="Trafilm.Metadata.Models.IUtteranceMetadata" FixedFromPoint="true" FixedToPoint="true">
+    <Position X="9.5" Y="8.25" Width="1.5" />
+    <InheritanceLine Type="Trafilm.Metadata.Models.IUtteranceMetadata" FixedFromPoint="true">
       <Path>
-        <Point X="10.188" Y="6.54" />
-        <Point X="10.188" Y="7.25" />
+        <Point X="10.25" Y="7.887" />
+        <Point X="10.25" Y="8.25" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -78,7 +78,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAgEQAAAEAAQAAAAAEEAAAAAAAAAAADAAAEAAAEAAQA=</HashCode>
+      <HashCode>AAgEQIAAkAAQAAEAAEEAgAAAAAAIAADQAAEAAAEAAwA=</HashCode>
       <FileName>Metadata\Utterance\IUtteranceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Trafilm.Metadata.UtteranceMetadata">
-    <Position X="8.25" Y="5.25" Width="4" />
+    <Position X="8.25" Y="6" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAgEwAAAEBAQAAgAAEEAAIAAAAAAAADAAAEAAAFAAQA=</HashCode>
+      <HashCode>AAgEwIAAkBAQAAkAAEEAgIAAAAAIAADQAAEAAAFAAwA=</HashCode>
       <FileName>Metadata\Utterance\UtteranceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,12 +11,12 @@
   <Class Name="Trafilm.Metadata.UtteranceMetadataFacets">
     <Position X="4.25" Y="2.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAACBAAACAAAAAAAAAAAUAAAGAAAAAEAAQABAAACBCA=</HashCode>
+      <HashCode>IAACBAAACBAAAAAAAAAQUAAAGAAKAAEAAQABAAAGJCA=</HashCode>
       <FileName>Metadata\Utterance\UtteranceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
-    <Position X="4" Y="7" Width="4" />
+    <Position X="4" Y="8.5" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgBA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
@@ -24,7 +24,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="5.75" Width="3.25" />
+    <Position X="0.5" Y="7.25" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -32,7 +32,7 @@
     <Position X="10.75" Y="3.5" Width="1.5" />
     <InheritanceLine Type="Trafilm.Metadata.UtteranceMetadata" FixedFromPoint="true">
       <Path>
-        <Point X="11.5" Y="5.25" />
+        <Point X="11.5" Y="6" />
         <Point X="11.5" Y="4.733" />
       </Path>
     </InheritanceLine>
@@ -45,7 +45,7 @@
   <Interface Name="Trafilm.Metadata.Models.IUtteranceMetadata">
     <Position X="8.25" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAgEQAAAEAAQAAAAAEEAAAAAAAAAAADAAAEAAAEAAQA=</HashCode>
+      <HashCode>AAgEQIAAkAAQAAEAAEEAgAAAAAAIAADQAAEAAAEAAwA=</HashCode>
       <FileName>Metadata\Utterance\IUtteranceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
