@@ -4,7 +4,7 @@
 
   <metadata>
     <id>Trafilm.Metadata</id>
-    <version>1.0.1</version>
+    <version>1.1.1</version>
     <title>Trafilm.Metadata</title>
     <authors>birbilis</authors>
     <owners>birbilis</owners>
@@ -20,7 +20,7 @@
 
     <dependencies>
       <group targetFramework="portable-net403+sl5+win8+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10">
-        <dependency id="Metadata.CXML" version="1.0.1" />
+        <dependency id="Metadata.CXML" version="1.0.2" />
       </group>
     </dependencies>    
     
