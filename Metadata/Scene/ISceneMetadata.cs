@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: ISceneMetadata.cs
-//Version: 20160503
+//Version: 20160512
 
 using System;
 
@@ -16,20 +16,20 @@ namespace Trafilm.Metadata.Models
 
     TimeSpan? StartTime { get; set; }
     TimeSpan? Duration { get; set; }
-
-    bool L1sourceLanguagePresent { get; set; }
-    bool L2translatedLanguagePresent { get; set; }
+    
+    bool L1languagePresent { get; set; }
+    bool L2languagePresent { get; set; }
 
     string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
     string L3speakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
 
     //Calculatable from Utterances//
 
-    int L3otherLanguagesCount { get; set; }
-    string[] L3otherLanguages { get; set; }
+    int L3languagesCount { get; set; }
+    string[] L3languages { get; set; }
 
-    int L3otherTypesCount { get; set; }
-    string[] L3otherTypes { get; set; }
+    int L3typesCount { get; set; }
+    string[] L3types { get; set; }
 
     int UtteranceCount { get; set; }
 

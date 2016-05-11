@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: IUtteranceMetadata.cs
-//Version: 20160510
+//Version: 20160512
 
 namespace Trafilm.Metadata.Models
 {
@@ -13,7 +13,7 @@ namespace Trafilm.Metadata.Models
     string FilmReferenceId { get; set; }
     string SceneReferenceId { get; set; }
     
-    string L3type { get; set; } //for L3ST, L3TT
+    string L3kind { get; set; } //L3ST or L3TT
 
     string LmainLanguage { get; set; } //depending on L3 type this is either the L1ST language or the L2TT language
     string LmainMode { get; set; } //oral, text (means dubbed, subtitled in L2TT context)

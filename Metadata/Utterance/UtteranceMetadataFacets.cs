@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: UtteranceMetadataFacets.cs
-//Version: 20160510
+//Version: 20160512
 
 namespace Trafilm.Metadata
 {
@@ -10,7 +10,7 @@ namespace Trafilm.Metadata
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
     public const string FACET_SCENE_REFERENCE_ID = "Scene Reference Id";
 
-    public const string FACET_L3_TYPE = "L3 type";
+    public const string FACET_L3_KIND = "L3 kind";
 
     public const string FACET_L_MAIN_LANGUAGE = "L1ST/L2TT"; //depending on L3 type this is either the L1ST language or the L2TT language
     public const string FACET_L_MAIN_MODE = "L main mode"; //oral, text (means dubbed, subtitled in L2TT context)
