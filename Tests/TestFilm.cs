@@ -17,14 +17,10 @@ namespace Trafilm.Metadata.Tests
     [TestMethod]
     public void TestSave()
     {
-      Save("test");
-    }
-
-    public static void Save(string key)
-    {
       IFilm metadata = new Film();
-      metadata.Id = key;
       metadata.Clear();
+      metadata.Id = "testFilm";
+      metadata.ReferenceId = "testFilm";
       using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.cxml"))
         metadata.Save(writer);
     }
@@ -32,9 +28,12 @@ namespace Trafilm.Metadata.Tests
     [TestMethod]
     public void TestLoad()
     {
-      Save("test");
+      TestSave();
       using (XmlReader reader = Helpers.CreateXmlReader(@"testFilm.cxml"))
-        new Film().Load("test", reader, null);
+      {
+        IFilm metadata = (IFilm)new Film().Load("testFilm", reader, null);
+        Assert.AreEqual("testFilm", metadata.ReferenceId);
+      }
     }
 
   }
