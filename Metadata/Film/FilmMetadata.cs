@@ -86,7 +86,7 @@ namespace Trafilm.Metadata
       Title_ca = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_CA);
       //...
 
-      Duration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DURATION).ToNullableTimeSpan("HH:MM:SS");
+      Duration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DURATION).ToNullableTimeSpan(@"hh\:mm\:ss");
 
       Directors = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DIRECTORS);
       Scriptwriters = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SCRIPTWRITERS);
@@ -104,7 +104,7 @@ namespace Trafilm.Metadata
       SubtitledLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES);
 
       SceneCount = int.Parse(facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENE_COUNT));
-      ScenesDuration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENES_DURATION).ToTimeSpan("HH:MM:SS");
+      ScenesDuration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENES_DURATION).ToTimeSpan(@"hh\:mm\:ss");
 
       return this;
     }
@@ -125,7 +125,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_CA, Title_ca));
       //...
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DURATION, Duration.ToString("HH:MM:SS"))); //for nullable types, ToString() method returns "" if HasValue is false
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DURATION, Duration.ToString(@"hh\:mm\:ss"))); //for nullable types, ToString() method returns "" if HasValue is false
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTORS, Directors));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCRIPTWRITERS, Scriptwriters));
@@ -143,7 +143,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES, SubtitledLanguages));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENE_COUNT, SceneCount.ToString()));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENES_DURATION, ScenesDuration.ToString("HH:MM:SS")));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENES_DURATION, ScenesDuration.ToString(@"hh\:mm\:ss")));
 
       return facets;
     }

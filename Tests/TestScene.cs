@@ -15,15 +15,27 @@ namespace Trafilm.Metadata.Tests
     }
 
     [TestMethod]
-    public void TestStorage()
+    public void TestSave()
+    {
+      Save("test");
+    }
+
+    public static void Save(string key)
     {
       IScene metadata = new Scene();
+      metadata.Id = key;
       metadata.Clear();
       using (XmlWriter writer = Helpers.CreateXmlWriter(@"testScene.cxml"))
         metadata.Save(writer);
     }
 
-
+    [TestMethod]
+    public void TestLoad()
+    {
+      Save("test");
+      using (XmlReader reader = Helpers.CreateXmlReader(@"testScene.cxml"))
+        new Scene().Load("test", reader, null);
+    }
 
   }
 }

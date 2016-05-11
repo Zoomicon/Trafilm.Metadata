@@ -15,15 +15,27 @@ namespace Trafilm.Metadata.Tests
     }
 
     [TestMethod]
-    public void TestStorage()
+    public void TestSave()
     {
-      IFilm metadata = new Film();
-      metadata.Clear();
-      using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.cxml"))
-        metadata .Save(writer);
+      Save("test");
     }
 
+    public static void Save(string key)
+    {
+      IFilm metadata = new Film();
+      metadata.Id = key;
+      metadata.Clear();
+      using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.cxml"))
+        metadata.Save(writer);
+    }
 
+    [TestMethod]
+    public void TestLoad()
+    {
+      Save("test");
+      using (XmlReader reader = Helpers.CreateXmlReader(@"testFilm.cxml"))
+        new Film().Load("test", reader, null);
+    }
 
   }
 }
