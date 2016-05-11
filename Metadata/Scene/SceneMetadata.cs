@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: SceneMetadata.cs
-//Version: 20160511
+//Version: 20160512
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -29,19 +29,19 @@ namespace Trafilm.Metadata
     public TimeSpan? StartTime { get; set; }
     public TimeSpan? Duration { get; set; }
 
-    public bool L1sourceLanguagePresent { get; set; }
-    public bool L2translatedLanguagePresent { get; set; }
+    public bool L1languagePresent { get; set; }
+    public bool L2languagePresent { get; set; }
 
     public string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
     public string L3speakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
 
     //Calculatable from Utterances//
 
-    public int L3otherLanguagesCount { get; set; }
-    public string[] L3otherLanguages { get; set; }
+    public int L3languagesCount { get; set; }
+    public string[] L3languages { get; set; }
 
-    public int L3otherTypesCount { get; set; }
-    public string[] L3otherTypes { get; set; }
+    public int L3languageTypesCount { get; set; }
+    public string[] L3languageTypes { get; set; }
 
     public int UtteranceCount { get; set; }
 
@@ -58,17 +58,17 @@ namespace Trafilm.Metadata
       StartTime = null;
       Duration = null;
 
-      L1sourceLanguagePresent = true; //this is the most usual case
-      L2translatedLanguagePresent = true; //this is the most usual case
+      L1languagePresent = true; //this is the most usual case
+      L2languagePresent = true; //this is the most usual case
 
       SpeakingCharactersCount = ""; //can take values like 1, 2, 3, more than 3
       L3speakingCharactersCount = ""; //can take values like 1, 2, 3, more than 3
 
-      L3otherLanguagesCount = 0;
-      L3otherLanguages = new string[] { };
+      L3languagesCount = 0;
+      L3languages = new string[] { };
 
-      L3otherTypesCount = 0;
-      L3otherTypes = new string[] { };
+      L3languageTypesCount = 0;
+      L3languageTypes = new string[] { };
 
       UtteranceCount = 0;
     }
@@ -84,17 +84,17 @@ namespace Trafilm.Metadata
       StartTime = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_START_TIME).ToNullableTimeSpan(DEFAULT_TIMESPAN_DURATION_FORMAT);
       Duration = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_TIMESPAN_POSITION_FORMAT);
 
-      L1sourceLanguagePresent = facets.CXMLFacetBoolValue(SceneMetadataFacets.FACET_L1_SOURCE_LANGUAGE_PRESENT);
-      L2translatedLanguagePresent = facets.CXMLFacetBoolValue(SceneMetadataFacets.FACET_L2_TRANSLATED_LANGUAGE_PRESENT);
+      L1languagePresent = facets.CXMLFacetBoolValue(SceneMetadataFacets.FACET_L1_LANGUAGE_PRESENT);
+      L2languagePresent = facets.CXMLFacetBoolValue(SceneMetadataFacets.FACET_L2_LANGUAGE_PRESENT);
 
       SpeakingCharactersCount = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_SPEAKING_CHARACTERS_COUNT); //e.g. 1, 2, 3, more than 3
       L3speakingCharactersCount = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_L3_SPEAKING_CHARACTERS_COUNT); //e.g. 1, 2, 3, more than 3
 
-      L3otherLanguagesCount = int.Parse(facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES_COUNT));
-      L3otherLanguages = facets.CXMLFacetStringValues(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES);
+      L3languagesCount = int.Parse(facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_L3_LANGUAGES_COUNT));
+      L3languages = facets.CXMLFacetStringValues(SceneMetadataFacets.FACET_L3_LANGUAGES);
 
-      L3otherTypesCount = int.Parse(facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_L3_OTHER_TYPES_COUNT));
-      L3otherTypes = facets.CXMLFacetStringValues(SceneMetadataFacets.FACET_L3_OTHER_TYPES);
+      L3languageTypesCount = int.Parse(facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_L3_LANGUAGE_TYPES_COUNT));
+      L3languageTypes = facets.CXMLFacetStringValues(SceneMetadataFacets.FACET_L3_LANGUAGE_TYPES);
 
       UtteranceCount = int.Parse(facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_UTTERANCE_COUNT));
 
@@ -118,17 +118,17 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_START_TIME, StartTime.ToString(DEFAULT_TIMESPAN_DURATION_FORMAT)));
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_TIMESPAN_POSITION_FORMAT)));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L1_SOURCE_LANGUAGE_PRESENT, L1sourceLanguagePresent.ToString())); //this will give True/False (not Yes/No)
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L2_TRANSLATED_LANGUAGE_PRESENT, L2translatedLanguagePresent.ToString())); //this will give True/False (not Yes/No)
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L1_LANGUAGE_PRESENT, L1languagePresent.ToString())); //this will give True/False (not Yes/No)
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L2_LANGUAGE_PRESENT, L2languagePresent.ToString())); //this will give True/False (not Yes/No)
 
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_SPEAKING_CHARACTERS_COUNT, SpeakingCharactersCount));
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_SPEAKING_CHARACTERS_COUNT, L3speakingCharactersCount));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES_COUNT, L3otherLanguagesCount.ToString()));
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES, L3otherLanguages));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_LANGUAGES_COUNT, L3languagesCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_LANGUAGES, L3languages));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_OTHER_TYPES_COUNT, L3otherTypesCount.ToString()));
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_OTHER_TYPES, L3otherTypes));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_LANGUAGE_TYPES_COUNT, L3languageTypesCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L3_LANGUAGE_TYPES, L3languageTypes));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_UTTERANCE_COUNT, UtteranceCount.ToString()));
 
@@ -152,17 +152,17 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_START_TIME, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
-      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L1_SOURCE_LANGUAGE_PRESENT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L2_TRANSLATED_LANGUAGE_PRESENT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L1_LANGUAGE_PRESENT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L2_LANGUAGE_PRESENT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_SPEAKING_CHARACTERS_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_SPEAKING_CHARACTERS_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_OTHER_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_LANGUAGES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_OTHER_TYPES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_OTHER_TYPES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_LANGUAGE_TYPES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_L3_LANGUAGE_TYPES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(SceneMetadataFacets.FACET_UTTERANCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 

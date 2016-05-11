@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm (http://trafilm.net)
 //Filename: UtteranceMetadata.cs
-//Version: 20160510
+//Version: 20160512
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -19,7 +19,7 @@ namespace Trafilm.Metadata
     public string FilmReferenceId { get; set; }
     public string SceneReferenceId { get; set; }
 
-    public string L3type { get; set; } //L3ST, L3TT
+    public string L3kind { get; set; } //L3ST or L3TT
 
     public string LmainLanguage { get; set; } //depending on L3 type this is either the L1ST language or the L2TT language
     public string LmainMode { get; set; } //oral, text (means dubbed, subtitled in L2TT context)
@@ -58,7 +58,7 @@ namespace Trafilm.Metadata
       FilmReferenceId = "";
       SceneReferenceId = "";
 
-      L3type = "";
+      L3kind = "";
 
       LmainLanguage = "";
       LmainMode = "";
@@ -96,7 +96,7 @@ namespace Trafilm.Metadata
       FilmReferenceId = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_FILM_REFERENCE_ID);
       SceneReferenceId = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID);
 
-      L3type = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3_TYPE);
+      L3kind = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L3_KIND);
 
       LmainLanguage = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L_MAIN_LANGUAGE);
       LmainMode = facets.CXMLFacetStringValue(UtteranceMetadataFacets.FACET_L_MAIN_MODE);
@@ -142,7 +142,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
       AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID, SceneReferenceId));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_TYPE, L3type));
+      AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L3_KIND, L3kind));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L_MAIN_LANGUAGE, LmainLanguage));
       AddNonNullToList(facets, CXML.MakeStringFacet(UtteranceMetadataFacets.FACET_L_MAIN_MODE, LmainMode));
@@ -188,7 +188,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_SCENE_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L3_KIND, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L_MAIN_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(UtteranceMetadataFacets.FACET_L_MAIN_MODE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
