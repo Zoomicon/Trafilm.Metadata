@@ -19,7 +19,7 @@ namespace Trafilm.Metadata.Tests
     {
       IUtterance metadata = new Utterance();
       metadata.Clear();
-      metadata.Id = "testFilm.testScene.testUtterance";
+      metadata.Id = "33";
       metadata.ReferenceId = "testFilm.testScene.testUtterance";
       metadata.FilmReferenceId = "testFilm";
       metadata.SceneReferenceId = "testFilm.testScene";

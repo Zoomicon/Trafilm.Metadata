@@ -19,7 +19,7 @@ namespace Trafilm.Metadata.Tests
     {
       IScene metadata = new Scene();
       metadata.Clear();
-      metadata.Id = "testFilm.testScene";
+      metadata.Id = "22";
       metadata.ReferenceId = "testFilm.testScene";
       metadata.FilmReferenceId = "testFilm";
       using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.testScene.cxml"))
