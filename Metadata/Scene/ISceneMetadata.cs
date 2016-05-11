@@ -28,8 +28,8 @@ namespace Trafilm.Metadata.Models
     int L3languagesCount { get; set; }
     string[] L3languages { get; set; }
 
-    int L3typesCount { get; set; }
-    string[] L3types { get; set; }
+    int L3languageTypesCount { get; set; }
+    string[] L3languageTypes { get; set; }
 
     int UtteranceCount { get; set; }
 

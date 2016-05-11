@@ -23,8 +23,8 @@ namespace Trafilm.Metadata
     public const string FACET_L3_LANGUAGES_COUNT = "L3 languages count";
     public const string FACET_L3_LANGUAGES = "L3/Other languages";
 
-    public const string FACET_L3_KINDS_COUNT = "L3 types count";
-    public const string FACET_L3_KINDS = "L3 types";
+    public const string FACET_L3_LANGUAGE_TYPES_COUNT = "L3 language types count";
+    public const string FACET_L3_LANGUAGE_TYPES = "L3 language types";
 
     public const string FACET_UTTERANCE_COUNT = "Utterance count";
   }
