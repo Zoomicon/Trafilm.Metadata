@@ -68,6 +68,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Tests.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>
