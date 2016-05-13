@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160502
+//Version: 20160504
 
 namespace Trafilm.Metadata
 {
@@ -11,7 +11,7 @@ namespace Trafilm.Metadata
     public const string FACET_TITLE_CA = "Title in Catalan";
     //...
 
-    public const string FACET_DURATION = "Duration (hh:mm:ss)";
+    public const string FACET_DURATION = "Duration (h:m:s.f)";
 
     public const string FACET_DIRECTORS = "Directors";
     public const string FACET_SCRIPTWRITERS = "Scriptwriters";
@@ -31,7 +31,7 @@ namespace Trafilm.Metadata
     //Calculatable from Scenes//
 
     public const string FACET_SCENE_COUNT = "Scene count";
-    public const string FACET_SCENES_DURATION = "Scenes duration (hh:mm:ss)";
+    public const string FACET_SCENES_DURATION = "Scenes duration (h:m:s.f)";
   }
 
 }

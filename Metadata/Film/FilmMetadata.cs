@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadata.cs
-//Version: 20160513
+//Version: 20160514
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -18,7 +18,7 @@ namespace Trafilm.Metadata
 
     #region --- Constants ---
 
-    public const string DEFAULT_DURATION_FORMAT = "c";
+    public const string DEFAULT_DURATION_FORMAT = "g";
 
     #endregion
 
