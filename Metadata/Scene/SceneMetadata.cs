@@ -1,6 +1,6 @@
-﻿//Project: Trafilm (http://trafilm.net)
+﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: SceneMetadata.cs
-//Version: 20160512
+//Version: 20160513
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -17,8 +17,8 @@ namespace Trafilm.Metadata
 
     #region --- Constants ---
 
-    public const string DEFAULT_TIMESPAN_DURATION_FORMAT = @"hh\:mm\:ss";
-    public const string DEFAULT_TIMESPAN_POSITION_FORMAT = @"\:mm\:ss\.ff";
+    public const string DEFAULT_TIMESPAN_DURATION_FORMAT = @"mm\:ss\.ff";
+    public const string DEFAULT_TIMESPAN_POSITION_FORMAT = @"hh\:mm\:ss.ff";
 
     #endregion
 

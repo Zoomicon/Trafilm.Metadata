@@ -1,7 +1,12 @@
-﻿using Trafilm.Metadata.Models;
+﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
+//Filename: TestFilm.cs
+//Version: 20160513
+
+using Trafilm.Metadata.Models;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;
+using System;
 
 namespace Trafilm.Metadata.Tests
 {
@@ -21,6 +26,7 @@ namespace Trafilm.Metadata.Tests
       metadata.Clear();
       metadata.Id = "11";
       metadata.ReferenceId = "testFilm";
+      metadata.Duration = TimeSpan.Parse("10:20:30");
       using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.cxml"))
         metadata.Save(writer);
     }

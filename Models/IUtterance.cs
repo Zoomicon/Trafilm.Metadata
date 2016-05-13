@@ -1,4 +1,4 @@
-﻿//Project: Trafilm (http://trafilm.net)
+﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IUtterance.cs
 //Version: 20160503
 

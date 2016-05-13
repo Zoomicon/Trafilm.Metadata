@@ -1,7 +1,13 @@
-﻿using Trafilm.Metadata.Models;
+﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
+//Filename: TestScene.cs
+//Version: 20160513
+
+using Trafilm.Metadata.Models;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;
+using System;
+using System.Globalization;
 
 namespace Trafilm.Metadata.Tests
 {
@@ -22,6 +28,8 @@ namespace Trafilm.Metadata.Tests
       metadata.Id = "22";
       metadata.ReferenceId = "testFilm.testScene";
       metadata.FilmReferenceId = "testFilm";
+      metadata.StartTime = TimeSpan.Parse("10:20:30.25");
+      metadata.Duration = TimeSpan.ParseExact("2:5.10", SceneMetadata.DEFAULT_TIMESPAN_DURATION_FORMAT, CultureInfo.InvariantCulture);
       using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.testScene.cxml"))
         metadata.Save(writer);
     }
