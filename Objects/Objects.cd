@@ -54,13 +54,6 @@
     </TypeIdentifier>
     <Lollipop Position="2.315" />
   </Class>
-  <Class Name="Trafilm.Metadata.Converters">
-    <Position X="9.25" Y="1" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>Converters.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
     <Position X="0.5" Y="0.5" Width="3.25" />
     <TypeIdentifier />

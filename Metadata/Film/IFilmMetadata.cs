@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IFilmMetadata.cs
-//Version: 20160503
+//Version: 20160513
 
 using System;
 
@@ -36,7 +36,7 @@ namespace Trafilm.Metadata.Models
     //Calculatable from Scenes//
 
     int SceneCount { get; set; }
-    TimeSpan ScenesDuration { get; set; }
+    TimeSpan? ScenesDuration { get; set; }
 
     #endregion
 

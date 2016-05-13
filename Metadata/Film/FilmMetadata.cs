@@ -1,9 +1,10 @@
 ﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadata.cs
-//Version: 20160511
+//Version: 20160513
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
+using Trafilm.Metadata.Utils;
 
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Trafilm.Metadata
 
     #region --- Constants ---
 
-    public const string DEFAULT_TIMESPAN_DURATION_FORMAT = @"hh\:mm\:ss";
+    public const string DEFAULT_DURATION_FORMAT = "c";
 
     #endregion
 
@@ -47,7 +48,7 @@ namespace Trafilm.Metadata
     //Calculatable from Scenes//
 
     public int SceneCount { get; set; }
-    public TimeSpan ScenesDuration { get; set; }
+    public TimeSpan? ScenesDuration { get; set; }
 
     #endregion
 
@@ -92,7 +93,7 @@ namespace Trafilm.Metadata
       Title_ca = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_CA);
       //...
 
-      Duration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_TIMESPAN_DURATION_FORMAT);
+      Duration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_DURATION_FORMAT);
 
       Directors = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DIRECTORS);
       Scriptwriters = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SCRIPTWRITERS);
@@ -110,7 +111,7 @@ namespace Trafilm.Metadata
       SubtitledLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES);
 
       SceneCount = int.Parse(facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENE_COUNT));
-      ScenesDuration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENES_DURATION).ToTimeSpan(DEFAULT_TIMESPAN_DURATION_FORMAT);
+      ScenesDuration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SCENES_DURATION).ToNullableTimeSpan(SceneMetadata.DEFAULT_DURATION_FORMAT);
 
       return this;
     }
@@ -131,7 +132,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_CA, Title_ca));
       //...
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_TIMESPAN_DURATION_FORMAT))); //for nullable types, ToString() method returns "" if HasValue is false
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_DURATION_FORMAT))); //for nullable types, ToString() method returns "" if HasValue is false
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTORS, Directors));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCRIPTWRITERS, Scriptwriters));
@@ -149,7 +150,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SUBTITLED_LANGUAGES, SubtitledLanguages));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENE_COUNT, SceneCount.ToString()));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENES_DURATION, ScenesDuration.ToString(DEFAULT_TIMESPAN_DURATION_FORMAT)));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCENES_DURATION, ScenesDuration.ToString(DEFAULT_DURATION_FORMAT)));
 
       return facets;
     }
