@@ -55,7 +55,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Converters.cs" />
+    <Compile Include="Utils\Converters.cs" />
     <Compile Include="Models\IFilm.cs" />
     <Compile Include="Models\IScene.cs" />
     <Compile Include="Metadata\Scene\SceneMetadata.cs" />
@@ -89,13 +89,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Utils\Utils.cd" />
     <None Include="Metadata\Scene\SceneMetadata.cd" />
     <None Include="Metadata\TrafilmMetadata.cd" />
     <None Include="Facets.cd" />
     <None Include="Metadata\Utterance\UtteranceMetadata.cd" />
-    <None Include="Models.cd" />
+    <None Include="Models\Models.cd" />
     <None Include="Metadata\Film\FilmMetadata.cd" />
-    <None Include="Objects.cd" />
+    <None Include="Objects\Objects.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

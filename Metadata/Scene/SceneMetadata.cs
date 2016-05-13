@@ -4,6 +4,7 @@
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
+using Trafilm.Metadata.Utils;
 
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,8 @@ namespace Trafilm.Metadata
 
     #region --- Constants ---
 
-    public const string DEFAULT_TIMESPAN_DURATION_FORMAT = @"mm\:ss\.ff";
-    public const string DEFAULT_TIMESPAN_POSITION_FORMAT = @"hh\:mm\:ss.ff";
+    public const string DEFAULT_POSITION_FORMAT = "c";
+    public const string DEFAULT_DURATION_FORMAT = "c";
 
     #endregion
 
@@ -81,8 +82,8 @@ namespace Trafilm.Metadata
 
       FilmReferenceId = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_FILM_REFERENCE_ID);
 
-      StartTime = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_START_TIME).ToNullableTimeSpan(DEFAULT_TIMESPAN_DURATION_FORMAT);
-      Duration = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_TIMESPAN_POSITION_FORMAT);
+      StartTime = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_START_TIME).ToNullableTimeSpan(DEFAULT_POSITION_FORMAT);
+      Duration = facets.CXMLFacetStringValue(SceneMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_DURATION_FORMAT);
 
       L1languagePresent = facets.CXMLFacetBoolValue(SceneMetadataFacets.FACET_L1_LANGUAGE_PRESENT);
       L2languagePresent = facets.CXMLFacetBoolValue(SceneMetadataFacets.FACET_L2_LANGUAGE_PRESENT);
@@ -115,8 +116,8 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_START_TIME, StartTime.ToString(DEFAULT_TIMESPAN_DURATION_FORMAT)));
-      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_TIMESPAN_POSITION_FORMAT)));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_START_TIME, StartTime.ToString(DEFAULT_POSITION_FORMAT)));
+      AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_DURATION_FORMAT)));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L1_LANGUAGE_PRESENT, L1languagePresent.ToString())); //this will give True/False (not Yes/No)
       AddNonNullToList(facets, CXML.MakeStringFacet(SceneMetadataFacets.FACET_L2_LANGUAGE_PRESENT, L2languagePresent.ToString())); //this will give True/False (not Yes/No)

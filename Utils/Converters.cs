@@ -1,11 +1,10 @@
 ﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Converters.cs
-//Version: 20160502
+//Version: 20160513
 
 using System;
-using System.Globalization;
 
-namespace Trafilm.Metadata
+namespace Trafilm.Metadata.Utils
 {
 
   public static class Converters
@@ -25,7 +24,7 @@ namespace Trafilm.Metadata
 
     public static TimeSpan ToTimeSpan(this string value, string format)
     {
-      return TimeSpan.ParseExact(value, format, CultureInfo.InvariantCulture);
+      return TimeSpan.ParseExact(value, format, null);
     }
 
     public static TimeSpan? ToNullableTimeSpan(this string value, string format)
@@ -38,7 +37,7 @@ namespace Trafilm.Metadata
 
     public static string ToString(this TimeSpan? value, string format)
     {
-      return (value != null) ? value.Value.ToString() : ""; //do not use value.ToString(), will do infinite loop
+      return (value == null) ? "" : value.ToString(format);
     }
 
     #endregion

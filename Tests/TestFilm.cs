@@ -3,6 +3,7 @@
 //Version: 20160513
 
 using Trafilm.Metadata.Models;
+using Trafilm.Metadata.Utils;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;
@@ -26,7 +27,7 @@ namespace Trafilm.Metadata.Tests
       metadata.Clear();
       metadata.Id = "11";
       metadata.ReferenceId = "testFilm";
-      metadata.Duration = TimeSpan.Parse("10:20:30");
+      metadata.Duration = "10:20:30".ToNullableTimeSpan(FilmMetadata.DEFAULT_DURATION_FORMAT);
       using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.cxml"))
         metadata.Save(writer);
     }
