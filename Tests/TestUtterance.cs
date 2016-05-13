@@ -1,4 +1,8 @@
-﻿using Trafilm.Metadata.Models;
+﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
+//Filename: TestUtterance.cs
+//Version: 20160513
+
+using Trafilm.Metadata.Models;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;

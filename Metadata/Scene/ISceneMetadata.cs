@@ -1,4 +1,4 @@
-﻿//Project: Trafilm (http://trafilm.net)
+﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ISceneMetadata.cs
 //Version: 20160512
 
