@@ -24,5 +24,8 @@ Library for manipulating hierarchical Trafilm (http://Trafilm.net) Gallery Metad
 *Class Diagram for UtteranceMetadata:*
 ![Class Diagram for UtteranceMetadata](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/UtteranceMetadata.png)
 
+*Class Diagram for Utils:*
+![Class Diagram for Utils](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/Utils.png)
+
 *Class Diagram for Tests:*
 ![Class Diagram for Tests](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/Tests.png)
