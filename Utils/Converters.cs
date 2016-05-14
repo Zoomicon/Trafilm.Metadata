@@ -1,8 +1,9 @@
-﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
+﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Converters.cs
-//Version: 20160513
+//Version: 20160514
 
 using System;
+using System.Globalization;
 
 namespace Trafilm.Metadata.Utils
 {
@@ -10,34 +11,52 @@ namespace Trafilm.Metadata.Utils
   public static class Converters
   {
 
-    #region --- Extension Methods ---
+    #region --- Extension Methods --
 
     public static int? ToNullableInt(this string value)
     {
-      if (String.IsNullOrWhiteSpace(value))
+      try
+      {
+        return (String.IsNullOrWhiteSpace(value)) ? (int?)null : int.Parse(value);
+      }
+      catch
+      {
         return null;
-      else
-        return int.Parse(value);
+      }
     }
 
     //
 
-    public static TimeSpan ToTimeSpan(this string value, string format)
+    public static TimeSpan ToTimeSpan(this string value, string format) //throws exceptions 
     {
-      return TimeSpan.ParseExact(value, format, null);
+      return TimeSpan.ParseExact(value, format, CultureInfo.InvariantCulture);
     }
 
     public static TimeSpan? ToNullableTimeSpan(this string value, string format)
     {
-      if (String.IsNullOrWhiteSpace(value))
+      try
+      {
+        if (String.IsNullOrWhiteSpace(value))
+          return null;
+        else
+          return value.ToTimeSpan(format);
+      }
+      catch
+      {
         return null;
-      else
-        return value.ToTimeSpan(format);
+      }
     }
 
     public static string ToString(this TimeSpan? value, string format)
     {
-      return (value == null) ? "" : value.ToString(format);
+      try
+      {
+        return (value == null) ? "" : ((TimeSpan)value).ToString(format, CultureInfo.InvariantCulture); //don't forget to cast to (TimeSpan), else infinite recursion is caused
+      }
+      catch
+      {
+        return "";
+      }
     }
 
     #endregion

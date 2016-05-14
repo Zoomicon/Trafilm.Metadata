@@ -1,6 +1,6 @@
-﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
+﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: SceneMetadataFacets.cs
-//Version: 20160513
+//Version: 20160514
 
 namespace Trafilm.Metadata
 {
@@ -9,8 +9,8 @@ namespace Trafilm.Metadata
   {
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
 
-    public const string FACET_START_TIME = "Start time (hh:mm:ss.ff)";
-    public const string FACET_DURATION = "Duration (mm:ss.ff)";
+    public const string FACET_START_TIME = "Start time (h:m:s.f)";
+    public const string FACET_DURATION = "Duration (h:m:s.f)";
 
     public const string FACET_L1_LANGUAGE_PRESENT = "L1/Source language present";
     public const string FACET_L2_LANGUAGE_PRESENT = "L2/Translated language present";

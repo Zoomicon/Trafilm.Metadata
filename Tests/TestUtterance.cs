@@ -1,4 +1,4 @@
-﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
+﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TestUtterance.cs
 //Version: 20160513
 
@@ -13,13 +13,14 @@ namespace Trafilm.Metadata.Tests
   public class TestUtterance
   {
     [TestMethod]
-    public void TestConstructor()
+    public void CreateUtterance()
     {
       IUtterance metadata = new Utterance();
+      metadata.Clear();
     }
 
     [TestMethod]
-    public void TestSave()
+    public void SaveUtterance()
     {
       IUtterance metadata = new Utterance();
       metadata.Clear();
@@ -32,9 +33,9 @@ namespace Trafilm.Metadata.Tests
     }
 
     [TestMethod]
-    public void TestLoad()
+    public void LoadUtterance()
     {
-      TestSave();
+      SaveUtterance();
       using (XmlReader reader = Helpers.CreateXmlReader(@"testFilm.testScene.testUtterance.cxml"))
       {
         IUtterance metadata = (IUtterance)new Utterance().Load("testFilm.testScene.testUtterance", reader, null);
