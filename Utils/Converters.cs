@@ -1,4 +1,4 @@
-﻿//Project: Trafilm.Metadata (http://github.com/Zoomicon/Trafilm.Metadata)
+﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Converters.cs
 //Version: 20160514
 
