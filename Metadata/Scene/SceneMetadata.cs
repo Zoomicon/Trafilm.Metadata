@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: SceneMetadata.cs
-//Version: 20160514
+//Version: 20160516
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -59,8 +59,8 @@ namespace Trafilm.Metadata
       StartTime = null;
       Duration = null;
 
-      L1languagePresent = true; //this is the most usual case
-      L2languagePresent = true; //this is the most usual case
+      L1languagePresent = false;
+      L2languagePresent = false;
 
       SpeakingCharactersCount = ""; //can take values like 1, 2, 3, more than 3
       L3speakingCharactersCount = ""; //can take values like 1, 2, 3, more than 3
