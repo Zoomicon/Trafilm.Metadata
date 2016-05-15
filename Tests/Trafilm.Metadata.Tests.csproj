@@ -62,14 +62,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Tests.cd" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Trafilm.Metadata.csproj">
       <Project>{a84716d5-5523-421c-aeb6-9ebaa0c77f93}</Project>
       <Name>Trafilm.Metadata</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="Tests.cd" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
