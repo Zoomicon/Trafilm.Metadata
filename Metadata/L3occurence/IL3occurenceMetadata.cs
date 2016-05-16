@@ -1,17 +1,17 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: IUtteranceMetadata.cs
+//Filename: IL3occurenceMetadata.cs
 //Version: 20160512
 
 namespace Trafilm.Metadata.Models
 {
 
-  public interface IUtteranceMetadata : ITrafilmMetadata
+  public interface IL3occurenceMetadata : ITrafilmMetadata
   {
 
     #region --- Properties ---
 
     string FilmReferenceId { get; set; }
-    string SceneReferenceId { get; set; }
+    string ConversationReferenceId { get; set; }
     
     string L3kind { get; set; } //L3ST or L3TT
 

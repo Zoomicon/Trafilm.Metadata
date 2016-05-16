@@ -23,13 +23,13 @@ Library for manipulating hierarchical Trafilm (http://Trafilm.net) Gallery Metad
 
 ![Class Diagram for FilmMetadata](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/FilmMetadata.png)
 
-*Class Diagram for SceneMetadata:*
+*Class Diagram for ConversationMetadata:*
 
-![Class Diagram for SceneMetadata](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/SceneMetadata.png)
+![Class Diagram for ConversationMetadata](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/ConversationMetadata.png)
 
-*Class Diagram for UtteranceMetadata:*
+*Class Diagram for L3occurenceMetadata:*
 
-![Class Diagram for UtteranceMetadata](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/UtteranceMetadata.png)
+![Class Diagram for L3occurenceMetadata](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/L3occurenceMetadata.png)
 
 *Class Diagram for Utils:*
 

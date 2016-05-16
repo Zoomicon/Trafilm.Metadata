@@ -12,7 +12,7 @@ namespace Trafilm.Metadata.Models
 
     #region --- Properties ---
 
-    IEnumerable<IScene> Scenes { get; set; }
+    IEnumerable<IConversation> Conversations { get; set; }
 
     #endregion
 

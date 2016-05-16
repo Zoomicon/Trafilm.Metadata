@@ -1,5 +1,5 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: ISceneMetadata.cs
+//Filename: IConversationMetadata.cs
 //Version: 20160512
 
 using System;
@@ -7,7 +7,7 @@ using System;
 namespace Trafilm.Metadata.Models
 {
 
-  public interface ISceneMetadata : ITrafilmMetadata
+  public interface IConversationMetadata : ITrafilmMetadata
   {
 
     #region --- Properties ---
@@ -23,7 +23,7 @@ namespace Trafilm.Metadata.Models
     string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
     string L3speakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
 
-    //Calculatable from Utterances//
+    //Calculatable from L3occurences//
 
     int L3languagesCount { get; set; }
     string[] L3languages { get; set; }
@@ -31,7 +31,7 @@ namespace Trafilm.Metadata.Models
     int L3languageTypesCount { get; set; }
     string[] L3languageTypes { get; set; }
 
-    int UtteranceCount { get; set; }
+    int L3occurenceCount { get; set; }
 
     #endregion
 

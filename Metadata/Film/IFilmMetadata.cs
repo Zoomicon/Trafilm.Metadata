@@ -33,10 +33,10 @@ namespace Trafilm.Metadata.Models
     string[] DubbedLanguages { get; set; }
     string[] SubtitledLanguages { get; set; }
 
-    //Calculatable from Scenes//
+    //Calculatable from Conversations//
 
-    int SceneCount { get; set; }
-    TimeSpan? ScenesDuration { get; set; }
+    int ConversationCount { get; set; }
+    TimeSpan? ConversationsDuration { get; set; }
 
     #endregion
 

@@ -7,15 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trafilm.Metadata", "Trafilm
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{DBE78397-968C-4D62-B40A-3B4F98A6ECE4}"
 	ProjectSection(SolutionItems) = preProject
+		Metadata\Conversation\ConversationMetadata.cd = Metadata\Conversation\ConversationMetadata.cd
 		Facets.cd = Facets.cd
 		Metadata\Film\FilmMetadata.cd = Metadata\Film\FilmMetadata.cd
+		Metadata\L3occurence\L3occurenceMetadata.cd = Metadata\L3occurence\L3occurenceMetadata.cd
 		Models\Models.cd = Models\Models.cd
 		Objects\Objects.cd = Objects\Objects.cd
-		Metadata\Scene\SceneMetadata.cd = Metadata\Scene\SceneMetadata.cd
 		Tests\Tests.cd = Tests\Tests.cd
 		Metadata\TrafilmMetadata.cd = Metadata\TrafilmMetadata.cd
 		Utils\Utils.cd = Utils\Utils.cd
-		Metadata\Utterance\UtteranceMetadata.cd = Metadata\Utterance\UtteranceMetadata.cd
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{8EBE710F-A8F3-47C7-9066-D7AC545B3825}"
