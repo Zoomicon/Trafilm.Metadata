@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TrafilmMetadtata.cs
-//Version: 20160430
+//Version: 20160516
 
 using Metadata.CXML;
 
@@ -45,6 +45,13 @@ namespace Trafilm.Metadata
       InfoUpdated = DateTime.UtcNow;
 
       Keywords = new string[] { };
+
+      ClearCalculated();
+    }
+
+    public virtual void ClearCalculated()
+    {
+      //can override at descendents
     }
 
     public override ICXMLMetadata Load(XElement item)

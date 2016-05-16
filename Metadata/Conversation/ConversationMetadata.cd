@@ -3,13 +3,13 @@
   <Class Name="Trafilm.Metadata.ConversationMetadata">
     <Position X="8.25" Y="5.5" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>CEAEkAAAUBACAAoAAAAAAAEAIBAAAABABAAAAABAAQg=</HashCode>
+      <HashCode>CEAEkAAAUBACAAoAAAAAAAEAIBAAAABABAAAAABAASg=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.ConversationMetadataFacets">
-    <Position X="4.25" Y="2.75" Width="3.5" />
+    <Position X="4.25" Y="3.25" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAQAAGgAgAAAAEAIBAQIAAgAAAAA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadataFacets.cs</FileName>
@@ -18,7 +18,7 @@
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
     <Position X="4" Y="7" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgBA=</HashCode>
+      <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -46,7 +46,7 @@
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
     <Position X="5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgBA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>

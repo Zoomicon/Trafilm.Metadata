@@ -65,6 +65,13 @@ namespace Trafilm.Metadata
       SpeakingCharactersCount = ""; //can take values like 1, 2, 3, more than 3
       L3speakingCharactersCount = ""; //can take values like 1, 2, 3, more than 3
 
+      //note: don't call ClearCalculated here, has been called by base.Clear() already
+    }
+
+    public override void ClearCalculated()
+    {
+      base.ClearCalculated();
+
       L3languagesCount = 0;
       L3languages = new string[] { };
 

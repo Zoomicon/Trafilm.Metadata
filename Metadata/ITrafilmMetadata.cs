@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ITrafilmMetadata.cs
-//Version: 20160430
+//Version: 20160516
 
 using Metadata.CXML;
 
@@ -21,6 +21,12 @@ namespace Trafilm.Metadata
     DateTime InfoUpdated { get; set; }
 
     string[] Keywords { get; set; }
+
+    #endregion
+
+    #region --- Methods ---
+
+    void ClearCalculated();
 
     #endregion
 

@@ -79,6 +79,13 @@ namespace Trafilm.Metadata
       DubbedLanguages = new string[] { };
       SubtitledLanguages = new string[] { };
 
+      //note: don't call ClearCalculated here, has been called by base.Clear() already
+    }
+
+    public override void ClearCalculated()
+    {
+      base.ClearCalculated();
+
       ConversationCount = 0;
       ConversationsDuration = TimeSpan.Zero;
     }
