@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TestScene.cs
-//Version: 20160514
+//Version: 20160516
 
 using Trafilm.Metadata.Models;
 using Trafilm.Metadata.Utils;
@@ -29,7 +29,7 @@ namespace Trafilm.Metadata.Tests
       metadata.ReferenceId = "testFilm.testScene";
       metadata.FilmReferenceId = "testFilm";
       metadata.StartTime = "10:20:30.12".ToNullableTimeSpan(SceneMetadata.DEFAULT_POSITION_FORMAT);
-      metadata.Duration = "0:2:5.12".ToNullableTimeSpan(SceneMetadata.DEFAULT_DURATION_FORMAT);
+      metadata.Duration = "2:5.12".ToNullableTimeSpan(SceneMetadata.DEFAULT_DURATION_FORMAT);
       using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.testScene.cxml"))
         metadata.Save(writer);
     }
