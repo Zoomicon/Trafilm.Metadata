@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
-  <Class Name="Trafilm.Metadata.SceneMetadata">
-    <Position X="8.25" Y="5.5" Width="3.75" />
+  <Class Name="Trafilm.Metadata.ConversationMetadata">
+    <Position X="8.25" Y="5.5" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>BmAAgAAAUBACAAogAEAAAAAAIAAAAABABAAAAABAAAg=</HashCode>
-      <FileName>Metadata\Scene\SceneMetadata.cs</FileName>
+      <HashCode>CEAEkAAAUBACAAoAAAAAAAEAIBAAAABABAAAAABAAQg=</HashCode>
+      <FileName>Metadata\Conversation\ConversationMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Trafilm.Metadata.SceneMetadataFacets">
+  <Class Name="Trafilm.Metadata.ConversationMetadataFacets">
     <Position X="4.25" Y="2.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAACAAAAAAAABAAAGgAkAAAAEAABAQAAAgAAAAA=</HashCode>
-      <FileName>Metadata\Scene\SceneMetadataFacets.cs</FileName>
+      <HashCode>AAAAAAACAAAAAAAAAQAAGgAgAAAAEAIBAQIAAgAAAAA=</HashCode>
+      <FileName>Metadata\Conversation\ConversationMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
@@ -28,25 +28,19 @@
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Trafilm.Metadata.Scene">
-    <Position X="11" Y="3.5" Width="2.75" />
-    <InheritanceLine Type="Trafilm.Metadata.SceneMetadata" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11.438" Y="5.5" />
-        <Point X="11.438" Y="4.916" />
-      </Path>
-    </InheritanceLine>
+  <Class Name="Trafilm.Metadata.Conversation">
+    <Position X="11" Y="3.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\Scene.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Conversation.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="Trafilm.Metadata.Models.ISceneMetadata">
+  <Interface Name="Trafilm.Metadata.Models.IConversationMetadata">
     <Position X="8.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AmAAAAAAUAACAAIgAAAAAAAAIAAAAABABAAAAAAAAAg=</HashCode>
-      <FileName>Metadata\Scene\ISceneMetadata.cs</FileName>
+      <HashCode>AEAAAAAAUAACAAIAAAAAAAEAIBAAAABABAAAAAAAAQg=</HashCode>
+      <FileName>Metadata\Conversation\IConversationMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
@@ -60,11 +54,11 @@
     <Position X="0.5" Y="0.5" Width="3.25" />
     <TypeIdentifier />
   </Interface>
-  <Interface Name="Trafilm.Metadata.Models.IScene">
-    <Position X="11" Y="0.5" Width="2.5" />
+  <Interface Name="Trafilm.Metadata.Models.IConversation">
+    <Position X="11" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAAAAAAAAAAA=</HashCode>
-      <FileName>Models\IScene.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Models\IConversation.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

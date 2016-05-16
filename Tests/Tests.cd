@@ -7,18 +7,18 @@
       <FileName>TestFilm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.Tests.TestScene">
-    <Position X="2.75" Y="0.5" Width="1.75" />
+  <Class Name="Trafilm.Metadata.Tests.TestConversation">
+    <Position X="2.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
-      <FileName>TestScene.cs</FileName>
+      <HashCode>EAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TestConversation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.Tests.TestUtterance">
-    <Position X="5" Y="0.5" Width="2" />
+  <Class Name="Trafilm.Metadata.Tests.TestL3occurence">
+    <Position X="5.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAIAIAAAAAAAA=</HashCode>
-      <FileName>TestUtterance.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAABAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TestL3occurence.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.Tests.Helpers">

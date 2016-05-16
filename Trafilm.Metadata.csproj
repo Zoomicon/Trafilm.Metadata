@@ -57,19 +57,19 @@
   <ItemGroup>
     <Compile Include="Utils\Converters.cs" />
     <Compile Include="Models\IFilm.cs" />
-    <Compile Include="Models\IScene.cs" />
-    <Compile Include="Metadata\Scene\SceneMetadata.cs" />
-    <Compile Include="Metadata\Scene\SceneMetadataFacets.cs" />
-    <Compile Include="Metadata\Scene\ISceneMetadata.cs" />
+    <Compile Include="Models\IConversation.cs" />
+    <Compile Include="Metadata\Conversation\ConversationMetadata.cs" />
+    <Compile Include="Metadata\Conversation\ConversationMetadataFacets.cs" />
+    <Compile Include="Metadata\Conversation\IConversationMetadata.cs" />
     <Compile Include="Metadata\TrafilmMetadata.cs" />
     <Compile Include="Metadata\TrafilmMetadataFacets.cs" />
     <Compile Include="Metadata\ITrafilmMetadata.cs" />
-    <Compile Include="Models\IUtterance.cs" />
-    <Compile Include="Metadata\Utterance\UtteranceMetadata.cs" />
-    <Compile Include="Metadata\Utterance\UtteranceMetadataFacets.cs" />
-    <Compile Include="Metadata\Utterance\IUtteranceMetadata.cs" />
-    <Compile Include="Objects\Utterance.cs" />
-    <Compile Include="Objects\Scene.cs" />
+    <Compile Include="Models\IL3occurence.cs" />
+    <Compile Include="Metadata\L3occurence\L3occurenceMetadata.cs" />
+    <Compile Include="Metadata\L3occurence\L3occurenceMetadataFacets.cs" />
+    <Compile Include="Metadata\L3occurence\IL3occurenceMetadata.cs" />
+    <Compile Include="Objects\L3occurence.cs" />
+    <Compile Include="Objects\Conversation.cs" />
     <Compile Include="Objects\Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Metadata\Film\IFilmMetadata.cs" />
@@ -90,10 +90,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Utils\Utils.cd" />
-    <None Include="Metadata\Scene\SceneMetadata.cd" />
+    <None Include="Metadata\Conversation\ConversationMetadata.cd" />
     <None Include="Metadata\TrafilmMetadata.cd" />
     <None Include="Facets.cd" />
-    <None Include="Metadata\Utterance\UtteranceMetadata.cd" />
+    <None Include="Metadata\L3occurence\L3occurenceMetadata.cd" />
     <None Include="Models\Models.cd" />
     <None Include="Metadata\Film\FilmMetadata.cd" />
     <None Include="Objects\Objects.cd" />

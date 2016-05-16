@@ -14,7 +14,7 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public IEnumerable<IScene> Scenes { get; set; }
+    public IEnumerable<IConversation> Conversations { get; set; }
 
     #endregion
 

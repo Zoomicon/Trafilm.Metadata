@@ -1,16 +1,16 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: IUtterance.cs
+//Filename: IL3occurence.cs
 //Version: 20160503
 
 namespace Trafilm.Metadata.Models
 {
 
-  public interface IUtterance : IUtteranceMetadata
+  public interface IL3occurence : IL3occurenceMetadata
   {
 
     #region --- Properties ---
 
-    IScene Scene { get; set; }
+    IConversation Conversation { get; set; }
 
     #endregion
 

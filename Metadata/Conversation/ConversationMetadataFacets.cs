@@ -1,11 +1,11 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: SceneMetadataFacets.cs
-//Version: 20160514
+//Filename: ConversationMetadataFacets.cs
+//Version: 20160516
 
 namespace Trafilm.Metadata
 {
 
-  public static class SceneMetadataFacets
+  public static class ConversationMetadataFacets
   {
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
 
@@ -18,7 +18,7 @@ namespace Trafilm.Metadata
     public const string FACET_SPEAKING_CHARACTERS_COUNT = "Speaking characters count";
     public const string FACET_L3_SPEAKING_CHARACTERS_COUNT = "L3-Speaking characters count";
 
-    //Calculatable from Utterances//
+    //Calculatable from L3occurences//
 
     public const string FACET_L3_LANGUAGES_COUNT = "L3 languages count";
     public const string FACET_L3_LANGUAGES = "L3/Other languages";
@@ -26,7 +26,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3_LANGUAGE_TYPES_COUNT = "L3 language types count";
     public const string FACET_L3_LANGUAGE_TYPES = "L3 language types";
 
-    public const string FACET_UTTERANCE_COUNT = "Utterance count";
+    public const string FACET_L3_OCCURENCE_COUNT = "L3-occurence count";
   }
 
 }

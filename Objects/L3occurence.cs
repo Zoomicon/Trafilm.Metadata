@@ -1,5 +1,5 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: Utterance.cs
+//Filename: L3occurence.cs
 //Version: 20160503
 
 using Trafilm.Metadata.Models;
@@ -7,12 +7,12 @@ using Trafilm.Metadata.Models;
 namespace Trafilm.Metadata
 {
 
-  public class Utterance : UtteranceMetadata, IUtterance
+  public class L3occurence : L3occurenceMetadata, IL3occurence
   {
 
     #region --- Properties ---
 
-    public IScene Scene { get; set; }
+    public IConversation Conversation { get; set; }
 
     #endregion
 
