@@ -1,6 +1,8 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3occurenceMetadata.cs
-//Version: 20160512
+//Version: 20160516
+
+using System;
 
 namespace Trafilm.Metadata.Models
 {
@@ -12,7 +14,10 @@ namespace Trafilm.Metadata.Models
 
     string FilmReferenceId { get; set; }
     string ConversationReferenceId { get; set; }
-    
+
+    TimeSpan? StartTime { get; set; }
+    TimeSpan? Duration { get; set; }
+
     string L3kind { get; set; } //L3ST or L3TT
 
     string LmainLanguage { get; set; } //depending on L3 type this is either the L1ST language or the L2TT language

@@ -1,12 +1,14 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3occurenceMetadata.cs
-//Version: 20160512
+//Version: 20160516
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
+using Trafilm.Metadata.Utils;
 
 using System.Collections.Generic;
 using System.Xml.Linq;
+using System;
 
 namespace Trafilm.Metadata
 {
@@ -14,10 +16,20 @@ namespace Trafilm.Metadata
   public class L3occurenceMetadata : TrafilmMetadata, IL3occurenceMetadata
   {
 
+    #region --- Constants ---
+
+    public const string DEFAULT_POSITION_FORMAT = "g";
+    public const string DEFAULT_DURATION_FORMAT = "g";
+
+    #endregion
+
     #region --- Properties ---
 
     public string FilmReferenceId { get; set; }
     public string ConversationReferenceId { get; set; }
+
+    public TimeSpan? StartTime { get; set; }
+    public TimeSpan? Duration { get; set; }
 
     public string L3kind { get; set; } //L3ST or L3TT
 
@@ -58,6 +70,9 @@ namespace Trafilm.Metadata
       FilmReferenceId = "";
       ConversationReferenceId = "";
 
+      StartTime = null;
+      Duration = null;
+
       L3kind = "";
 
       LmainLanguage = "";
@@ -95,6 +110,9 @@ namespace Trafilm.Metadata
 
       FilmReferenceId = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_FILM_REFERENCE_ID);
       ConversationReferenceId = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID);
+
+      StartTime = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_START_TIME).ToNullableTimeSpan(DEFAULT_POSITION_FORMAT);
+      Duration = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_DURATION_FORMAT);
 
       L3kind = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_L3_KIND);
 
@@ -142,6 +160,9 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, ConversationReferenceId));
 
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_START_TIME, StartTime.ToString(DEFAULT_POSITION_FORMAT)));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_DURATION_FORMAT)));
+
       AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_L3_KIND, L3kind));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_L_MAIN_LANGUAGE, LmainLanguage));
@@ -187,6 +208,9 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_START_TIME, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_L3_KIND, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
