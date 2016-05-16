@@ -1,26 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Interface Name="Trafilm.Metadata.Models.IFilmMetadata">
-    <Position X="4" Y="3" Width="2.75" />
-    <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" FixedFromPoint="true">
-      <Path>
-        <Point X="8.5" Y="2.31" />
-        <Point X="8.5" Y="2.625" />
-        <Point X="5.375" Y="2.625" />
-        <Point X="5.375" Y="3" />
-      </Path>
-    </InheritanceLine>
+    <Position X="4" Y="3.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAIAABEABAACAACEAAAAIAgAAAAAFBEEAAAAAgAAAAA=</HashCode>
       <FileName>Metadata\Film\IFilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IFilm">
-    <Position X="4" Y="8.25" Width="2.75" />
+    <Position X="4" Y="8.75" Width="2.75" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IFilmMetadata" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.222" Y="6.925" />
-        <Point X="5.222" Y="8.25" />
+        <Point X="5.222" Y="7.175" />
+        <Point X="5.222" Y="8.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -29,11 +21,11 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IConversation">
-    <Position X="7.25" Y="8.25" Width="2.75" />
+    <Position X="7.25" Y="8.5" Width="2.75" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IConversationMetadata" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="8.375" Y="6.348" />
-        <Point X="8.375" Y="8.25" />
+        <Point X="8.375" Y="6.598" />
+        <Point X="8.375" Y="8.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -42,24 +34,18 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IL3occurence">
-    <Position X="10.25" Y="8.25" Width="2.25" />
-    <InheritanceLine Type="Trafilm.Metadata.Models.IL3occurenceMetadata" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11.25" Y="7.887" />
-        <Point X="11.25" Y="8.25" />
-      </Path>
-    </InheritanceLine>
+    <Position X="10.25" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Models\IL3occurence.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IConversationMetadata">
-    <Position X="7.25" Y="3" Width="2.5" />
-    <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" FixedFromPoint="true" FixedToPoint="true">
+    <Position X="7.25" Y="3.25" Width="2.5" />
+    <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" FixedToPoint="true">
       <Path>
-        <Point X="8.5" Y="2.31" />
-        <Point X="8.5" Y="3" />
+        <Point X="8.625" Y="2.761" />
+        <Point X="8.625" Y="3.25" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -68,24 +54,16 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IL3occurenceMetadata">
-    <Position X="10.25" Y="3" Width="2.25" />
-    <InheritanceLine Type="Trafilm.Metadata.ITrafilmMetadata" FixedFromPoint="true">
-      <Path>
-        <Point X="8.5" Y="2.31" />
-        <Point X="8.5" Y="2.625" />
-        <Point X="11.375" Y="2.625" />
-        <Point X="11.375" Y="3" />
-      </Path>
-    </InheritanceLine>
+    <Position X="10.25" Y="3.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAgGQIAAkAAQAAEAAAEAgAABAAAIAABQAAEAAAEAAwA=</HashCode>
+      <HashCode>AAgGQIAAkAASAAEAAAEAgAABIAAIAABQAAEAAAEAAwA=</HashCode>
       <FileName>Metadata\L3occurence\IL3occurenceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
     <Position X="7.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgBA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
