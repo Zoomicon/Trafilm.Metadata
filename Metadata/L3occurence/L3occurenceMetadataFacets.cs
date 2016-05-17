@@ -15,8 +15,8 @@ namespace Trafilm.Metadata
 
     public const string FACET_L3_KIND = "L3 kind";
 
-    public const string FACET_L_MAIN_LANGUAGE = "L1ST/L2TT"; //depending on L3 type this is either the L1ST language or the L2TT language
-    public const string FACET_L_MAIN_MODE = "L main mode"; //oral, text (means dubbed, subtitled in L2TT context)
+    public const string FACET_L_MAIN_LANGUAGE = "L1/L2 language (for ST/TT respectively)"; //depending on L3 kind this is either the L1ST language or the L2TT language
+    public const string FACET_L_MAIN_MODE = "L1/L2 mode (for ST/TT respectively)"; //oral, text (means dubbed, subtitled in L2TT context)
 
     public const string FACET_L2_SAME_AS_L3ST = "L2 same as L3ST";
     public const string FACET_L3ST_CONVEYED_AS_L3TT = "L3ST conveyed as L3TT";
