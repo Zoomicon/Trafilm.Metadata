@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3occurenceMetadata.cs
-//Version: 20160516
+//Version: 20160517
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -46,7 +46,7 @@ namespace Trafilm.Metadata
 
     public string L3audienceUnderstanding { get; set; }
     public string L3messageUnderstanding { get; set; }
-    public string L3meaningDeciphered { get; set; }
+    public string L3meaningDecipherable { get; set; }
 
     public string L3speakerPerformance { get; set; }
 
@@ -88,7 +88,7 @@ namespace Trafilm.Metadata
 
       L3audienceUnderstanding = "";
       L3messageUnderstanding = "";
-      L3meaningDeciphered = "";
+      L3meaningDecipherable = "";
 
       L3speakerPerformance = "";
 
@@ -129,7 +129,7 @@ namespace Trafilm.Metadata
 
       L3audienceUnderstanding = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_L3_AUDIENCE_UNDERSTANDING);
       L3messageUnderstanding = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_L3_MESSAGE_UNDERSTANDING);
-      L3meaningDeciphered = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_L3_MEANING_DECIPHERED);
+      L3meaningDecipherable = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_L3_MEANING_DECIPHERABLE);
 
       L3speakerPerformance = facets.CXMLFacetStringValue(L3occurenceMetadataFacets.FACET_L3_SPEAKER_PERFORMANCE);
 
@@ -178,7 +178,7 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_L3_AUDIENCE_UNDERSTANDING, L3audienceUnderstanding));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_L3_MESSAGE_UNDERSTANDING, L3messageUnderstanding));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_L3_MEANING_DECIPHERED, L3meaningDeciphered));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_L3_MEANING_DECIPHERABLE, L3meaningDecipherable));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3occurenceMetadataFacets.FACET_L3_SPEAKER_PERFORMANCE, L3speakerPerformance));
 
@@ -227,7 +227,7 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_L3_AUDIENCE_UNDERSTANDING, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_L3_MESSAGE_UNDERSTANDING, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_L3_MEANING_DECIPHERED, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_L3_MEANING_DECIPHERABLE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3occurenceMetadataFacets.FACET_L3_SPEAKER_PERFORMANCE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
