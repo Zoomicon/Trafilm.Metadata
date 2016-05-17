@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3occurenceMetadata.cs
-//Version: 20160516
+//Version: 20160517
 
 using System;
 
@@ -33,7 +33,7 @@ namespace Trafilm.Metadata.Models
 
     string L3audienceUnderstanding { get; set; }
     string L3messageUnderstanding { get; set; }
-    string L3meaningDeciphered { get; set; }
+    string L3meaningDecipherable { get; set; }
     
     string L3speakerPerformance { get; set; }
 

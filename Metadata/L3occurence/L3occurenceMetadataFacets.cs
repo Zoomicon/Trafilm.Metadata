@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3occurenceMetadataFacets.cs
-//Version: 20160516
+//Version: 20160517
 
 namespace Trafilm.Metadata
 {
@@ -26,9 +26,9 @@ namespace Trafilm.Metadata
 
     public const string FACET_L3_CONSTRUCTED_BASED_ON = "L3 constructed based on";
 
-    public const string FACET_L3_AUDIENCE_UNDERSTANDING = "L3 audience understanding";
-    public const string FACET_L3_MESSAGE_UNDERSTANDING = "L3 message understanding";
-    public const string FACET_L3_MEANING_DECIPHERED = "L3 meaning deciphered";
+    public const string FACET_L3_AUDIENCE_UNDERSTANDING = "L3 meant to be understood";
+    public const string FACET_L3_MESSAGE_UNDERSTANDING = "L3 required for understanding";
+    public const string FACET_L3_MEANING_DECIPHERABLE = "L3 meaning decipherable";
 
     public const string FACET_L3_SPEAKER_PERFORMANCE = "L3 speaker performance";
 
