@@ -38,10 +38,10 @@ namespace Trafilm.Metadata
         {
           L3occurenceCount = value.Count();
 
-          L3languages = value.Aggregate(new List<string>(), (total, next) => { if (!total.Contains(next.L3language)) total.Add(next.L3language); return total; } ).ToArray();
+          L3languages = value.Aggregate(new List<string>(), (total, next) => { if (!string.IsNullOrEmpty(next.L3language) && !total.Contains(next.L3language)) total.Add(next.L3language); return total; } ).ToArray();
           L3languagesCount = L3languages.Count();
 
-          L3languageTypes = value.Aggregate(new List<string>(), (total, next) => { if (!total.Contains(next.L3languageType)) total.Add(next.L3languageType); return total; }).ToArray();
+          L3languageTypes = value.Aggregate(new List<string>(), (total, next) => { if (!string.IsNullOrEmpty(next.L3languageType) && !total.Contains(next.L3languageType)) total.Add(next.L3languageType); return total; }).ToArray();
           L3languageTypesCount = L3languageTypes.Count();
         }
         else
