@@ -29,17 +29,9 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.Film">
-    <Position X="11.25" Y="3.25" Width="3.25" />
-    <InheritanceLine Type="Trafilm.Metadata.FilmMetadata" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11.562" Y="5" />
-        <Point X="11.562" Y="4.783" />
-        <Point X="11.562" Y="4.783" />
-        <Point X="11.562" Y="4.483" />
-      </Path>
-    </InheritanceLine>
+    <Position X="11.5" Y="2.75" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\Film.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
