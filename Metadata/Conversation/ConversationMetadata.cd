@@ -29,9 +29,9 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.Conversation">
-    <Position X="11" Y="3.5" Width="3.25" />
+    <Position X="11" Y="3.25" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAABAAAAA=</HashCode>
       <FileName>Objects\Conversation.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
