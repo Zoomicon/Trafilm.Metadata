@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3occurrenceMetadata.cs
-//Version: 20160517
+//Version: 20160524
 
 using System;
 

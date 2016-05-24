@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3occurrence.cs
-//Version: 20160503
+//Version: 20160524
 
 using Trafilm.Metadata.Models;
 

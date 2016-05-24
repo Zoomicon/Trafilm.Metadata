@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadataFacets.cs
-//Version: 20160516
+//Version: 20160524
 
 namespace Trafilm.Metadata
 {
@@ -26,7 +26,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3_LANGUAGE_TYPES_COUNT = "L3 language types count";
     public const string FACET_L3_LANGUAGE_TYPES = "L3 language types";
 
-    public const string FACET_L3_Occurrence_COUNT = "L3-occurrence count";
+    public const string FACET_L3_OCCURRENCE_COUNT = "L3-occurrence count";
   }
 
 }
