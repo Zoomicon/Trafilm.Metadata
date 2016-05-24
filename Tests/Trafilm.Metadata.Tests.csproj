@@ -57,7 +57,7 @@
   <ItemGroup>
     <Compile Include="Helpers.cs" />
     <Compile Include="TestUtils.cs" />
-    <Compile Include="TestL3occurence.cs" />
+    <Compile Include="TestL3occurrence.cs" />
     <Compile Include="TestConversation.cs" />
     <Compile Include="TestFilm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

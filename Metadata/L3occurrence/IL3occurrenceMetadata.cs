@@ -1,13 +1,13 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: IL3occurenceMetadata.cs
-//Version: 20160517
+//Filename: IL3occurrenceMetadata.cs
+//Version: 20160524
 
 using System;
 
 namespace Trafilm.Metadata.Models
 {
 
-  public interface IL3occurenceMetadata : ITrafilmMetadata
+  public interface IL3occurrenceMetadata : ITrafilmMetadata
   {
 
     #region --- Properties ---

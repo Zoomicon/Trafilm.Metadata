@@ -15,28 +15,28 @@ namespace Trafilm.Metadata
 
     #region --- Fields ---
 
-    protected IEnumerable<IL3occurence> l3occurences; //=null
+    protected IEnumerable<IL3occurrence> l3occurrences; //=null
 
     #endregion
 
     #region --- Properties ---
 
     public IFilm Film { get; set; }
-    public IEnumerable<IL3occurence> L3occurences
+    public IEnumerable<IL3occurrence> L3occurrences
     {
       get
       {
-        return l3occurences;
+        return l3occurrences;
       }
       set
       {
-        l3occurences = value;
+        l3occurrences = value;
 
-        //Calculated from L3occurences//
+        //Calculated from L3occurrences//
 
         if (value != null)
         {
-          L3occurenceCount = value.Count();
+          L3occurrenceCount = value.Count();
 
           L3languages = value.Aggregate(new List<string>(), (total, next) => { if (!string.IsNullOrEmpty(next.L3language) && !total.Contains(next.L3language)) total.Add(next.L3language); return total; } ).ToArray();
           L3languagesCount = L3languages.Count();

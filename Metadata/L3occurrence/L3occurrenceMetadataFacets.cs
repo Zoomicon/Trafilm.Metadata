@@ -1,11 +1,11 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: L3occurenceMetadataFacets.cs
-//Version: 20160517
+//Filename: L3occurrenceMetadataFacets.cs
+//Version: 20160524
 
 namespace Trafilm.Metadata
 {
 
-  public static class L3occurenceMetadataFacets
+  public static class L3occurrenceMetadataFacets
   {
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
     public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";

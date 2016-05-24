@@ -64,11 +64,11 @@
     <Compile Include="Metadata\TrafilmMetadata.cs" />
     <Compile Include="Metadata\TrafilmMetadataFacets.cs" />
     <Compile Include="Metadata\ITrafilmMetadata.cs" />
-    <Compile Include="Models\IL3occurence.cs" />
-    <Compile Include="Metadata\L3occurence\L3occurenceMetadata.cs" />
-    <Compile Include="Metadata\L3occurence\L3occurenceMetadataFacets.cs" />
-    <Compile Include="Metadata\L3occurence\IL3occurenceMetadata.cs" />
-    <Compile Include="Objects\L3occurence.cs" />
+    <Compile Include="Models\IL3occurrence.cs" />
+    <Compile Include="Metadata\L3occurrence\L3occurrenceMetadata.cs" />
+    <Compile Include="Metadata\L3occurrence\L3occurrenceMetadataFacets.cs" />
+    <Compile Include="Metadata\L3occurrence\IL3occurrenceMetadata.cs" />
+    <Compile Include="Objects\L3occurrence.cs" />
     <Compile Include="Objects\Conversation.cs" />
     <Compile Include="Objects\Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,7 +93,7 @@
     <None Include="Metadata\Conversation\ConversationMetadata.cd" />
     <None Include="Metadata\TrafilmMetadata.cd" />
     <None Include="Facets.cd" />
-    <None Include="Metadata\L3occurence\L3occurenceMetadata.cd" />
+    <None Include="Metadata\L3occurrence\L3occurrenceMetadata.cd" />
     <None Include="Models\Models.cd" />
     <None Include="Metadata\Film\FilmMetadata.cd" />
     <None Include="Objects\Objects.cd" />

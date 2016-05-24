@@ -13,9 +13,9 @@
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Trafilm.Metadata.L3occurence">
+  <Class Name="Trafilm.Metadata.L3occurrence">
     <Position X="10.75" Y="3.5" Width="2.25" />
-    <InheritanceLine Type="Trafilm.Metadata.L3occurenceMetadata" FixedFromPoint="true">
+    <InheritanceLine Type="Trafilm.Metadata.L3occurrenceMetadata" FixedFromPoint="true">
       <Path>
         <Point X="11.875" Y="6.5" />
         <Point X="11.875" Y="4.733" />
@@ -23,30 +23,30 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\L3occurence.cs</FileName>
+      <FileName>Objects\L3occurrence.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Trafilm.Metadata.L3occurenceMetadataFacets">
+  <Class Name="Trafilm.Metadata.L3occurrenceMetadataFacets">
     <Position X="4.25" Y="3" Width="3.5" />
     <TypeIdentifier>
       <HashCode>IAACBAAACBAAAAAAAAAUUgAiCAAKAAEAAQABAAAGJAA=</HashCode>
-      <FileName>Metadata\L3occurence\L3occurenceMetadataFacets.cs</FileName>
+      <FileName>Metadata\L3occurrence\L3occurrenceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.L3occurenceMetadata">
+  <Class Name="Trafilm.Metadata.L3occurrenceMetadata">
     <Position X="8.25" Y="6.5" Width="4.25" />
     <TypeIdentifier>
       <HashCode>CAgG0IAEkBASAAkAAAEAgAABIAAIAABQAAEAAAFAAwA=</HashCode>
-      <FileName>Metadata\L3occurence\L3occurenceMetadata.cs</FileName>
+      <FileName>Metadata\L3occurrence\L3occurrenceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="Trafilm.Metadata.Models.IL3occurenceMetadata">
+  <Interface Name="Trafilm.Metadata.Models.IL3occurrenceMetadata">
     <Position X="8.25" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAgGQIAAkAASAAEAAAEAgAABIAAIAABQAAEAAAEAAwA=</HashCode>
-      <FileName>Metadata\L3occurence\IL3occurenceMetadata.cs</FileName>
+      <FileName>Metadata\L3occurrence\IL3occurrenceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
@@ -60,11 +60,11 @@
     <Position X="0.5" Y="0.5" Width="3.25" />
     <TypeIdentifier />
   </Interface>
-  <Interface Name="Trafilm.Metadata.Models.IL3occurence">
+  <Interface Name="Trafilm.Metadata.Models.IL3occurrence">
     <Position X="10.75" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\IL3occurence.cs</FileName>
+      <FileName>Models\IL3occurrence.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
