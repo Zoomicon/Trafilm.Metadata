@@ -23,7 +23,7 @@ namespace Trafilm.Metadata.Models
     string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
     string L3speakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
 
-    //Calculatable from L3occurences//
+    //Calculatable from L3occurrences//
 
     int L3languagesCount { get; set; }
     string[] L3languages { get; set; }
@@ -31,7 +31,7 @@ namespace Trafilm.Metadata.Models
     int L3languageTypesCount { get; set; }
     string[] L3languageTypes { get; set; }
 
-    int L3occurenceCount { get; set; }
+    int L3occurrenceCount { get; set; }
 
     #endregion
 

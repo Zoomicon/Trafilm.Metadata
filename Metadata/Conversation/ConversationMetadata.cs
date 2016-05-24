@@ -36,7 +36,7 @@ namespace Trafilm.Metadata
     public string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
     public string L3speakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
 
-    //Calculatable from L3occurences//
+    //Calculatable from L3occurrences//
 
     public int L3languagesCount { get; set; }
     public string[] L3languages { get; set; }
@@ -44,7 +44,7 @@ namespace Trafilm.Metadata
     public int L3languageTypesCount { get; set; }
     public string[] L3languageTypes { get; set; }
 
-    public int L3occurenceCount { get; set; }
+    public int L3occurrenceCount { get; set; }
 
     #endregion
 
@@ -78,7 +78,7 @@ namespace Trafilm.Metadata
       L3languageTypesCount = 0;
       L3languageTypes = new string[] { };
 
-      L3occurenceCount = 0;
+      L3occurrenceCount = 0;
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -104,7 +104,7 @@ namespace Trafilm.Metadata
       L3languageTypesCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3_LANGUAGE_TYPES_COUNT));
       L3languageTypes = facets.CXMLFacetStringValues(ConversationMetadataFacets.FACET_L3_LANGUAGE_TYPES);
 
-      L3occurenceCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3_OCCURENCE_COUNT));
+      L3occurrenceCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3_Occurrence_COUNT));
 
       return this;
     }
@@ -138,7 +138,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3_LANGUAGE_TYPES_COUNT, L3languageTypesCount.ToString()));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3_LANGUAGE_TYPES, L3languageTypes));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3_OCCURENCE_COUNT, L3occurenceCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3_Occurrence_COUNT, L3occurrenceCount.ToString()));
 
       return facets;
     }
@@ -172,7 +172,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3_LANGUAGE_TYPES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3_LANGUAGE_TYPES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3_OCCURENCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3_Occurrence_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       //
 

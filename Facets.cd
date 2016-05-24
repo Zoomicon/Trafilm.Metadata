@@ -7,11 +7,11 @@
       <FileName>Metadata\TrafilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.L3occurenceMetadataFacets">
+  <Class Name="Trafilm.Metadata.L3occurrenceMetadataFacets">
     <Position X="7.25" Y="2.5" Width="3" />
     <TypeIdentifier>
       <HashCode>IAACBAAACBAAAAAAAAAUUAACCAAKAAEAAQABAAAGJAA=</HashCode>
-      <FileName>Metadata\L3occurence\L3occurenceMetadataFacets.cs</FileName>
+      <FileName>Metadata\L3occurrence\L3occurrenceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.ConversationMetadataFacets">

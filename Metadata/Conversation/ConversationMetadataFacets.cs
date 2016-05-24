@@ -18,7 +18,7 @@ namespace Trafilm.Metadata
     public const string FACET_SPEAKING_CHARACTERS_COUNT = "Speaking characters count";
     public const string FACET_L3_SPEAKING_CHARACTERS_COUNT = "L3-Speaking characters count";
 
-    //Calculatable from L3occurences//
+    //Calculatable from L3occurrences//
 
     public const string FACET_L3_LANGUAGES_COUNT = "L3 languages count";
     public const string FACET_L3_LANGUAGES = "L3/Other languages";
@@ -26,7 +26,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3_LANGUAGE_TYPES_COUNT = "L3 language types count";
     public const string FACET_L3_LANGUAGE_TYPES = "L3 language types";
 
-    public const string FACET_L3_OCCURENCE_COUNT = "L3-occurence count";
+    public const string FACET_L3_Occurrence_COUNT = "L3-occurrence count";
   }
 
 }

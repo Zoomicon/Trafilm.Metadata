@@ -18,34 +18,34 @@
     <Position X="7.25" Y="8.5" Width="2.75" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IConversationMetadata" FixedToPoint="true">
       <Path>
-        <Point X="8.5" Y="6.556" />
+        <Point X="8.5" Y="6.598" />
         <Point X="8.5" Y="8.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAI=</HashCode>
       <FileName>Models\IConversation.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Trafilm.Metadata.Models.IL3occurence">
+  <Interface Name="Trafilm.Metadata.Models.IL3occurrence">
     <Position X="10.25" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\IL3occurence.cs</FileName>
+      <FileName>Models\IL3occurrence.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IConversationMetadata">
     <Position X="7.25" Y="3.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAUAACAAIAAAAAAAEAIBAAAABABAAAAAAAAQg=</HashCode>
+      <HashCode>AEAAAAAAUAACAAIAAAAAAAAAIBAAAABABAAAAAAAQQg=</HashCode>
       <FileName>Metadata\Conversation\IConversationMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Trafilm.Metadata.Models.IL3occurenceMetadata">
+  <Interface Name="Trafilm.Metadata.Models.IL3occurrenceMetadata">
     <Position X="10.25" Y="3.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAgGQIAAkAASAAEAAAEAAAABIAAIAABQAAGAAAEAAwA=</HashCode>
-      <FileName>Metadata\L3occurence\IL3occurenceMetadata.cs</FileName>
+      <FileName>Metadata\L3occurrence\IL3occurrenceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
