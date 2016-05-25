@@ -104,6 +104,8 @@ namespace Trafilm.Metadata
       L3STlanguageTypesCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT));
       L3STlanguageTypes = facets.CXMLFacetStringValues(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES);
 
+      //Calculatable from L3SToccurrences//
+
       L3SToccurrenceCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_OCCURRENCE_COUNT));
 
       return this;
@@ -137,6 +139,8 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT, L3STlanguageTypesCount.ToString()));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES, L3STlanguageTypes));
+
+      //Calculatable from L3SToccurrences//
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_OCCURRENCE_COUNT, L3SToccurrenceCount.ToString()));
 

@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3SToccurrenceMetadataFacets.cs
-//Version: 20160525
+//Version: 20160526
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -39,6 +39,10 @@ namespace Trafilm.Metadata
 
     public const string FACET_L3ST_FUNCTIONS = "L3ST functions";
 
+    //Calculatable from L3TToccurrences//
+
+    public const string FACET_L3TT_OCCURRENCE_COUNT = "L3TT-occurrences: count";
+
     #endregion
 
     #region --- Methods ---
@@ -75,6 +79,10 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3SToccurrenceMetadataFacets.FACET_L3ST_REPRESENTATIONS_VISUAL, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3SToccurrenceMetadataFacets.FACET_L3ST_FUNCTIONS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      //Calculatable from L3TToccurrences//
+
+      result.Add(CXML.MakeFacetCategory(L3SToccurrenceMetadataFacets.FACET_L3TT_OCCURRENCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       //
 

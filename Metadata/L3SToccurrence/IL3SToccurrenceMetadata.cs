@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3SToccurrenceMetadata.cs
-//Version: 20160525
+//Version: 20160526
 
 using System;
 
@@ -36,6 +36,10 @@ namespace Trafilm.Metadata.Models
     string[] L3STrepresentationsVisual { get; set; }
 
     string[] L3STfunctions { get; set; }
+
+    //Calculatable from L3TToccurrences//
+
+    int L3TToccurrenceCount { get; set; }
 
     #endregion
 

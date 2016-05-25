@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TToccurrenceMetadata.cs
-//Version: 20160525
+//Version: 20160526
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -88,6 +88,13 @@ namespace Trafilm.Metadata
       L3TTrepresentationsVisual = new string[] { };
 
       L3TTfunctions = new string[] { };
+
+      //note: don't call ClearCalculated here, has been called by base.Clear() already
+    }
+
+    public override void ClearCalculated()
+    {
+      base.ClearCalculated();
 
       L3STmodeChange = new string[] { };
       L3STfunctionsChange = new string[] { };
