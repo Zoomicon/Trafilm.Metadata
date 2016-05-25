@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3SToccurrenceMetadata.cs
-//Version: 20160525
+//Version: 20160526
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -50,6 +50,10 @@ namespace Trafilm.Metadata
 
     public string[] L3STfunctions { get; set; }
 
+    //Calculatable from L3TToccurrences//
+
+    public int L3TToccurrenceCount { get; set; }
+
     #endregion
 
     #region --- Methods ---
@@ -82,6 +86,15 @@ namespace Trafilm.Metadata
       L3STrepresentationsVisual = new string[] { };
 
       L3STfunctions = new string[] { };
+
+      //note: don't call ClearCalculated here, has been called by base.Clear() already
+    }
+
+    public override void ClearCalculated()
+    {
+      base.ClearCalculated();
+
+      L3TToccurrenceCount = 0;
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -114,6 +127,10 @@ namespace Trafilm.Metadata
       L3STrepresentationsVisual = facets.CXMLFacetStringValues(L3SToccurrenceMetadataFacets.FACET_L3ST_REPRESENTATIONS_VISUAL);
 
       L3STfunctions = facets.CXMLFacetStringValues(L3SToccurrenceMetadataFacets.FACET_L3ST_FUNCTIONS);
+
+      //Calculatable from L3SToccurrences//
+
+      L3TToccurrenceCount = int.Parse(facets.CXMLFacetStringValue(L3SToccurrenceMetadataFacets.FACET_L3TT_OCCURRENCE_COUNT));
 
       return this;
     }
@@ -154,6 +171,10 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3SToccurrenceMetadataFacets.FACET_L3ST_REPRESENTATIONS_VISUAL, L3STrepresentationsVisual));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3SToccurrenceMetadataFacets.FACET_L3ST_FUNCTIONS, L3STfunctions));
+
+      //Calculatable from L3TToccurrences//
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3SToccurrenceMetadataFacets.FACET_L3TT_OCCURRENCE_COUNT, L3TToccurrenceCount.ToString()));
 
       return facets;
     }

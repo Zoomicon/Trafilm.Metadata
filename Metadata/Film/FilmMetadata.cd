@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.FilmMetadataFacets">
-    <Position X="4.5" Y="3.25" Width="3.25" />
+    <Position X="4.25" Y="3.25" Width="3.75" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAQgAIAABAgFAAAAgBAAABAQBAAAAIIA=</HashCode>
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
@@ -30,12 +30,6 @@
   </Class>
   <Class Name="Trafilm.Metadata.Film">
     <Position X="11.25" Y="2.75" Width="3.25" />
-    <InheritanceLine Type="Trafilm.Metadata.FilmMetadata" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11.688" Y="5.75" />
-        <Point X="11.688" Y="4.434" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>LinkedData\Film\Film.cs</FileName>

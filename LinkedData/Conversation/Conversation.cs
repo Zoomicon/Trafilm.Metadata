@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Conversation.cs
-//Version: 20160525
+//Version: 20160526
 
 using Trafilm.Metadata.Models;
 
@@ -15,7 +15,7 @@ namespace Trafilm.Metadata
 
     #region --- Fields ---
 
-    protected IEnumerable<IL3SToccurrence> l3stOccurrences; //=null
+    protected IEnumerable<IL3SToccurrence> l3STOccurrences; //=null
 
     #endregion
 
@@ -26,11 +26,11 @@ namespace Trafilm.Metadata
     {
       get
       {
-        return l3stOccurrences;
+        return l3STOccurrences;
       }
       set
       {
-        l3stOccurrences = value;
+        l3STOccurrences = value;
 
         //Calculated from L3SToccurrences//
 
@@ -43,6 +43,8 @@ namespace Trafilm.Metadata
 
           L3STlanguageTypes = value.Aggregate(new List<string>(), (total, next) => { if (!string.IsNullOrEmpty(next.L3STlanguageType) && !total.Contains(next.L3STlanguageType)) total.Add(next.L3STlanguageType); return total; }).ToArray();
           L3STlanguageTypesCount = L3STlanguageTypes.Count();
+
+          //...
         }
         else
           ClearCalculated();

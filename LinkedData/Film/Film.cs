@@ -36,7 +36,10 @@ namespace Trafilm.Metadata
         if (value != null)
         {
           ConversationCount = value.Count();
+
           ConversationsDuration = value.Aggregate(TimeSpan.Zero, (total, next) => total.Add(next.Duration ?? TimeSpan.Zero));
+          
+          //...
         }
         else
           ClearCalculated();
