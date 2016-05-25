@@ -3,15 +3,15 @@
   <Class Name="Trafilm.Metadata.ConversationMetadata">
     <Position X="8.25" Y="5.5" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>CEAEkAAAUBACAAoAAAAAAAEAIBAAAABABAAAAABAASg=</HashCode>
+      <HashCode>CEAEkAAAEBACAAogAACAAACAKAAAAAAAhAACAABAACA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.ConversationMetadataFacets">
-    <Position X="4.25" Y="3.25" Width="3.5" />
+    <Position X="4.25" Y="3.25" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAQAAGgAgAAAAEAIBAQIAAgAAAAA=</HashCode>
+      <HashCode>AAACAAACAAAAAAAAAAAAGgAgAABAEAAAAAACQAAAkAA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -29,17 +29,17 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.Conversation">
-    <Position X="11" Y="3.25" Width="3.25" />
+    <Position X="11" Y="3" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAABAAAAA=</HashCode>
-      <FileName>Objects\Conversation.cs</FileName>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LinkedData\Conversation\Conversation.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Trafilm.Metadata.Models.IConversationMetadata">
     <Position X="8.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAUAACAAIAAAAAAAEAIBAAAABABAAAAAAAAQg=</HashCode>
+      <HashCode>AEAAAAAAEAACAAIgAACAAACAKAAAAAAAhAACAAAAAAA=</HashCode>
       <FileName>Metadata\Conversation\IConversationMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -55,10 +55,10 @@
     <TypeIdentifier />
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IConversation">
-    <Position X="11" Y="0.5" Width="2.75" />
+    <Position X="11" Y="0.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAA=</HashCode>
-      <FileName>Models\IConversation.cs</FileName>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LinkedData\Conversation\IConversation.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

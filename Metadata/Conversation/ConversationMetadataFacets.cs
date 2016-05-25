@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadataFacets.cs
-//Version: 20160524
+//Version: 20160525
 
 namespace Trafilm.Metadata
 {
@@ -12,21 +12,21 @@ namespace Trafilm.Metadata
     public const string FACET_START_TIME = "Start time (h:m:s.f)";
     public const string FACET_DURATION = "Duration (h:m:s.f)";
 
-    public const string FACET_L1_LANGUAGE_PRESENT = "L1/Source language present";
-    public const string FACET_L2_LANGUAGE_PRESENT = "L2/Translated language present";
+    public const string FACET_L1_LANGUAGE_PRESENT = "L1 language present";
+    public const string FACET_L2_LANGUAGE_PRESENT = "L2 language present";
 
-    public const string FACET_SPEAKING_CHARACTERS_COUNT = "Speaking characters count";
-    public const string FACET_L3_SPEAKING_CHARACTERS_COUNT = "L3-Speaking characters count";
+    public const string FACET_SPEAKING_CHARACTERS_COUNT = "Speaking characters: count";
+    public const string FACET_L3ST_SPEAKING_CHARACTERS_COUNT = "L3ST-speaking characters: count";
 
-    //Calculatable from L3occurrences//
+    //Calculatable from L3SToccurrences//
 
-    public const string FACET_L3_LANGUAGES_COUNT = "L3 languages count";
-    public const string FACET_L3_LANGUAGES = "L3/Other languages";
+    public const string FACET_L3ST_LANGUAGES_COUNT = "L3ST languages: count";
+    public const string FACET_L3ST_LANGUAGES = "L3ST languages";
 
-    public const string FACET_L3_LANGUAGE_TYPES_COUNT = "L3 language types count";
-    public const string FACET_L3_LANGUAGE_TYPES = "L3 language types";
+    public const string FACET_L3ST_LANGUAGE_TYPES_COUNT = "L3ST language types: count";
+    public const string FACET_L3ST_LANGUAGE_TYPES = "L3ST language types";
 
-    public const string FACET_L3_OCCURRENCE_COUNT = "L3-occurrence count";
+    public const string FACET_L3ST_OCCURRENCE_COUNT = "L3ST-occurrences: count";
   }
 
 }

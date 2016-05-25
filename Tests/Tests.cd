@@ -14,11 +14,11 @@
       <FileName>TestConversation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.Tests.TestL3occurrence">
+  <Class Name="Trafilm.Metadata.Tests.TestL3SToccurrence">
     <Position X="5.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAABAAAIAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>TestL3occurrence.cs</FileName>
+      <FileName>TestL3SToccurrence.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.Tests.Helpers">

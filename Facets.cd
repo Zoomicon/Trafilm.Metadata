@@ -1,31 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Trafilm.Metadata.TrafilmMetadataFacets">
-    <Position X="4.25" Y="0.5" Width="2" />
+    <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAIAAAAAACAAEAAAAAAAAAA=</HashCode>
       <FileName>Metadata\TrafilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.L3occurrenceMetadataFacets">
-    <Position X="7.25" Y="2.5" Width="3" />
+  <Class Name="Trafilm.Metadata.L3SToccurrenceMetadataFacets">
+    <Position X="7" Y="2.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>IAACBAAACBAAAAAAAAAUUAACCAAKAAEAAQABAAAGJAA=</HashCode>
-      <FileName>Metadata\L3occurrence\L3occurrenceMetadataFacets.cs</FileName>
+      <HashCode>CFCAAAAAAAAAAAABAAAkEgAhAAAAAAAEAAAgQAIAAAI=</HashCode>
+      <FileName>Metadata\L3SToccurrence\L3SToccurrenceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.ConversationMetadataFacets">
-    <Position X="3.75" Y="2.5" Width="3" />
+    <Position X="3.5" Y="2.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAQAAGgAgAAAAEAIBAQIAAgAAAAA=</HashCode>
+      <HashCode>AAACAAACAAAAAAAAAAAAGgAgAABAEAAAAAACQAAAkAA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.FilmMetadataFacets">
     <Position X="0.5" Y="2.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>wAAAAAAAAAAAAQAAAgABAgFAAAAgFAAABAABAAAAIIA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAQAAIAABAgFAAAAgBAAABAQBAAAAIIA=</HashCode>
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trafilm.Metadata.L3TToccurrenceMetadataFacets">
+    <Position X="10.25" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>CFCAABAAAAAAAAABAAA0EAIBCAAAAAAkAAAgQAIAIAo=</HashCode>
+      <FileName>Metadata\L3TToccurrence\L3TToccurrenceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

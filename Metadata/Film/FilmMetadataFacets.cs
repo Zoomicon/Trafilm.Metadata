@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160516
+//Version: 20160525
 
 namespace Trafilm.Metadata
 {
@@ -22,16 +22,16 @@ namespace Trafilm.Metadata
     public const string FACET_BOX_OFFICE = "Box office";
     public const string FACET_YEAR = "Year";
 
-    public const string FACET_SOURCE_LANGUAGES = "Source languages";
+    public const string FACET_L1_LANGUAGE = "L1/Source language";
 
     public const string FACET_YEAR_TRANSLATED = "Year translated";
-    public const string FACET_DUBBED_LANGUAGES = "Dubbed languages";
-    public const string FACET_SUBTITLED_LANGUAGES = "Subtitled languages";
+    public const string FACET_L2_DUBBED_LANGUAGES = "L2-Dubbed languages";
+    public const string FACET_L2_SUBTITLED_LANGUAGES = "L2-Subtitled languages";
 
     //Calculatable from Conversations//
 
-    public const string FACET_CONVERSATION_COUNT = "Conversation count";
-    public const string FACET_CONVERSATIONS_DURATION = "Conversations duration (h:m:s.f)";
+    public const string FACET_CONVERSATION_COUNT = "Conversations: count";
+    public const string FACET_CONVERSATIONS_DURATION = "Conversations: duration (h:m:s.f)";
   }
 
 }

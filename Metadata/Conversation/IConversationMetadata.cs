@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IConversationMetadata.cs
-//Version: 20160512
+//Version: 20160525
 
 using System;
 
@@ -21,17 +21,17 @@ namespace Trafilm.Metadata.Models
     bool L2languagePresent { get; set; }
 
     string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
-    string L3speakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
+    string L3STspeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
 
-    //Calculatable from L3occurrences//
+    //Calculatable from L3SToccurrences//
 
-    int L3languagesCount { get; set; }
-    string[] L3languages { get; set; }
+    int L3STlanguagesCount { get; set; }
+    string[] L3STlanguages { get; set; }
 
-    int L3languageTypesCount { get; set; }
-    string[] L3languageTypes { get; set; }
+    int L3STlanguageTypesCount { get; set; }
+    string[] L3STlanguageTypes { get; set; }
 
-    int L3occurrenceCount { get; set; }
+    int L3SToccurrenceCount { get; set; }
 
     #endregion
 
