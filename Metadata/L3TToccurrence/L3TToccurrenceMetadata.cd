@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Trafilm.Metadata.TrafilmMetadata">
+    <Position X="4" Y="9.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <FileName>Metadata\TrafilmMetadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Metadata.CXML.CXMLMetadata">
+    <Position X="0.5" Y="8.25" Width="3.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Trafilm.Metadata.L3TToccurrence">
+    <Position X="11" Y="3.5" Width="2.5" />
+    <InheritanceLine Type="Trafilm.Metadata.L3TToccurrenceMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.875" Y="6.25" />
+        <Point X="11.875" Y="4.733" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LinkedData\L3TToccurrence\L3TToccurrence.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Trafilm.Metadata.L3TToccurrenceMetadataFacets">
+    <Position X="4.25" Y="3.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>CFCAABAAAAAAAAABAAA0EAIBCAAAAAAkAAAgQAIAIAo=</HashCode>
+      <FileName>Metadata\L3TToccurrence\L3TToccurrenceMetadataFacets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trafilm.Metadata.L3TToccurrenceMetadata">
+    <Position X="8.25" Y="6.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>BAACgACEFBCAAAgAAhEhJAAAAAgIAAAZAIgAACBAAAA=</HashCode>
+      <FileName>Metadata\L3TToccurrence\L3TToccurrenceMetadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Trafilm.Metadata.Models.IL3TToccurrenceMetadata">
+    <Position X="8.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAACEFACAAAAAAhEhIAAAAAgIAAAZAIgAACAAAAA=</HashCode>
+      <FileName>Metadata\L3TToccurrence\IL3TToccurrenceMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
+      <FileName>Metadata\ITrafilmMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Metadata.CXML.ICXMLMetadata">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Trafilm.Metadata.Models.IL3TToccurrence">
+    <Position X="11" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LinkedData\L3TToccurrence\IL3TToccurrence.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

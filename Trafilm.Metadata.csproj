@@ -55,22 +55,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="LinkedData\L3TToccurrence\IL3TToccurrence.cs" />
+    <Compile Include="LinkedData\L3TToccurrence\L3TToccurrence.cs" />
+    <Compile Include="Metadata\L3TToccurrence\IL3TToccurrenceMetadata.cs" />
+    <Compile Include="Metadata\L3TToccurrence\L3TToccurrenceMetadata.cs" />
+    <Compile Include="Metadata\L3TToccurrence\L3TToccurrenceMetadataFacets.cs" />
     <Compile Include="Utils\Converters.cs" />
-    <Compile Include="Models\IFilm.cs" />
-    <Compile Include="Models\IConversation.cs" />
+    <Compile Include="LinkedData\Film\IFilm.cs" />
+    <Compile Include="LinkedData\Conversation\IConversation.cs" />
     <Compile Include="Metadata\Conversation\ConversationMetadata.cs" />
     <Compile Include="Metadata\Conversation\ConversationMetadataFacets.cs" />
     <Compile Include="Metadata\Conversation\IConversationMetadata.cs" />
     <Compile Include="Metadata\TrafilmMetadata.cs" />
     <Compile Include="Metadata\TrafilmMetadataFacets.cs" />
     <Compile Include="Metadata\ITrafilmMetadata.cs" />
-    <Compile Include="Models\IL3occurrence.cs" />
-    <Compile Include="Metadata\L3occurrence\L3occurrenceMetadata.cs" />
-    <Compile Include="Metadata\L3occurrence\L3occurrenceMetadataFacets.cs" />
-    <Compile Include="Metadata\L3occurrence\IL3occurrenceMetadata.cs" />
-    <Compile Include="Objects\L3occurrence.cs" />
-    <Compile Include="Objects\Conversation.cs" />
-    <Compile Include="Objects\Film.cs" />
+    <Compile Include="LinkedData\L3SToccurence\IL3SToccurrence.cs" />
+    <Compile Include="Metadata\L3SToccurrence\L3SToccurrenceMetadata.cs" />
+    <Compile Include="Metadata\L3SToccurrence\L3SToccurrenceMetadataFacets.cs" />
+    <Compile Include="Metadata\L3SToccurrence\IL3SToccurrenceMetadata.cs" />
+    <Compile Include="LinkedData\L3SToccurence\L3SToccurrence.cs" />
+    <Compile Include="LinkedData\Conversation\Conversation.cs" />
+    <Compile Include="LinkedData\Film\Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Metadata\Film\IFilmMetadata.cs" />
     <Compile Include="Metadata\Film\FilmMetadata.cs" />
@@ -89,14 +94,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Metadata\L3TToccurrence\L3TToccurrenceMetadata.cd" />
     <None Include="Utils\Utils.cd" />
     <None Include="Metadata\Conversation\ConversationMetadata.cd" />
     <None Include="Metadata\TrafilmMetadata.cd" />
     <None Include="Facets.cd" />
-    <None Include="Metadata\L3occurrence\L3occurrenceMetadata.cd" />
-    <None Include="Models\Models.cd" />
+    <None Include="Metadata\L3SToccurrence\L3SToccurrenceMetadata.cd" />
+    <None Include="LinkedData\Models.cd" />
     <None Include="Metadata\Film\FilmMetadata.cd" />
-    <None Include="Objects\Objects.cd" />
+    <None Include="LinkedData\Objects.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +111,7 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

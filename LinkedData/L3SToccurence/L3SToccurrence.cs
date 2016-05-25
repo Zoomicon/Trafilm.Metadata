@@ -1,5 +1,5 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: L3occurrence.cs
+//Filename: L3SToccurrence.cs
 //Version: 20160524
 
 using Trafilm.Metadata.Models;
@@ -7,7 +7,7 @@ using Trafilm.Metadata.Models;
 namespace Trafilm.Metadata
 {
 
-  public class L3occurrence : L3occurrenceMetadata, IL3occurrence
+  public class L3SToccurrence : L3SToccurrenceMetadata, IL3SToccurrence
   {
 
     #region --- Properties ---

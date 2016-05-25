@@ -3,7 +3,7 @@
   <Class Name="Trafilm.Metadata.FilmMetadata">
     <Position X="8.25" Y="5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CAIAgBEABBACAAiEAAAAIAgAAAAAFBEEAAAAAgBAACA=</HashCode>
+      <HashCode>CAIAgBAABBACAAiEAAAAAAQAgAAAFBEEAgAAAgBAACA=</HashCode>
       <FileName>Metadata\Film\FilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,7 +11,7 @@
   <Class Name="Trafilm.Metadata.FilmMetadataFacets">
     <Position X="4.5" Y="3" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>wAAAAAAAAAAAAQAAAgABAgFAAAAgFAAABAABAAAAIIA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAQAAIAABAgFAAAAgBAAABAQBAAAAIIA=</HashCode>
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -32,14 +32,14 @@
     <Position X="11.5" Y="2.75" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\Film.cs</FileName>
+      <FileName>LinkedData\Film\Film.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Trafilm.Metadata.Models.IFilmMetadata">
-    <Position X="8.25" Y="0.5" Width="2.75" />
+    <Position X="8.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAIAABEABAACAACEAAAAIAgAAAAAFBEEAAAAAgAAAAA=</HashCode>
+      <HashCode>AAIAABAABAACAACEAAAAAAQAgAAAFBEEAgAAAgAAAAA=</HashCode>
       <FileName>Metadata\Film\IFilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -47,7 +47,7 @@
     <Position X="11.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\IFilm.cs</FileName>
+      <FileName>LinkedData\Film\IFilm.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
