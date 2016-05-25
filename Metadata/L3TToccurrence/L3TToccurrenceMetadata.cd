@@ -17,8 +17,8 @@
     <Position X="11" Y="3.5" Width="2.5" />
     <InheritanceLine Type="Trafilm.Metadata.L3TToccurrenceMetadata" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="11.875" Y="6.25" />
-        <Point X="11.875" Y="4.733" />
+        <Point X="11.438" Y="6.25" />
+        <Point X="11.438" Y="4.733" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -28,16 +28,16 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.L3TToccurrenceMetadataFacets">
-    <Position X="4.25" Y="3.25" Width="3.5" />
+    <Position X="4.25" Y="3.25" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CFCAABAAAAAAAAABAAA0EAIBCAAAAAAkAAAgQAIAIAo=</HashCode>
+      <HashCode>CFCAABAAAAAAAAgBAAA0EAIBCAAAAAAkAAAgQAIAIAo=</HashCode>
       <FileName>Metadata\L3TToccurrence\L3TToccurrenceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.L3TToccurrenceMetadata">
-    <Position X="8.25" Y="6.25" Width="4.25" />
+    <Position X="8.25" Y="6.25" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>BAACgACEFBCAAAgAAhEhJAAAAAgIAAAZAIgAACBAAAA=</HashCode>
+      <HashCode>BAACgACEFBCAAAgAAhEhIAAAAAgIAAAZAIgAACBAAAA=</HashCode>
       <FileName>Metadata\L3TToccurrence\L3TToccurrenceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -61,7 +61,7 @@
     <TypeIdentifier />
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IL3TToccurrence">
-    <Position X="11" Y="0.5" Width="2" />
+    <Position X="11" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LinkedData\L3TToccurrence\IL3TToccurrence.cs</FileName>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Trafilm.Metadata.ConversationMetadata">
-    <Position X="8.25" Y="5.5" Width="4.25" />
+    <Position X="8.25" Y="5.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CEAEkAAAEBACAAogAACAAACAKAAAAAAAhAACAABAACA=</HashCode>
+      <HashCode>CEAAkAAAEBACAAogAACAAACAKAAAAAAAhAACAABAACA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,12 +11,12 @@
   <Class Name="Trafilm.Metadata.ConversationMetadataFacets">
     <Position X="4.25" Y="3.25" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAACAAACAAAAAAAAAAAAGgAgAABAEAAAAAACQAAAkAA=</HashCode>
+      <HashCode>AAACAAACAAAAAAgAAAAAGgAgAABAEAAAAAACQAAAkAA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
-    <Position X="4" Y="7" Width="4" />
+    <Position X="4" Y="7.5" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
@@ -24,7 +24,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="5.75" Width="3.25" />
+    <Position X="0.5" Y="6.5" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>

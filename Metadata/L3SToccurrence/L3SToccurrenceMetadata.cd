@@ -28,16 +28,16 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.L3SToccurrenceMetadataFacets">
-    <Position X="4.25" Y="3.25" Width="3.5" />
+    <Position X="4.25" Y="3.25" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CFCAAAAAAAAAAAABAAAkEgAhAAAAAAAEAAAgQAIAAAI=</HashCode>
+      <HashCode>CFCAAAAAAAAAAAgBAAAkEgAhAAAAAAAEAAAgQAIAAAI=</HashCode>
       <FileName>Metadata\L3SToccurrence\L3SToccurrenceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.L3SToccurrenceMetadata">
-    <Position X="8.25" Y="6" Width="4.25" />
+    <Position X="8.25" Y="6" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CAACkAAEFBCCAAgAAhAgJAAAIAgAAAAJAIgAAABAAAA=</HashCode>
+      <HashCode>CAACkAAEFBCCAAgAAhAgIAAAIAgAAAAJAIgAAABAAAA=</HashCode>
       <FileName>Metadata\L3SToccurrence\L3SToccurrenceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

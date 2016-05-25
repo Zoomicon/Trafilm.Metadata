@@ -111,7 +111,7 @@ namespace Trafilm.Metadata
 
     public override IEnumerable<XElement> GetCXMLFacetCategories() //the following also defines the order in which facets appear in PivotViewer's filters pane
     {
-      return MakeConversationFacetCategories();
+      return ConversationMetadataFacets.GetCXMLFacetCategories();
     }
 
     public override IEnumerable<XElement> GetCXMLFacets(IList<XElement> facets = null)
@@ -141,47 +141,6 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_OCCURRENCE_COUNT, L3SToccurrenceCount.ToString()));
 
       return facets;
-    }
-
-    #endregion
-
-    #region --- Helpers ---
-
-    public static IEnumerable<XElement> MakeConversationFacetCategories() //the following also defines the order in which filters appear in PivotViewer's filter pane
-    {
-      IList<XElement> result = new List<XElement>();
-
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
-
-      //
-
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_START_TIME, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L1_LANGUAGE_PRESENT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L2_LANGUAGE_PRESENT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_SPEAKING_CHARACTERS_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_SPEAKING_CHARACTERS_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_OCCURRENCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-
-      //
-
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_KEYWORDS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_CREATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_UPDATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-
-      return result;
     }
 
     #endregion
