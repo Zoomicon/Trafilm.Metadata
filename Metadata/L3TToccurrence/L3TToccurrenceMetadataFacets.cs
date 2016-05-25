@@ -2,11 +2,18 @@
 //Filename: L3TToccurrenceMetadataFacets.cs
 //Version: 20160525
 
+using Metadata.CXML;
+using System.Collections.Generic;
+using System.Xml.Linq;
+
 namespace Trafilm.Metadata
 {
 
   public static class L3TToccurrenceMetadataFacets
   {
+
+    #region --- Constants ---
+
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
     public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";
     public const string FACET_L3ST_OCCURRENCE_REFERENCE_ID = "L3ST-occurrence Reference Id";
@@ -41,6 +48,65 @@ namespace Trafilm.Metadata
 
     public const string FACET_L3ST_MODE_CHANGE = "L3ST mode change";
     public const string FACET_L3ST_FUNCTIONS_CHANGE = "L3ST functions change";
+
+    #endregion
+
+    #region --- Methods ---
+
+    public static IEnumerable<XElement> GetCXMLFacetCategories() //the following also defines the order in which filters appear in PivotViewer's filter pane
+    {
+      IList<XElement> result = new List<XElement>();
+
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
+
+      //
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3ST_OCCURRENCE_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L2_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L2_MODE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L2_SAME_AS_L3ST, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3ST_CONVEYED_AS_L3TT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_LANGUAGE_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_CONSTRUCTED_BASED_ON, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_AUDIENCE_UNDERSTANDING, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_MESSAGE_UNDERSTANDING, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_MEANING_DECIPHERABLE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_SPEAKER_PERFORMANCE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_MODE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_REPRESENTED, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_REPRESENTATIONS_ORAL, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_REPRESENTATIONS_VISUAL, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3TT_FUNCTIONS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      //Calculatable from L3SToccurrence//
+
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3ST_MODE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TToccurrenceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      //
+
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_KEYWORDS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_CREATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_UPDATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      return result;
+    }
+
+    #endregion
 
   }
 
