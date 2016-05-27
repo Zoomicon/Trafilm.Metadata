@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadata.cs
-//Version: 20160525
+//Version: 20160527
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -37,14 +37,17 @@ namespace Trafilm.Metadata
     public string[] ProductionCompanies { get; set; }
 
     public string BoxOffice { get; set; }
-    public int? Year { get; set; }
+    public int? YearSTreleased { get; set; }
 
     public string L1language { get; set; }
 
-    public int? YearTranslated { get; set; }
+    public int? YearTTreleased_Spain { get; set; }
+
+    //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+
     public string[] L2dubbedLanguages { get; set; }
     public string[] L2subtitledLanguages { get; set; }
-
+    
     //Calculatable from Conversations//
 
     public int ConversationCount { get; set; }
@@ -71,13 +74,11 @@ namespace Trafilm.Metadata
       ProductionCompanies = new string[] { };
 
       BoxOffice = "";
-      Year = null;
+      YearSTreleased = null;
 
       L1language = "";
 
-      YearTranslated = null;
-      L2dubbedLanguages = new string[] { };
-      L2subtitledLanguages = new string[] { };
+      YearTTreleased_Spain = null;
 
       //note: don't call ClearCalculated here, has been called by base.Clear() already
     }
@@ -85,6 +86,9 @@ namespace Trafilm.Metadata
     public override void ClearCalculated()
     {
       base.ClearCalculated();
+
+      L2dubbedLanguages = new string[] { };
+      L2subtitledLanguages = new string[] { };
 
       ConversationCount = 0;
       ConversationsDuration = TimeSpan.Zero;
@@ -109,13 +113,18 @@ namespace Trafilm.Metadata
       ProductionCompanies = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES);
 
       BoxOffice = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_BOX_OFFICE);
-      Year = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR).ToNullableInt();
+      YearSTreleased = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR_ST_RELEASED).ToNullableInt();
 
       L1language = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_L1_LANGUAGE);
 
-      YearTranslated = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR_TRANSLATED).ToNullableInt();
+      YearTTreleased_Spain = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR_TT_RELEASED_SPAIN).ToNullableInt();
+
+      //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+
       L2dubbedLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_L2_DUBBED_LANGUAGES);
       L2subtitledLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_L2_SUBTITLED_LANGUAGES);
+      
+      //Calculatable from Conversations//
 
       ConversationCount = int.Parse(facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_CONVERSATION_COUNT));
       ConversationsDuration = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_CONVERSATIONS_DURATION).ToNullableTimeSpan(ConversationMetadata.DEFAULT_DURATION_FORMAT);
@@ -148,13 +157,18 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES, ProductionCompanies));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_BOX_OFFICE, BoxOffice));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR, Year.ToString())); //for nullable types, ToString() method returns "" if HasValue is false
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, YearSTreleased.ToString())); //for nullable types, ToString() method returns "" if HasValue is false
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_L1_LANGUAGE, L1language));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR_TRANSLATED, YearTranslated.ToString())); //for nullable types, ToString() method returns "" if HasValue is false
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR_TT_RELEASED_SPAIN, YearTTreleased_Spain.ToString())); //for nullable types, ToString() method returns "" if HasValue is false
+
+      //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_L2_DUBBED_LANGUAGES, L2dubbedLanguages));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_L2_SUBTITLED_LANGUAGES, L2subtitledLanguages));
+
+      //Calculatable from Conversations//
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_CONVERSATION_COUNT, ConversationCount.ToString()));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_CONVERSATIONS_DURATION, ConversationsDuration.ToString(DEFAULT_DURATION_FORMAT)));

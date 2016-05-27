@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IFilmMetadata.cs
-//Version: 20160525
+//Version: 20160527
 
 using System;
 
@@ -25,11 +25,14 @@ namespace Trafilm.Metadata.Models
     string[] ProductionCompanies { get; set; }
 
     string BoxOffice { get; set; }
-    int? Year { get; set; }
+    int? YearSTreleased { get; set; }
 
     string L1language { get; set; }
 
-    int? YearTranslated { get; set; }
+    int? YearTTreleased_Spain { get; set; }
+
+    //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+
     string[] L2dubbedLanguages { get; set; }
     string[] L2subtitledLanguages { get; set; }
 

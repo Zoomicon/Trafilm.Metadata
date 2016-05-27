@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Film.cs
-//Version: 20160522
+//Version: 20160527
 
 using Trafilm.Metadata.Models;
 
@@ -38,8 +38,11 @@ namespace Trafilm.Metadata
           ConversationCount = value.Count();
 
           ConversationsDuration = value.Aggregate(TimeSpan.Zero, (total, next) => total.Add(next.Duration ?? TimeSpan.Zero));
-          
-          //...
+
+          //Calculated from Conversations.L3SToccurrences.L3TToccurrences//
+
+          L2dubbedLanguages = new string[] { }; //TODO
+          L2subtitledLanguages = new string[] { }; //TODO
         }
         else
           ClearCalculated();

@@ -27,14 +27,17 @@ namespace Trafilm.Metadata
     public const string FACET_PRODUCTION_COMPANIES = "Production companies";
 
     public const string FACET_BOX_OFFICE = "Box office";
-    public const string FACET_YEAR = "Year";
+    public const string FACET_YEAR_ST_RELEASED = "Year ST released";
 
     public const string FACET_L1_LANGUAGE = "L1 language";
 
-    public const string FACET_YEAR_TRANSLATED = "Year translated";
+    public const string FACET_YEAR_TT_RELEASED_SPAIN = "Year TT released in Spain";
+
+    //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+
     public const string FACET_L2_DUBBED_LANGUAGES = "L2-Dubbed languages";
     public const string FACET_L2_SUBTITLED_LANGUAGES = "L2-Subtitled languages";
-
+    
     //Calculatable from Conversations//
 
     public const string FACET_CONVERSATION_COUNT = "Conversations: count";
@@ -65,18 +68,21 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_BOX_OFFICE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_YEAR, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L1_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_YEAR_TRANSLATED, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L2_DUBBED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L2_SUBTITLED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_YEAR_TT_RELEASED_SPAIN, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //Calculatable from Conversations//
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_CONVERSATION_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_CONVERSATIONS_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L2_DUBBED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L2_SUBTITLED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //
 
