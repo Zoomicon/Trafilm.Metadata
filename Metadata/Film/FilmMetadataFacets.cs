@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160525
+//Version: 20160527
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Trafilm.Metadata
     public const string FACET_BOX_OFFICE = "Box office";
     public const string FACET_YEAR = "Year";
 
-    public const string FACET_L1_LANGUAGE = "L1/Source language";
+    public const string FACET_L1_LANGUAGE = "L1 language";
 
     public const string FACET_YEAR_TRANSLATED = "Year translated";
     public const string FACET_L2_DUBBED_LANGUAGES = "L2-Dubbed languages";
