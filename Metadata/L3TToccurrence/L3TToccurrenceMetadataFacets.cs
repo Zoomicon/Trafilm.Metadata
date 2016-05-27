@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TToccurrenceMetadataFacets.cs
-//Version: 20160525
+//Version: 20160527
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -38,11 +38,11 @@ namespace Trafilm.Metadata
 
     public const string FACET_L3TT_MODE = "L3TT mode";
 
-    public const string FACET_L3TT_REPRESENTED = "L3 represented";
-    public const string FACET_L3TT_REPRESENTATIONS_ORAL = "L3 oral representations";
-    public const string FACET_L3TT_REPRESENTATIONS_VISUAL = "L3 visual representations";
+    public const string FACET_L3TT_REPRESENTED = "L3TT represented";
+    public const string FACET_L3TT_REPRESENTATIONS_ORAL = "L3TT oral representations";
+    public const string FACET_L3TT_REPRESENTATIONS_VISUAL = "L3TT visual representations";
 
-    public const string FACET_L3TT_FUNCTIONS = "L3 functions";
+    public const string FACET_L3TT_FUNCTIONS = "L3TT functions";
 
     //Calculatable from L3SToccurrence//
 
