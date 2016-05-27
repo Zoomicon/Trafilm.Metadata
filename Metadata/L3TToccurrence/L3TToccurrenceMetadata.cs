@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TToccurrenceMetadata.cs
-//Version: 20160526
+//Version: 20160527
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
