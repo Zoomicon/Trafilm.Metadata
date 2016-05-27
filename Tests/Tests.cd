@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.Tests.Helpers">
-    <Position X="3" Y="2.5" Width="3.75" />
+    <Position X="6" Y="2.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAQAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Helpers.cs</FileName>
@@ -33,6 +33,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>TestL3TToccurrence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trafilm.Metadata.Tests.TestDiff">
+    <Position X="0.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TestDiff.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

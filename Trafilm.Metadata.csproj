@@ -60,6 +60,7 @@
     <Compile Include="Metadata\L3TToccurrence\IL3TToccurrenceMetadata.cs" />
     <Compile Include="Metadata\L3TToccurrence\L3TToccurrenceMetadata.cs" />
     <Compile Include="Metadata\L3TToccurrence\L3TToccurrenceMetadataFacets.cs" />
+    <Compile Include="Utils\Diff.cs" />
     <Compile Include="Utils\Converters.cs" />
     <Compile Include="LinkedData\Film\IFilm.cs" />
     <Compile Include="LinkedData\Conversation\IConversation.cs" />
