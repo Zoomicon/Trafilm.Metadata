@@ -18,6 +18,8 @@ namespace Trafilm.Metadata.Models
     TimeSpan? StartTime { get; set; }
     TimeSpan? Duration { get; set; }
 
+    string L1language { get; set; } //Calculatable from Film
+
     string L3STlanguageType { get; set; } //e.g. real, constructed, variety (real dialect, slang or other)
     string L3STlanguage { get; set; }
 
