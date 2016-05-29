@@ -8,9 +8,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.Utils.Diff">
-    <Position X="5.25" Y="0.5" Width="3.25" />
+    <Position X="0.5" Y="2.75" Width="9" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAQBAQAAAAAA=</HashCode>
       <FileName>Utils\Diff.cs</FileName>
     </TypeIdentifier>
   </Class>
