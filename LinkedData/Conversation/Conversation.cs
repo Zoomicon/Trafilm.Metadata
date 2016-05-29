@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Conversation.cs
-//Version: 20160526
+//Version: 20160529
 
 using Trafilm.Metadata.Models;
 
@@ -22,6 +22,7 @@ namespace Trafilm.Metadata
     #region --- Properties ---
 
     public IFilm Film { get; set; }
+
     public IEnumerable<IL3SToccurrence> L3SToccurrences
     {
       get
@@ -38,10 +39,25 @@ namespace Trafilm.Metadata
         {
           L3SToccurrenceCount = value.Count();
 
-          L3STlanguages = value.Aggregate(new List<string>(), (total, next) => { if (!string.IsNullOrEmpty(next.L3STlanguage) && !total.Contains(next.L3STlanguage)) total.Add(next.L3STlanguage); return total; } ).ToArray();
-          L3STlanguagesCount = L3STlanguages.Count();
+          IList<string> languages = new List<string>();
+          IList<string> languageTypes = new List<string>();
+          foreach(L3SToccurrence l3SToccurrence in L3SToccurrences)
+            if (l3SToccurrence != null)
+            {
+              string language = l3SToccurrence.L3STlanguage;
+              if (!string.IsNullOrEmpty(language) &&
+                  !languages.Contains(language))
+                languages.Add(language);
 
-          L3STlanguageTypes = value.Aggregate(new List<string>(), (total, next) => { if (!string.IsNullOrEmpty(next.L3STlanguageType) && !total.Contains(next.L3STlanguageType)) total.Add(next.L3STlanguageType); return total; }).ToArray();
+              string languageType = l3SToccurrence.L3STlanguageType;
+              if (!string.IsNullOrEmpty(languageType) &&
+                  !languageTypes.Contains(languageType))
+                languageTypes.Add(languageType);
+            }
+          L3STlanguages = languages.ToArray();
+          L3STlanguageTypes = languageTypes.ToArray();
+
+          L3STlanguagesCount = L3STlanguages.Count();
           L3STlanguageTypesCount = L3STlanguageTypes.Count();
 
           //...
