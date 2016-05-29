@@ -2,8 +2,6 @@
 //Filename: IL3TToccurrenceMetadata.cs
 //Version: 20160529
 
-using System;
-
 namespace Trafilm.Metadata.Models
 {
 
@@ -44,7 +42,7 @@ namespace Trafilm.Metadata.Models
 
     //Calculatable from L3SToccurrence//
 
-    string L3STlanguageTypeChange { get; set; }
+    string[] L3STlanguageTypeChange { get; set; }
     string[] L3STmodeChange { get; set;  }
     string[] L3STfunctionsChange { get; set; }
 

@@ -48,7 +48,7 @@ namespace Trafilm.Metadata
 
     //Calculatable from L3SToccurrence//
 
-    public string L3STlanguageTypeChange { get; set; }
+    public string[] L3STlanguageTypeChange { get; set; }
     public string[] L3STmodeChange { get; set; }
     public string[] L3STfunctionsChange { get; set; }
 
@@ -97,7 +97,7 @@ namespace Trafilm.Metadata
     {
       base.ClearCalculated();
 
-      L3STlanguageTypeChange = "";
+      L3STlanguageTypeChange = new string[] { };
       L3STmodeChange = new string[] { };
       L3STfunctionsChange = new string[] { };
     }
@@ -140,7 +140,7 @@ namespace Trafilm.Metadata
 
       //Calculatable from L3SToccurrence//
 
-      L3STlanguageTypeChange = facets.CXMLFacetStringValue(L3TToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE);
+      L3STlanguageTypeChange = facets.CXMLFacetStringValues(L3TToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE);
       L3STmodeChange = facets.CXMLFacetStringValues(L3TToccurrenceMetadataFacets.FACET_L3ST_MODE_CHANGE); 
       L3STfunctionsChange = facets.CXMLFacetStringValues(L3TToccurrenceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE);
 
