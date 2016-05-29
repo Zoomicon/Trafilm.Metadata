@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TestDiff.cs
-//Version: 20160527
+//Version: 20160529
 
 using Trafilm.Metadata.Utils;
 
@@ -16,7 +16,9 @@ namespace Trafilm.Metadata.Tests
     {
       Assert.AreEqual("None", Diff.GetDifference("a", "a"));
       Assert.AreEqual("a -> b", Diff.GetDifference("a", "b"));
-      Assert.AreEqual("b -> a", Diff.GetDifference("b", "a"));
+
+      CollectionAssert.AreEqual(new string[] { "None" }, Diff.GetDifferences("a", "a"));
+      CollectionAssert.AreEqual(new string[] { "- a", "+ b"}, Diff.GetDifferences("a", "b"));
     }
 
     [TestMethod]
