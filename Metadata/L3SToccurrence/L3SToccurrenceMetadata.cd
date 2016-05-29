@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
-    <Position X="4" Y="8.75" Width="4" />
+    <Position X="4" Y="9" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <HashCode>AAAAgAAAABAABAiAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="7.75" Width="3.25" />
+    <Position X="0.5" Y="8.5" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -17,14 +17,14 @@
     <Position X="11" Y="3.5" Width="3.5" />
     <InheritanceLine Type="Trafilm.Metadata.L3SToccurrenceMetadata" FixedFromPoint="true">
       <Path>
-        <Point X="10.875" Y="6" />
-        <Point X="10.875" Y="5.606" />
-        <Point X="12.75" Y="5.606" />
-        <Point X="12.75" Y="5.231" />
+        <Point X="10.812" Y="6" />
+        <Point X="10.812" Y="5.809" />
+        <Point X="12.75" Y="5.809" />
+        <Point X="12.75" Y="5.569" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAgAACAIAAAAAAAAAAAA=</HashCode>
       <FileName>LinkedData\L3SToccurence\L3SToccurrence.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -32,14 +32,14 @@
   <Class Name="Trafilm.Metadata.L3SToccurrenceMetadataFacets">
     <Position X="4.25" Y="3.25" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CFCAAAAAAAAAAAgBAAAkEgAhAABAAAAEAAAgQAIAAAI=</HashCode>
+      <HashCode>CFCAAAAAAAAAAAgBAAAkEgAhAABAAAAEAAQgQAIAAAI=</HashCode>
       <FileName>Metadata\L3SToccurrence\L3SToccurrenceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.L3SToccurrenceMetadata">
     <Position X="8.25" Y="6" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CAACkAAEFBCCAAgAAhAgIACAIAgAAAAJAIgAAABAACA=</HashCode>
+      <HashCode>CAAGkAAEFBCCAAgAChAgIACAIAgAAAAJAogAAABAACA=</HashCode>
       <FileName>Metadata\L3SToccurrence\L3SToccurrenceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

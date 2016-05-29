@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3SToccurrenceMetadata.cs
-//Version: 20160526
+//Version: 20160529
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -30,6 +30,8 @@ namespace Trafilm.Metadata
 
     public TimeSpan? StartTime { get; set; }
     public TimeSpan? Duration { get; set; }
+
+    public string L1language { get; set; } //Calculatable from Film
 
     public string L3STlanguageType { get; set; } //e.g. real, constructed, variety (real dialect, slang or other)
     public string L3STlanguage { get; set; }
@@ -82,7 +84,7 @@ namespace Trafilm.Metadata
       L3STmode = new string[] { };
 
       L3STrepresented = new string[] { };
-      L3STrepresentationsOral= new string[] { };
+      L3STrepresentationsOral = new string[] { };
       L3STrepresentationsVisual = new string[] { };
 
       L3STfunctions = new string[] { };
@@ -94,6 +96,17 @@ namespace Trafilm.Metadata
     {
       base.ClearCalculated();
 
+      ClearCalculatedFromFilm();
+      ClearCalculatedFromL3TToccurrences();
+    }
+
+    public void ClearCalculatedFromFilm()
+    {
+      L1language = "";
+    }
+
+    public void ClearCalculatedFromL3TToccurrences()
+    {
       L3TToccurrenceCount = 0;
     }
 
@@ -108,6 +121,8 @@ namespace Trafilm.Metadata
 
       StartTime = facets.CXMLFacetStringValue(L3SToccurrenceMetadataFacets.FACET_START_TIME).ToNullableTimeSpan(DEFAULT_POSITION_FORMAT);
       Duration = facets.CXMLFacetStringValue(L3SToccurrenceMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_DURATION_FORMAT);
+
+      L1language = facets.CXMLFacetStringValue(L3SToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE); //Calculatable from Film
 
       L3STlanguageType = facets.CXMLFacetStringValue(L3SToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE);
       L3STlanguage = facets.CXMLFacetStringValue(L3SToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE);
@@ -152,6 +167,8 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3SToccurrenceMetadataFacets.FACET_START_TIME, StartTime.ToString(DEFAULT_POSITION_FORMAT)));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3SToccurrenceMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_DURATION_FORMAT)));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3SToccurrenceMetadataFacets.FACET_L1_LANGUAGE, L1language)); //Calculatable from Film
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3SToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE, L3STlanguageType));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3SToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE, L3STlanguage));

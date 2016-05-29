@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3SToccurrenceMetadataFacets.cs
-//Version: 20160526
+//Version: 20160529
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -20,6 +20,8 @@ namespace Trafilm.Metadata
     public const string FACET_START_TIME = "Start time (h:m:s.f)";
     public const string FACET_DURATION = "Duration (h:m:s.f)";
 
+    public const string FACET_L1_LANGUAGE = "L1 language"; //Calculatable from Film
+
     public const string FACET_L3ST_LANGUAGE_TYPE = "L3ST language type"; //e.g. real, constructed, variety (real dialect, slang or other)
     public const string FACET_L3ST_LANGUAGE = "L3ST language";
 
@@ -34,8 +36,8 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_MODE = "L3ST mode";
 
     public const string FACET_L3ST_REPRESENTED = "L3ST represented";
-    public const string FACET_L3ST_REPRESENTATIONS_ORAL = "L3ST oral representations";
-    public const string FACET_L3ST_REPRESENTATIONS_VISUAL = "L3ST visual representations";
+    public const string FACET_L3ST_REPRESENTATIONS_ORAL = "L3ST represented: oral";
+    public const string FACET_L3ST_REPRESENTATIONS_VISUAL = "L3ST represented: visual";
 
     public const string FACET_L3ST_FUNCTIONS = "L3ST functions";
 
@@ -60,6 +62,8 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(L3SToccurrenceMetadataFacets.FACET_START_TIME, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(L3SToccurrenceMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(L3SToccurrenceMetadataFacets.FACET_L1_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true)); //Calculatable from Film
 
       result.Add(CXML.MakeFacetCategory(L3SToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3SToccurrenceMetadataFacets.FACET_L3ST_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));

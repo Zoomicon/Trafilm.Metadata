@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3SToccurrence.cs
-//Version: 20160526
+//Version: 20160529
 
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +14,34 @@ namespace Trafilm.Metadata
 
     #region --- Fields ---
 
+    protected IConversation conversation; //=null
     protected IEnumerable<IL3TToccurrence> l3TToccurrences; //=null
 
     #endregion
 
     #region --- Properties ---
 
-    public IConversation Conversation { get; set; }
+    public IConversation Conversation
+    {
+      get
+      {
+        return Conversation;
+      }
+      set
+      {
+        conversation = value;
+
+        //Calculated from Film//
+
+        if ((value != null) && (value.Film != null))
+        {
+          L1language = value.Film.L1language;
+          //...
+        }
+        else
+          ClearCalculatedFromFilm(); //con't call ClearCalculated() here, since we also calculate facet values at "L3TToccurrences" property
+      }
+    }
 
     public IEnumerable<IL3TToccurrence> L3TToccurrences
     {
@@ -32,16 +53,15 @@ namespace Trafilm.Metadata
       {
         l3TToccurrences = value;
 
-        //Calculated from L3SToccurrences//
+        //Calculated from L3TToccurrences//
 
         if (value != null)
         {
           L3TToccurrenceCount = value.Count();
-
           //...
         }
         else
-          ClearCalculated();
+          ClearCalculatedFromL3TToccurrences(); //con't call ClearCalculated() here, since we also calculate facet values at "Conversation" property
       }
     }
 
