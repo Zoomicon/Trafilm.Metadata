@@ -41,7 +41,7 @@ namespace Trafilm.Metadata
     //Calculatable from Conversations//
 
     public const string FACET_CONVERSATION_COUNT = "Conversations: count";
-    public const string FACET_CONVERSATIONS_DURATION = "Conversations: duration (h:m:s.f)";
+    public const string FACET_CONVERSATIONS_DURATION = "Conversations: duration (h:m:s)";
 
     #endregion
 
