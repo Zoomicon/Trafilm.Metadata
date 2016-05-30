@@ -31,7 +31,7 @@ namespace Trafilm.Metadata.Models
 
     int? YearTTreleased_Spain { get; set; }
 
-    //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+    //Calculatable from Conversations.L3STinstances.L3TTinstances//
 
     string[] L2dubbedLanguages { get; set; }
     string[] L2subtitledLanguages { get; set; }

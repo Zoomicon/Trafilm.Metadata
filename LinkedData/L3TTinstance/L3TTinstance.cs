@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: L3TToccurrence.cs
-//Version: 20160529
+//Filename: L3TTinstance.cs
+//Version: 20160530
 
 using Trafilm.Metadata.Models;
 using Trafilm.Metadata.Utils;
@@ -8,28 +8,28 @@ using Trafilm.Metadata.Utils;
 namespace Trafilm.Metadata
 {
 
-  public class L3TToccurrence : L3TToccurrenceMetadata, IL3TToccurrence
+  public class L3TTinstance : L3TTinstanceMetadata, IL3TTinstance
   {
 
     #region --- Fields ---
 
-    protected IL3SToccurrence l3SToccurrence; //=null
+    protected IL3STinstance l3STinstance; //=null
 
     #endregion
 
     #region --- Properties ---
 
-    public IL3SToccurrence L3SToccurrence
+    public IL3STinstance L3STinstance
     {
       get
       {
-        return l3SToccurrence;
+        return l3STinstance;
       }
       set
       {
-        l3SToccurrence = value;
+        l3STinstance = value;
 
-        //Calculated from L3SToccurrence//
+        //Calculated from L3STinstance//
 
         if (value != null)
         {

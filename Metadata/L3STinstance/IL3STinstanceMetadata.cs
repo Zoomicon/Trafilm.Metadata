@@ -1,13 +1,13 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: IL3SToccurrenceMetadata.cs
-//Version: 20160529
+//Filename: IL3STinstanceMetadata.cs
+//Version: 20160530
 
 using System;
 
 namespace Trafilm.Metadata.Models
 {
 
-  public interface IL3SToccurrenceMetadata : ITrafilmMetadata
+  public interface IL3STinstanceMetadata : ITrafilmMetadata
   {
 
     #region --- Properties ---
@@ -39,9 +39,9 @@ namespace Trafilm.Metadata.Models
 
     string[] L3STfunctions { get; set; }
 
-    //Calculatable from L3TToccurrences//
+    //Calculatable from L3TTinstances//
 
-    int L3TToccurrenceCount { get; set; }
+    int L3TTinstanceCount { get; set; }
 
     #endregion
 

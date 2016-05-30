@@ -33,7 +33,7 @@ namespace Trafilm.Metadata
 
     public const string FACET_YEAR_TT_RELEASED_SPAIN = "Year TT released in Spain";
 
-    //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+    //Calculatable from Conversations.L3STinstances.L3TTinstances//
 
     public const string FACET_L2_DUBBED_LANGUAGES = "L2-Dubbed languages";
     public const string FACET_L2_SUBTITLED_LANGUAGES = "L2-Subtitled languages";
@@ -79,7 +79,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_CONVERSATION_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_CONVERSATIONS_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
-      //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+      //Calculatable from Conversations.L3STinstances.L3TTinstances//
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L2_DUBBED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L2_SUBTITLED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));

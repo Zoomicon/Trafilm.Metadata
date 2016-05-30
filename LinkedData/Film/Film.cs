@@ -38,20 +38,20 @@ namespace Trafilm.Metadata
           ConversationCount = value.Count();
           ConversationsDuration = value.Aggregate(TimeSpan.Zero, (total, next) => total.Add(next.Duration ?? TimeSpan.Zero));
 
-          //Calculated from Conversations.L3SToccurrences.L3TToccurrences//
+          //Calculated from Conversations.L3STinstances.L3TTinstances//
 
           IList<string> dubbed = new List<string>();
           IList<string> subtitled = new List<string>();
           foreach (Conversation conversation in value)
-            if ((conversation != null) && (conversation.L3SToccurrences != null))
-              foreach (L3SToccurrence l3SToccurrence in conversation.L3SToccurrences)
-                if ((l3SToccurrence != null) && (l3SToccurrence.L3TToccurrences != null))
-                  foreach (L3TToccurrence l3TToccurrence in l3SToccurrence.L3TToccurrences)
-                    if (l3TToccurrence != null)
+            if ((conversation != null) && (conversation.L3STinstances != null))
+              foreach (L3STinstance l3STinstance in conversation.L3STinstances)
+                if ((l3STinstance != null) && (l3STinstance.L3TTinstances != null))
+                  foreach (L3TTinstance l3TTinstance in l3STinstance.L3TTinstances)
+                    if (l3TTinstance != null)
                     {
-                      string l2language = l3TToccurrence.L2language;
+                      string l2language = l3TTinstance.L2language;
                       if (!string.IsNullOrEmpty(l2language))
-                        switch (l3TToccurrence.L2mode)
+                        switch (l3TTinstance.L2mode)
                         {
                           case "Dubbed":
                             if (!dubbed.Contains(l2language))

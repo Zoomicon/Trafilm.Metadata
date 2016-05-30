@@ -57,9 +57,9 @@
   <ItemGroup>
     <Compile Include="Helpers.cs" />
     <Compile Include="TestDiff.cs" />
-    <Compile Include="TestL3TToccurrence.cs" />
+    <Compile Include="TestL3TTinstance.cs" />
     <Compile Include="TestUtils.cs" />
-    <Compile Include="TestL3SToccurrence.cs" />
+    <Compile Include="TestL3STinstance.cs" />
     <Compile Include="TestConversation.cs" />
     <Compile Include="TestFilm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

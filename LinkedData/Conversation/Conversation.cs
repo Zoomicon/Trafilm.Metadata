@@ -15,7 +15,7 @@ namespace Trafilm.Metadata
 
     #region --- Fields ---
 
-    protected IEnumerable<IL3SToccurrence> l3STOccurrences; //=null
+    protected IEnumerable<IL3STinstance> l3STInstances; //=null
 
     #endregion
 
@@ -23,33 +23,33 @@ namespace Trafilm.Metadata
 
     public IFilm Film { get; set; }
 
-    public IEnumerable<IL3SToccurrence> L3SToccurrences
+    public IEnumerable<IL3STinstance> L3STinstances
     {
       get
       {
-        return l3STOccurrences;
+        return l3STInstances;
       }
       set
       {
-        l3STOccurrences = value;
+        l3STInstances = value;
 
-        //Calculated from L3SToccurrences//
+        //Calculated from L3STinstances//
 
         if (value != null)
         {
-          L3SToccurrenceCount = value.Count();
+          L3STinstanceCount = value.Count();
 
           IList<string> languages = new List<string>();
           IList<string> languageTypes = new List<string>();
-          foreach(L3SToccurrence l3SToccurrence in L3SToccurrences)
-            if (l3SToccurrence != null)
+          foreach(L3STinstance l3STinstance in L3STinstances)
+            if (l3STinstance != null)
             {
-              string language = l3SToccurrence.L3STlanguage;
+              string language = l3STinstance.L3STlanguage;
               if (!string.IsNullOrEmpty(language) &&
                   !languages.Contains(language))
                 languages.Add(language);
 
-              string languageType = l3SToccurrence.L3STlanguageType;
+              string languageType = l3STinstance.L3STlanguageType;
               if (!string.IsNullOrEmpty(languageType) &&
                   !languageTypes.Contains(languageType))
                 languageTypes.Add(languageType);

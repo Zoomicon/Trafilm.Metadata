@@ -25,7 +25,7 @@ namespace Trafilm.Metadata
     public const string FACET_SPEAKING_CHARACTERS_COUNT = "Speaking characters: count";
     public const string FACET_L3ST_SPEAKING_CHARACTERS_COUNT = "L3ST-speaking characters: count";
 
-    //Calculatable from L3SToccurrences//
+    //Calculatable from L3STinstances//
 
     public const string FACET_L3ST_LANGUAGES_COUNT = "L3ST languages: count";
     public const string FACET_L3ST_LANGUAGES = "L3ST languages";
@@ -33,7 +33,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_LANGUAGE_TYPES_COUNT = "L3ST language types: count";
     public const string FACET_L3ST_LANGUAGE_TYPES = "L3ST language types";
 
-    public const string FACET_L3ST_OCCURRENCE_COUNT = "L3ST-occurrences: count";
+    public const string FACET_L3ST_INSTANCE_COUNT = "L3ST-instances: count";
 
     #endregion
 
@@ -58,7 +58,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_SPEAKING_CHARACTERS_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_SPEAKING_CHARACTERS_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      //Calculatable from L3SToccurrences//
+      //Calculatable from L3STinstances//
 
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
@@ -66,7 +66,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_OCCURRENCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       //
 

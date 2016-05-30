@@ -36,7 +36,7 @@ namespace Trafilm.Metadata
     public string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
     public string L3STspeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
 
-    //Calculatable from L3SToccurrences//
+    //Calculatable from L3STinstances//
 
     public int L3STlanguagesCount { get; set; }
     public string[] L3STlanguages { get; set; }
@@ -44,7 +44,7 @@ namespace Trafilm.Metadata
     public int L3STlanguageTypesCount { get; set; }
     public string[] L3STlanguageTypes { get; set; }
 
-    public int L3SToccurrenceCount { get; set; }
+    public int L3STinstanceCount { get; set; }
 
     #endregion
 
@@ -78,7 +78,7 @@ namespace Trafilm.Metadata
       L3STlanguageTypesCount = 0;
       L3STlanguageTypes = new string[] { };
 
-      L3SToccurrenceCount = 0;
+      L3STinstanceCount = 0;
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -104,9 +104,9 @@ namespace Trafilm.Metadata
       L3STlanguageTypesCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT));
       L3STlanguageTypes = facets.CXMLFacetStringValues(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES);
 
-      //Calculatable from L3SToccurrences//
+      //Calculatable from L3STinstances//
 
-      L3SToccurrenceCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_OCCURRENCE_COUNT));
+      L3STinstanceCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT));
 
       return this;
     }
@@ -140,9 +140,9 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT, L3STlanguageTypesCount.ToString()));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES, L3STlanguageTypes));
 
-      //Calculatable from L3SToccurrences//
+      //Calculatable from L3STinstances//
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_OCCURRENCE_COUNT, L3SToccurrenceCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT, L3STinstanceCount.ToString()));
 
       return facets;
     }
