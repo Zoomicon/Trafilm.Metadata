@@ -1,16 +1,16 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: IL3TToccurrence.cs
-//Version: 20160525
+//Filename: IL3TTinstance.cs
+//Version: 20160530
 
 namespace Trafilm.Metadata.Models
 {
 
-  public interface IL3TToccurrence : IL3TToccurrenceMetadata
+  public interface IL3TTinstance : IL3TTinstanceMetadata
   {
 
     #region --- Properties ---
 
-    IL3SToccurrence L3SToccurrence { get; set; }
+    IL3STinstance L3STinstance { get; set; }
 
     #endregion
 

@@ -1,18 +1,18 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
-//Filename: IL3TToccurrenceMetadata.cs
-//Version: 20160529
+//Filename: IL3TTinstanceMetadata.cs
+//Version: 20160530
 
 namespace Trafilm.Metadata.Models
 {
 
-  public interface IL3TToccurrenceMetadata : ITrafilmMetadata
+  public interface IL3TTinstanceMetadata : ITrafilmMetadata
   {
 
     #region --- Properties ---
 
     string FilmReferenceId { get; set; }
     string ConversationReferenceId { get; set; }
-    string L3SToccurrenceReferenceId { get; set; }
+    string L3STinstanceReferenceId { get; set; }
 
     string L2language { get; set; }
     string L2mode { get; set; } //dubbed, subtitled
@@ -40,7 +40,7 @@ namespace Trafilm.Metadata.Models
 
     string[] L3TTfunctions { get; set; }
 
-    //Calculatable from L3SToccurrence//
+    //Calculatable from L3STinstance//
 
     string[] L3STlanguageTypeChange { get; set; }
     string[] L3STmodeChange { get; set;  }

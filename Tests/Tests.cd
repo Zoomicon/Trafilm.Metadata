@@ -14,11 +14,11 @@
       <FileName>TestConversation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.Tests.TestL3SToccurrence">
+  <Class Name="Trafilm.Metadata.Tests.TestL3STinstance">
     <Position X="5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAACIAAAAAAAAAAA=</HashCode>
-      <FileName>TestL3SToccurrence.cs</FileName>
+      <FileName>TestL3STinstance.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.Tests.Helpers">
@@ -28,11 +28,11 @@
       <FileName>Helpers.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.Tests.TestL3TToccurrence">
+  <Class Name="Trafilm.Metadata.Tests.TestL3TTinstance">
     <Position X="7.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
-      <FileName>TestL3TToccurrence.cs</FileName>
+      <FileName>TestL3TTinstance.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.Tests.TestDiff">

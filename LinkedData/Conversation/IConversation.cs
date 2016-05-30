@@ -13,7 +13,7 @@ namespace Trafilm.Metadata.Models
     #region --- Properties ---
 
     IFilm Film { get; set; }
-    IEnumerable<IL3SToccurrence> L3SToccurrences { get; set; }
+    IEnumerable<IL3STinstance> L3STinstances { get; set; }
 
     #endregion
 

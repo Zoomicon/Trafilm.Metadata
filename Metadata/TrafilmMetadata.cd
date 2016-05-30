@@ -3,7 +3,7 @@
   <Class Name="Trafilm.Metadata.TrafilmMetadata" BaseTypeListCollapsed="true">
     <Position X="4.25" Y="5.5" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <HashCode>AAAAgAAAABAABAiAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -16,7 +16,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="4.5" Width="3.25" />
+    <Position X="0.5" Y="5" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>

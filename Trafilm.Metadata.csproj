@@ -55,11 +55,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LinkedData\L3TToccurrence\IL3TToccurrence.cs" />
-    <Compile Include="LinkedData\L3TToccurrence\L3TToccurrence.cs" />
-    <Compile Include="Metadata\L3TToccurrence\IL3TToccurrenceMetadata.cs" />
-    <Compile Include="Metadata\L3TToccurrence\L3TToccurrenceMetadata.cs" />
-    <Compile Include="Metadata\L3TToccurrence\L3TToccurrenceMetadataFacets.cs" />
+    <Compile Include="LinkedData\L3TTinstance\IL3TTinstance.cs" />
+    <Compile Include="LinkedData\L3TTinstance\L3TTinstance.cs" />
+    <Compile Include="Metadata\L3TTinstance\IL3TTinstanceMetadata.cs" />
+    <Compile Include="Metadata\L3TTinstance\L3TTinstanceMetadata.cs" />
+    <Compile Include="Metadata\L3TTinstance\L3TTinstanceMetadataFacets.cs" />
     <Compile Include="Utils\Diff.cs" />
     <Compile Include="Utils\Converters.cs" />
     <Compile Include="LinkedData\Film\IFilm.cs" />
@@ -70,11 +70,11 @@
     <Compile Include="Metadata\TrafilmMetadata.cs" />
     <Compile Include="Metadata\TrafilmMetadataFacets.cs" />
     <Compile Include="Metadata\ITrafilmMetadata.cs" />
-    <Compile Include="LinkedData\L3SToccurence\IL3SToccurrence.cs" />
-    <Compile Include="Metadata\L3SToccurrence\L3SToccurrenceMetadata.cs" />
-    <Compile Include="Metadata\L3SToccurrence\L3SToccurrenceMetadataFacets.cs" />
-    <Compile Include="Metadata\L3SToccurrence\IL3SToccurrenceMetadata.cs" />
-    <Compile Include="LinkedData\L3SToccurence\L3SToccurrence.cs" />
+    <Compile Include="LinkedData\L3STinstance\IL3STinstance.cs" />
+    <Compile Include="Metadata\L3STinstance\L3STinstanceMetadata.cs" />
+    <Compile Include="Metadata\L3STinstance\L3STinstanceMetadataFacets.cs" />
+    <Compile Include="Metadata\L3STinstance\IL3STinstanceMetadata.cs" />
+    <Compile Include="LinkedData\L3STinstance\L3STinstance.cs" />
     <Compile Include="LinkedData\Conversation\Conversation.cs" />
     <Compile Include="LinkedData\Film\Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,12 +95,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Metadata\L3TToccurrence\L3TToccurrenceMetadata.cd" />
+    <None Include="Metadata\L3TTinstance\L3TTinstanceMetadata.cd" />
     <None Include="Utils\Utils.cd" />
     <None Include="Metadata\Conversation\ConversationMetadata.cd" />
     <None Include="Metadata\TrafilmMetadata.cd" />
     <None Include="Facets.cd" />
-    <None Include="Metadata\L3SToccurrence\L3SToccurrenceMetadata.cd" />
+    <None Include="Metadata\L3STinstance\L3STinstanceMetadata.cd" />
     <None Include="LinkedData\Models.cd" />
     <None Include="Metadata\Film\FilmMetadata.cd" />
     <None Include="LinkedData\Objects.cd" />

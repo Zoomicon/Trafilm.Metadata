@@ -43,7 +43,7 @@ namespace Trafilm.Metadata
 
     public int? YearTTreleased_Spain { get; set; }
 
-    //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+    //Calculatable from Conversations.L3STinstances.L3TTinstances//
 
     public string[] L2dubbedLanguages { get; set; }
     public string[] L2subtitledLanguages { get; set; }
@@ -119,7 +119,7 @@ namespace Trafilm.Metadata
 
       YearTTreleased_Spain = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR_TT_RELEASED_SPAIN).ToNullableInt();
 
-      //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+      //Calculatable from Conversations.L3STinstances.L3TTinstances//
 
       L2dubbedLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_L2_DUBBED_LANGUAGES);
       L2subtitledLanguages = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_L2_SUBTITLED_LANGUAGES);
@@ -163,7 +163,7 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR_TT_RELEASED_SPAIN, YearTTreleased_Spain.ToString())); //for nullable types, ToString() method returns "" if HasValue is false
 
-      //Calculatable from Conversations.L3SToccurrences.L3TToccurrences//
+      //Calculatable from Conversations.L3STinstances.L3TTinstances//
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_L2_DUBBED_LANGUAGES, L2dubbedLanguages));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_L2_SUBTITLED_LANGUAGES, L2subtitledLanguages));

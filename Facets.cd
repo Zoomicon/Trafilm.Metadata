@@ -7,11 +7,11 @@
       <FileName>Metadata\TrafilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.L3SToccurrenceMetadataFacets">
+  <Class Name="Trafilm.Metadata.L3STinstanceMetadataFacets">
     <Position X="7" Y="2.5" Width="3" />
     <TypeIdentifier>
       <HashCode>CFCAAAAAAAAAAAABAAAkEgAhAAAAAAAEAAAgQAIAAAI=</HashCode>
-      <FileName>Metadata\L3SToccurrence\L3SToccurrenceMetadataFacets.cs</FileName>
+      <FileName>Metadata\L3STinstance\L3STinstanceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.ConversationMetadataFacets">
@@ -28,11 +28,11 @@
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Trafilm.Metadata.L3TToccurrenceMetadataFacets">
+  <Class Name="Trafilm.Metadata.L3TTinstanceMetadataFacets">
     <Position X="10.25" Y="2.5" Width="3" />
     <TypeIdentifier>
       <HashCode>CFCAABAAAAAAAAABAAA0EAIBCAAAAAAkAAAgQAIAIAo=</HashCode>
-      <FileName>Metadata\L3TToccurrence\L3TToccurrenceMetadataFacets.cs</FileName>
+      <FileName>Metadata\L3TTinstance\L3TTinstanceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
