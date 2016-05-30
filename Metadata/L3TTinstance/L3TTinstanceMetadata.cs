@@ -23,9 +23,9 @@ namespace Trafilm.Metadata
     public string L2language { get; set; }
     public string L2mode { get; set; } //dubbed, subtitled
 
-    public bool L2sameAsL3ST { get; set; }
+    public string L2sameAsL3ST { get; set; }
 
-    public bool L3STconveyedAsL3TT { get; set; }
+    public string L3STconveyedAsL3TT { get; set; }
 
     public string L3TTlanguageType { get; set; } //e.g. real, constructed, variety (real dialect, slang or other)
     public string L3TTlanguage { get; set; }
@@ -67,9 +67,9 @@ namespace Trafilm.Metadata
       L2language = "";
       L2mode = "";
 
-      L2sameAsL3ST = false;
+      L2sameAsL3ST = "";
 
-      L3STconveyedAsL3TT = false;
+      L3STconveyedAsL3TT = "";
 
       L3TTlanguageType = "";
       L3TTlanguage = "";
@@ -115,9 +115,9 @@ namespace Trafilm.Metadata
       L2language = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L2_LANGUAGE);
       L2mode = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L2_MODE);
 
-      L2sameAsL3ST = facets.CXMLFacetBoolValue(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST);
+      L2sameAsL3ST = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST);
 
-      L3STconveyedAsL3TT = facets.CXMLFacetBoolValue(L3TTinstanceMetadataFacets.FACET_L3ST_CONVEYED_AS_L3TT);
+      L3STconveyedAsL3TT = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3ST_CONVEYED_AS_L3TT);
 
       L3TTlanguageType = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3TT_LANGUAGE_TYPE);
       L3TTlanguage = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3TT_LANGUAGE);
@@ -166,9 +166,9 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L2_LANGUAGE, L2language));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L2_MODE, L2mode));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST, L2sameAsL3ST.ToString())); //this will give True/False (not Yes/No)
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST, L2sameAsL3ST));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_CONVEYED_AS_L3TT, L3STconveyedAsL3TT.ToString())); //this will give True/False (not Yes/No)
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_CONVEYED_AS_L3TT, L3STconveyedAsL3TT));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_LANGUAGE_TYPE, L3TTlanguageType));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_LANGUAGE, L3TTlanguage));

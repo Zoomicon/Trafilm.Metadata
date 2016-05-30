@@ -17,8 +17,8 @@ namespace Trafilm.Metadata
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
     public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";
 
-    public const string FACET_START_TIME = "Start time (h:m:s.f)";
-    public const string FACET_DURATION = "Duration (h:m:s.f)";
+    public const string FACET_START_TIME = "Start time (h:m:s)";
+    public const string FACET_DURATION = "Duration (h:m:s)";
 
     public const string FACET_L1_LANGUAGE = "L1 language"; //Calculatable from Film
 

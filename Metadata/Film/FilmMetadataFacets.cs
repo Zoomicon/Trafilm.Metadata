@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160527
+//Version: 20160530
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -18,10 +18,10 @@ namespace Trafilm.Metadata
     public const string FACET_TITLE_CA = "Title in Catalan";
     //...
 
-    public const string FACET_DURATION = "Duration (h:m:s.f)";
+    public const string FACET_DURATION = "Duration (h:m:s)";
 
-    public const string FACET_DIRECTORS = "Directors";
-    public const string FACET_SCRIPTWRITERS = "Scriptwriters";
+    public const string FACET_DIRECTORS = "Director(s)";
+    public const string FACET_SCRIPTWRITERS = "Scriptwriter(s)";
 
     public const string FACET_PRODUCTION_COUNTRIES = "Production countries";
     public const string FACET_PRODUCTION_COMPANIES = "Production companies";

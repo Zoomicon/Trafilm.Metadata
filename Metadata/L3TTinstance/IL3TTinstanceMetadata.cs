@@ -17,9 +17,9 @@ namespace Trafilm.Metadata.Models
     string L2language { get; set; }
     string L2mode { get; set; } //dubbed, subtitled
 
-    bool L2sameAsL3ST { get; set; }
+    string L2sameAsL3ST { get; set; }
 
-    bool L3STconveyedAsL3TT { get; set; }
+    string L3STconveyedAsL3TT { get; set; }
 
     string L3TTlanguageType { get; set; } //e.g. real, constructed, variety (real dialect, slang or other)
     string L3TTlanguage { get; set; }
