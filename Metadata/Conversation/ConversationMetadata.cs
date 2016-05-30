@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadata.cs
-//Version: 20160525
+//Version: 20160530
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -30,8 +30,8 @@ namespace Trafilm.Metadata
     public TimeSpan? StartTime { get; set; }
     public TimeSpan? Duration { get; set; }
 
-    public bool L1languagePresent { get; set; }
-    public bool L2languagePresent { get; set; }
+    public string L1languagePresent { get; set; }
+    public string L2languagePresent { get; set; }
 
     public string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
     public string L3STspeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
@@ -59,8 +59,8 @@ namespace Trafilm.Metadata
       StartTime = null;
       Duration = null;
 
-      L1languagePresent = false;
-      L2languagePresent = false;
+      L1languagePresent = "";
+      L2languagePresent = "";
 
       SpeakingCharactersCount = ""; //can take values like 1, 2, 3, more than 3
       L3STspeakingCharactersCount = ""; //can take values like 1, 2, 3, more than 3
@@ -92,8 +92,8 @@ namespace Trafilm.Metadata
       StartTime = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_START_TIME).ToNullableTimeSpan(DEFAULT_POSITION_FORMAT);
       Duration = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_DURATION_FORMAT);
 
-      L1languagePresent = facets.CXMLFacetBoolValue(ConversationMetadataFacets.FACET_L1_LANGUAGE_PRESENT);
-      L2languagePresent = facets.CXMLFacetBoolValue(ConversationMetadataFacets.FACET_L2_LANGUAGE_PRESENT);
+      L1languagePresent = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L1_LANGUAGE_PRESENT);
+      L2languagePresent = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L2_LANGUAGE_PRESENT);
 
       SpeakingCharactersCount = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_SPEAKING_CHARACTERS_COUNT); //e.g. 1, 2, 3, more than 3
       L3STspeakingCharactersCount = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_SPEAKING_CHARACTERS_COUNT); //e.g. 1, 2, 3, more than 3
@@ -128,8 +128,8 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_START_TIME, StartTime.ToString(DEFAULT_POSITION_FORMAT)));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_DURATION_FORMAT)));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L1_LANGUAGE_PRESENT, L1languagePresent.ToString())); //this will give True/False (not Yes/No)
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L2_LANGUAGE_PRESENT, L2languagePresent.ToString())); //this will give True/False (not Yes/No)
+      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L1_LANGUAGE_PRESENT, L1languagePresent));
+      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L2_LANGUAGE_PRESENT, L2languagePresent));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_SPEAKING_CHARACTERS_COUNT, SpeakingCharactersCount));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_SPEAKING_CHARACTERS_COUNT, L3STspeakingCharactersCount));
