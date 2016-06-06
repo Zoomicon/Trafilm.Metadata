@@ -49,11 +49,12 @@ namespace Trafilm.Metadata
 
     #region --- Methods ---
 
-    public static IEnumerable<XElement> GetCXMLFacetCategories() //the following also defines the order in which filters appear in PivotViewer's filter pane
+    public static IEnumerable<XElement> GetCXMLFacetCategories(IList<XElement> result = null) //the following also defines the order in which filters appear in PivotViewer's filter pane
     {
-      IList<XElement> result = new List<XElement>();
+      if (result == null)
+        result = new List<XElement>();
 
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
+      TrafilmMetadataFacets.GetCXMLFacetCategories_Header(result);
 
       //
 
@@ -90,11 +91,7 @@ namespace Trafilm.Metadata
 
       //
 
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_KEYWORDS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REMARKS, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
-
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_CREATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_UPDATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      TrafilmMetadataFacets.GetCXMLFacetCategories_Footer(result);
 
       return result;
     }

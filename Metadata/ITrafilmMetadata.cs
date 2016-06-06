@@ -20,6 +20,8 @@ namespace Trafilm.Metadata
     DateTime InfoCreated { get; set; }
     DateTime InfoUpdated { get; set; }
 
+    string Transcription { get; set; }
+
     string[] Keywords { get; set; }
 
     string Remarks { get; set; }
