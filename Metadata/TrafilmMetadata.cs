@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TrafilmMetadtata.cs
-//Version: 20160527
+//Version: 20160606
 
 using Metadata.CXML;
 
@@ -24,9 +24,12 @@ namespace Trafilm.Metadata
     #region --- Properties ---
 
     public string ReferenceId { get; set; }
+
     public DateTime InfoCreated { get; set; }
     public DateTime InfoUpdated { get; set; }
+
     public string[] Keywords { get; set; }
+    public string Remarks { get; set; }
 
     #endregion
 
@@ -50,6 +53,7 @@ namespace Trafilm.Metadata
       InfoUpdated = DateTime.UtcNow;
 
       Keywords = new string[] { };
+      Remarks = "";
 
       ClearCalculated();
     }
@@ -70,6 +74,7 @@ namespace Trafilm.Metadata
       InfoUpdated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_UPDATED);
 
       Keywords = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_KEYWORDS);
+      Remarks = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_REMARKS);
 
       return this;
     }
@@ -107,10 +112,11 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REFERENCE_ID, ReferenceId));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
-
       AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
       AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REMARKS, Remarks));
 
       return facets;
     }
