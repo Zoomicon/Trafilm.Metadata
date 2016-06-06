@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Trafilm.Metadata.FilmMetadata">
-    <Position X="8.25" Y="5.75" Width="3.75" />
+    <Position X="8.25" Y="6.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CAIAgBAABBACAAiEAAAAAAQAgAAAFBEEAgAAAgBAACA=</HashCode>
+      <HashCode>CAIAgBAAABECAAgEAAAAACQAgAAAFBEEAgAAAgBAACA=</HashCode>
       <FileName>Metadata\Film\FilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.FilmMetadataFacets">
-    <Position X="4.25" Y="3.25" Width="3.75" />
+    <Position X="4.25" Y="3.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAQgAIAABAgFAAAAgBAAABAQBAAAAIIA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAQgAIAAhAgFIAAAgAAAAAAQBAAAAIIA=</HashCode>
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
     <Position X="4" Y="8.25" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAABAABACAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <HashCode>AAAAgAAAAJAABAiAAAoAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="7.25" Width="3.25" />
+    <Position X="0.5" Y="8" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -39,7 +39,7 @@
   <Interface Name="Trafilm.Metadata.Models.IFilmMetadata">
     <Position X="8.25" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAIAABAABAACAACEAAAAAAQAgAAAFBEEAgAAAgAAAAA=</HashCode>
+      <HashCode>AAIAABAAAAECAAAEAAAAACQAgAAAFBEEAgAAAgAAAAA=</HashCode>
       <FileName>Metadata\Film\IFilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -53,7 +53,7 @@
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
     <Position X="5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAoAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>

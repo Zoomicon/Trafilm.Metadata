@@ -3,7 +3,7 @@
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
     <Position X="4.25" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAABAABAiAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <HashCode>AAAAgAAAAJAABAiAAAoAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.524" />
@@ -20,12 +20,12 @@
     <Position X="4.25" Y="5" Width="3.5" />
     <InheritanceLine Type="Trafilm.Metadata.TrafilmMetadata" FixedToPoint="true">
       <Path>
-        <Point X="6.125" Y="3.867" />
+        <Point X="6.125" Y="4.196" />
         <Point X="6.125" Y="5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>CEAAkAAAEBACAAogAACAAACAKAAAAAAAhAACAABAACA=</HashCode>
+      <HashCode>CEAQkAAAEBACAAogAACAAAAAKAAAAAAAhAACAABAACA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.039" />
@@ -33,7 +33,7 @@
   <Class Name="Trafilm.Metadata.L3STinstanceMetadata">
     <Position X="8" Y="5" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>CAAGkAAEFBCCAAgAChAgIACAIAgAAAAJAogAAABAACA=</HashCode>
+      <HashCode>CAASkAAEFBCCAAgAChAgIAAAIAgAEAAJAogAAABAACA=</HashCode>
       <FileName>Metadata\L3STinstance\L3STinstanceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="1.917" />
@@ -60,7 +60,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAgABAAAAAAAAAAAAAA=</HashCode>
       <FileName>LinkedData\Conversation\Conversation.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.057" />
@@ -74,7 +74,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAgAACAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAggAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>LinkedData\L3STinstance\L3STinstance.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.057" />
@@ -82,7 +82,7 @@
   <Class Name="Trafilm.Metadata.L3TTinstanceMetadata">
     <Position X="12" Y="5" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>BAACgACkFBCAAAgAAhEhIAAAAAgIAAAZAIgAACBAACA=</HashCode>
+      <HashCode>BAECgAAkFBCAAAgAAhEhIAAAAAgIAAAZAIgAACBAACA=</HashCode>
       <FileName>Metadata\L3TTinstance\L3TTinstanceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="1.913" />
@@ -90,7 +90,7 @@
   <Class Name="Trafilm.Metadata.L3TTinstance">
     <Position X="12.5" Y="11.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LinkedData\L3TTinstance\L3TTinstance.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="1.311" />

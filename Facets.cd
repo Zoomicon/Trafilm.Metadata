@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Trafilm.Metadata.TrafilmMetadataFacets">
-    <Position X="0.5" Y="0.5" Width="2" />
+    <Position X="0.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAIAAAAAACAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAACAgAAACAAAKAAAAAAiAAEAAAAAAAAAA=</HashCode>
       <FileName>Metadata\TrafilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.L3STinstanceMetadataFacets">
-    <Position X="7" Y="2.5" Width="3" />
+    <Position X="7" Y="4" Width="3" />
     <TypeIdentifier>
-      <HashCode>CFCAAAAAAAAAAAABAAAkEgAhAAAAAAAEAAAgQAIAAAI=</HashCode>
+      <HashCode>CFCAAAAAAAAAAAgBAAAkEgAhAAAAAAAEQAQgQAIAAAI=</HashCode>
       <FileName>Metadata\L3STinstance\L3STinstanceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.ConversationMetadataFacets">
-    <Position X="3.5" Y="2.5" Width="3.25" />
+    <Position X="3.5" Y="4" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAACAAACAAAAAAAAAAAAGgAgAABAEAAAAAACQAAAkAA=</HashCode>
+      <HashCode>AAACAAACAAAAAAgAAAAAGgAgAAAAEAAAQAACQAAAkAA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.FilmMetadataFacets">
-    <Position X="0.5" Y="2.5" Width="2.75" />
+    <Position X="0.5" Y="4" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAQAAIAABAgFAAAAgBAAABAQBAAAAIIA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAQgAIAAhAgFIAAAgAAAAAAQBAAAAIIA=</HashCode>
       <FileName>Metadata\Film\FilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.L3TTinstanceMetadataFacets">
-    <Position X="10.25" Y="2.5" Width="3" />
+    <Position X="10.25" Y="4" Width="3" />
     <TypeIdentifier>
-      <HashCode>CFCAABAAAAAAAAABAAA0EAIBCAAAAAAkAAAgQAIAIAo=</HashCode>
+      <HashCode>CFiAAAAAAAAAAAgBAAA0EAIBCAAAAABkAAAgQAIAIAo=</HashCode>
       <FileName>Metadata\L3TTinstance\L3TTinstanceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>

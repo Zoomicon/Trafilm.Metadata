@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Trafilm.Metadata.TrafilmMetadata" BaseTypeListCollapsed="true">
-    <Position X="4.25" Y="5.5" Width="4" />
+    <Position X="4.25" Y="4.75" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAABAABAiAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <HashCode>AAAAgAAAAJAABAiAAAoAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.TrafilmMetadataFacets">
-    <Position X="4.25" Y="3.25" Width="2.25" />
+    <Position X="6.75" Y="0.5" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAIAAAAAACAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAACAgAAACAAAKAAAAAAiAAEAAAAAAAAAA=</HashCode>
       <FileName>Metadata\TrafilmMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="5" Width="3.25" />
+    <Position X="0.5" Y="4.75" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
     <Position X="4.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAoAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>

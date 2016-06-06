@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TrafilmMetadtata.cs
-//Version: 20160527
+//Version: 20160606
 
 using Metadata.CXML;
 
@@ -24,9 +24,15 @@ namespace Trafilm.Metadata
     #region --- Properties ---
 
     public string ReferenceId { get; set; }
+
     public DateTime InfoCreated { get; set; }
     public DateTime InfoUpdated { get; set; }
+
+    public string Transcription { get; set; }
+
     public string[] Keywords { get; set; }
+
+    public string Remarks { get; set; }
 
     #endregion
 
@@ -45,11 +51,17 @@ namespace Trafilm.Metadata
       base.Clear();
 
       //Facets//
+
       ReferenceId = "";
+
       InfoCreated = DateTime.UtcNow;
       InfoUpdated = DateTime.UtcNow;
 
+      Transcription = "";
+
       Keywords = new string[] { };
+
+      Remarks = "";
 
       ClearCalculated();
     }
@@ -69,7 +81,10 @@ namespace Trafilm.Metadata
       InfoCreated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_CREATED);
       InfoUpdated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_UPDATED);
 
+      Transcription = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_TRANSCRIPTION);
+
       Keywords = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_KEYWORDS);
+      Remarks = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_REMARKS);
 
       return this;
     }
@@ -107,10 +122,14 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REFERENCE_ID, ReferenceId));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
-
       AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
       AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_TRANSCRIPTION, Transcription));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REMARKS, Remarks));
 
       return facets;
     }
