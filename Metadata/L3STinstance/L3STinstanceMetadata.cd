@@ -3,13 +3,13 @@
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
     <Position X="4" Y="9" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAABAABAiAAAIAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <HashCode>AAAAgAAAAJAABAiAAAoAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="8.5" Width="3.25" />
+    <Position X="0.5" Y="8.75" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -17,7 +17,7 @@
     <Position X="11" Y="3" Width="3.25" />
     <InheritanceLine Type="Trafilm.Metadata.L3STinstanceMetadata" FixedFromPoint="true">
       <Path>
-        <Point X="10.812" Y="6" />
+        <Point X="10.812" Y="6.25" />
         <Point X="10.812" Y="5.444" />
         <Point X="12.625" Y="5.444" />
         <Point X="12.625" Y="5.069" />
@@ -30,14 +30,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.L3STinstanceMetadataFacets">
-    <Position X="4.25" Y="3.25" Width="3.75" />
+    <Position X="4.25" Y="3.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>CFCAAAAAAAAAAAgBAAAkEgAhAAAAAAAEQAQgQAIAAAI=</HashCode>
       <FileName>Metadata\L3STinstance\L3STinstanceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.L3STinstanceMetadata">
-    <Position X="8.25" Y="6" Width="3.75" />
+    <Position X="8.25" Y="6.25" Width="3.75" />
     <TypeIdentifier>
       <HashCode>CAASkAAEFBCCAAgAChAgIAAAIAgAEAAJAogAAABAACA=</HashCode>
       <FileName>Metadata\L3STinstance\L3STinstanceMetadata.cs</FileName>
@@ -54,7 +54,7 @@
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
     <Position X="5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAoAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
