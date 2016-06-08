@@ -3,7 +3,7 @@
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
     <Position X="4.25" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAJAABAiAAAoAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <HashCode>ABAAgAAAAJAABAiAAAoAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.524" />
@@ -20,7 +20,7 @@
     <Position X="4.25" Y="5" Width="3.5" />
     <InheritanceLine Type="Trafilm.Metadata.TrafilmMetadata" FixedToPoint="true">
       <Path>
-        <Point X="6.125" Y="4.196" />
+        <Point X="6.125" Y="4.36" />
         <Point X="6.125" Y="5" />
       </Path>
     </InheritanceLine>

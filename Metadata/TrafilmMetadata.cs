@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TrafilmMetadtata.cs
-//Version: 20160606
+//Version: 20160608
 
 using Metadata.CXML;
 
@@ -25,14 +25,16 @@ namespace Trafilm.Metadata
 
     public string ReferenceId { get; set; }
 
-    public DateTime InfoCreated { get; set; }
-    public DateTime InfoUpdated { get; set; }
-
     public string Transcription { get; set; }
 
     public string[] Keywords { get; set; }
 
     public string Remarks { get; set; }
+
+    public DateTime InfoCreated { get; set; }
+    public DateTime InfoUpdated { get; set; }
+
+    public string[] MetadataEditors { get; set; }
 
     #endregion
 
@@ -54,14 +56,16 @@ namespace Trafilm.Metadata
 
       ReferenceId = "";
 
-      InfoCreated = DateTime.UtcNow;
-      InfoUpdated = DateTime.UtcNow;
-
       Transcription = "";
 
       Keywords = new string[] { };
 
       Remarks = "";
+
+      InfoCreated = DateTime.UtcNow;
+      InfoUpdated = DateTime.UtcNow;
+
+      MetadataEditors = new string[] { };
 
       ClearCalculated();
     }
@@ -78,13 +82,17 @@ namespace Trafilm.Metadata
       IEnumerable<XElement> facets = FindFacets(item);
 
       ReferenceId = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_REFERENCE_ID);
-      InfoCreated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_CREATED);
-      InfoUpdated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_UPDATED);
 
       Transcription = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_TRANSCRIPTION);
 
       Keywords = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_KEYWORDS);
+
       Remarks = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_REMARKS);
+
+      InfoCreated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_CREATED);
+      InfoUpdated = facets.CXMLFacetDateTimeValue(TrafilmMetadataFacets.FACET_INFO_UPDATED);
+
+      MetadataEditors = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_METADATA_EDITORS);
 
       return this;
     }
@@ -122,14 +130,16 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REFERENCE_ID, ReferenceId));
 
-      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
-      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));
-
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_TRANSCRIPTION, Transcription));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REMARKS, Remarks));
+
+      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_CREATED, InfoCreated));
+      AddNonNullToList(facets, CXML.MakeDateTimeFacet(TrafilmMetadataFacets.FACET_INFO_UPDATED, InfoUpdated));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_METADATA_EDITORS, MetadataEditors));
 
       return facets;
     }

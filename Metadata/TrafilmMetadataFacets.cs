@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TrafilmMetadataFacets.cs
-//Version: 20160606
+//Version: 20160608
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -15,11 +15,17 @@ namespace Trafilm.Metadata
     #region --- Constants ---
 
     public const string FACET_REFERENCE_ID = "Reference Id";
+
+    public const string FACET_TRANSCRIPTION = "Transcription";
+
+    public const string FACET_KEYWORDS = "Keywords";
+
+    public const string FACET_REMARKS = "Remarks";
+
     public const string FACET_INFO_CREATED = "Info created";
     public const string FACET_INFO_UPDATED = "Info updated";
-    public const string FACET_TRANSCRIPTION = "Transcription";
-    public const string FACET_KEYWORDS = "Keywords";
-    public const string FACET_REMARKS = "Remarks";
+
+    public const string FACET_METADATA_EDITORS = "Metadata Editors";
 
     #endregion
 
@@ -49,6 +55,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_CREATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_INFO_UPDATED, CXML.VALUE_DATETIME, CXML.DEFAULT_DATETIME_FORMAT, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_METADATA_EDITORS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       return result;
     }
 
