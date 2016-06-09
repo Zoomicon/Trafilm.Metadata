@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadata.cs
-//Version: 20160530
+//Version: 20160609
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -25,7 +25,7 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public string FilmReferenceId { get; set; }
+    public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
 
     public TimeSpan? StartTime { get; set; }
     public TimeSpan? Duration { get; set; }

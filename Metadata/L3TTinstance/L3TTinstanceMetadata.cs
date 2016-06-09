@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadata.cs
-//Version: 20160530
+//Version: 20160609
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -16,9 +16,9 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public string FilmReferenceId { get; set; }
-    public string ConversationReferenceId { get; set; }
-    public string L3STinstanceReferenceId { get; set; }
+    public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+    public virtual string ConversationReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+    public virtual string L3STinstanceReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
 
     public string L2language { get; set; }
     public string L2mode { get; set; } //dubbed, subtitled
