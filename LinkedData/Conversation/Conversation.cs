@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Conversation.cs
-//Version: 20160529
+//Version: 20160609
 
 using Trafilm.Metadata.Models;
 
@@ -21,6 +21,43 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
+    public override string ReferenceId
+    {
+      get
+      {
+        return base.ReferenceId;
+      }
+
+      set
+      {
+        base.ReferenceId = value; //this will also change Id and Title fields if they were equal to ReferenceId
+
+        foreach (IL3STinstance l3STinstance in L3STinstances)
+          l3STinstance.ConversationReferenceId = value;
+      }
+    }
+
+    public override string FilmReferenceId
+    {
+      get
+      {
+        return base.FilmReferenceId;
+      }
+
+      set
+      {
+        foreach (IL3STinstance l3STinstance in L3STinstances)
+          l3STinstance.FilmReferenceId = value;
+
+        string oldValue = base.FilmReferenceId;
+        string referenceId = ReferenceId;
+        if (referenceId.StartsWith(oldValue + ".")) //if using a structured referenceId (starts with the parent's referenceId, followed by a dot character)...
+          ReferenceId = value + referenceId.Remove(0, oldValue.Length); //...update that too
+
+        base.FilmReferenceId = value;
+      }
+    }
+
     public IFilm Film { get; set; }
 
     public IEnumerable<IL3STinstance> L3STinstances
@@ -29,6 +66,7 @@ namespace Trafilm.Metadata
       {
         return l3STInstances;
       }
+
       set
       {
         l3STInstances = value;
@@ -41,7 +79,7 @@ namespace Trafilm.Metadata
 
           IList<string> languages = new List<string>();
           IList<string> languageTypes = new List<string>();
-          foreach(L3STinstance l3STinstance in L3STinstances)
+          foreach (IL3STinstance l3STinstance in L3STinstances)
             if (l3STinstance != null)
             {
               string language = l3STinstance.L3STlanguage;

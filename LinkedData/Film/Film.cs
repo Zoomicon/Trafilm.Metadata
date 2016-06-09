@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Film.cs
-//Version: 20160529
+//Version: 20160609
 
 using Trafilm.Metadata.Models;
 
@@ -22,11 +22,28 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
+    public override string ReferenceId
+    {
+      get
+      {
+        return base.ReferenceId;
+      }
+
+      set
+      {
+        base.ReferenceId = value; //this will also change Id and Title fields if they were equal to ReferenceId
+
+        foreach (IConversation conversation in Conversations)
+          conversation.FilmReferenceId = value;
+      }
+    }
+
     public IEnumerable<IConversation> Conversations {
       get
       {
         return conversations;
       }
+
       set
       {
         conversations = value;
@@ -42,11 +59,13 @@ namespace Trafilm.Metadata
 
           IList<string> dubbed = new List<string>();
           IList<string> subtitled = new List<string>();
-          foreach (Conversation conversation in value)
+          foreach (IConversation conversation in value)
             if ((conversation != null) && (conversation.L3STinstances != null))
-              foreach (L3STinstance l3STinstance in conversation.L3STinstances)
+
+              foreach (IL3STinstance l3STinstance in conversation.L3STinstances)
                 if ((l3STinstance != null) && (l3STinstance.L3TTinstances != null))
-                  foreach (L3TTinstance l3TTinstance in l3STinstance.L3TTinstances)
+
+                  foreach (IL3TTinstance l3TTinstance in l3STinstance.L3TTinstances)
                     if (l3TTinstance != null)
                     {
                       string l2language = l3TTinstance.L2language;

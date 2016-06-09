@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstance.cs
-//Version: 20160530
+//Version: 20160609
 
 using Trafilm.Metadata.Models;
 using Trafilm.Metadata.Utils;
@@ -19,12 +19,31 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
+    public override string L3STinstanceReferenceId
+    {
+      get
+      {
+        return base.L3STinstanceReferenceId;
+      }
+
+      set
+      {
+        string oldValue = base.L3STinstanceReferenceId;
+        string referenceId = ReferenceId;
+        if (referenceId.StartsWith(oldValue + ".")) //if using a structured referenceId (starts with the parent's referenceId, followed by a dot character)...
+          ReferenceId = value + referenceId.Remove(0, oldValue.Length); //...update that too
+
+        base.L3STinstanceReferenceId = value;
+      }
+    }
+
     public IL3STinstance L3STinstance
     {
       get
       {
         return l3STinstance;
       }
+
       set
       {
         l3STinstance = value;

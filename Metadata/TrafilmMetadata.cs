@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TrafilmMetadtata.cs
-//Version: 20160608
+//Version: 20160609
 
 using Metadata.CXML;
 
@@ -21,9 +21,32 @@ namespace Trafilm.Metadata
 
     #endregion
 
+    #region --- Fields ---
+
+    private string referenceId; //=null (note: Clear() will set this to "")
+
+    #endregion
+
     #region --- Properties ---
 
-    public string ReferenceId { get; set; }
+    public virtual string ReferenceId //descendents can override this property to propagate change of ReferenceId where needed
+    {
+      get
+      {
+        return referenceId;
+      }
+
+      set
+      {
+        if (Id == referenceId)
+          Id = value;
+
+        if (Title == referenceId)
+          Title = value;
+
+        referenceId = value;
+      }
+    }
 
     public string Transcription { get; set; }
 
