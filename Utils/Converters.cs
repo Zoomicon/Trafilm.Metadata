@@ -29,6 +29,9 @@ namespace Trafilm.Metadata.Utils
 
     public static string FixTime(this string value)
     {
+      if (value == null)
+        return null;
+
       int count = 0;
       foreach (char c in value)
         if (c == ':')

@@ -32,8 +32,9 @@ namespace Trafilm.Metadata
       {
         base.ReferenceId = value; //this will also change Id and Title fields if they were equal to ReferenceId
 
-        foreach (IL3TTinstance l3TTinstance in L3TTinstances)
-          l3TTinstance.L3STinstanceReferenceId = value;
+        if (L3TTinstances != null)
+          foreach (IL3TTinstance l3TTinstance in L3TTinstances)
+            l3TTinstance.L3STinstanceReferenceId = value;
       }
     }
 
@@ -48,8 +49,9 @@ namespace Trafilm.Metadata
       {
         base.FilmReferenceId = value; 
 
-        foreach (IL3TTinstance l3TTinstance in L3TTinstances)
-          l3TTinstance.FilmReferenceId = value;
+        if (L3TTinstances != null)
+          foreach (IL3TTinstance l3TTinstance in L3TTinstances)
+            l3TTinstance.FilmReferenceId = value;
       }
     }
 
@@ -62,8 +64,9 @@ namespace Trafilm.Metadata
 
       set
       {
-        foreach (IL3TTinstance l3TTinstance in L3TTinstances)
-          l3TTinstance.ConversationReferenceId = value;
+        if (L3TTinstances != null)
+          foreach (IL3TTinstance l3TTinstance in L3TTinstances)
+            l3TTinstance.ConversationReferenceId = value;
 
         string oldValue = base.ConversationReferenceId;
         string referenceId = ReferenceId;

@@ -33,8 +33,9 @@ namespace Trafilm.Metadata
       {
         base.ReferenceId = value; //this will also change Id and Title fields if they were equal to ReferenceId
 
-        foreach (IConversation conversation in Conversations)
-          conversation.FilmReferenceId = value;
+        if (Conversations != null)
+          foreach (IConversation conversation in Conversations)
+            conversation.FilmReferenceId = value;
       }
     }
 
