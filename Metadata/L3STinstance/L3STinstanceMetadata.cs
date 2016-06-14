@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadata.cs
-//Version: 20160609
+//Version: 20160614
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -52,6 +52,8 @@ namespace Trafilm.Metadata
 
     public string[] L3STfunctions { get; set; }
 
+    public string L3STsources { get; set; }
+
     //Calculatable from L3TTinstances//
 
     public int L3TTinstanceCount { get; set; }
@@ -88,6 +90,8 @@ namespace Trafilm.Metadata
       L3STrepresentationsVisual = new string[] { };
 
       L3STfunctions = new string[] { };
+
+      L3STsources = "";
 
       //note: don't call ClearCalculated here, has been called by base.Clear() already
     }
@@ -143,6 +147,8 @@ namespace Trafilm.Metadata
 
       L3STfunctions = facets.CXMLFacetStringValues(L3STinstanceMetadataFacets.FACET_L3ST_FUNCTIONS);
 
+      L3STsources = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_SOURCES);
+
       //Calculatable from L3STinstances//
 
       L3TTinstanceCount = int.Parse(facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3TT_INSTANCE_COUNT));
@@ -188,6 +194,8 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_REPRESENTATIONS_VISUAL, L3STrepresentationsVisual));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_FUNCTIONS, L3STfunctions));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_SOURCES, L3STsources));
 
       //Calculatable from L3TTinstances//
 

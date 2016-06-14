@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadata.cs
-//Version: 20160609
+//Version: 20160614
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -46,11 +46,14 @@ namespace Trafilm.Metadata
 
     public string[] L3TTfunctions { get; set; }
 
+    public string L3TTsources { get; set; }
+
     //Calculatable from L3STinstance//
 
     public string[] L3STlanguageTypeChange { get; set; }
     public string[] L3STmodeChange { get; set; }
     public string[] L3STfunctionsChange { get; set; }
+    public string[] L3STsourcesChange { get; set; }
 
     #endregion
 
@@ -90,6 +93,8 @@ namespace Trafilm.Metadata
 
       L3TTfunctions = new string[] { };
 
+      L3TTsources = "";
+
       //note: don't call ClearCalculated here, has been called by base.Clear() already
     }
 
@@ -100,6 +105,7 @@ namespace Trafilm.Metadata
       L3STlanguageTypeChange = new string[] { };
       L3STmodeChange = new string[] { };
       L3STfunctionsChange = new string[] { };
+      L3STsourcesChange = new string[] { };
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -138,11 +144,14 @@ namespace Trafilm.Metadata
 
       L3TTfunctions = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3TT_FUNCTIONS);
 
+      L3TTsources = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES);
+
       //Calculatable from L3STinstance//
 
       L3STlanguageTypeChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE);
       L3STmodeChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_MODE_CHANGE); 
       L3STfunctionsChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE);
+      L3STsourcesChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_SOURCES_CHANGE);
 
       return this;
     }
@@ -189,11 +198,14 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_FUNCTIONS, L3TTfunctions));
 
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES, L3TTsources));
+
       //Calculatable from L3STinstance//
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE, L3STlanguageTypeChange));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_MODE_CHANGE, L3STmodeChange));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE, L3STfunctionsChange));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_SOURCES_CHANGE, L3STsourcesChange));
 
       return facets;
     }

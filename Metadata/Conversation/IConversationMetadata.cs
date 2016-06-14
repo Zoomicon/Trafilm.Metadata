@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IConversationMetadata.cs
-//Version: 20160530
+//Version: 20160614
 
 using System;
 
@@ -16,12 +16,8 @@ namespace Trafilm.Metadata.Models
 
     TimeSpan? StartTime { get; set; }
     TimeSpan? Duration { get; set; }
-    
-    string L1languagePresent { get; set; }
-    string L2languagePresent { get; set; }
 
-    string SpeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
-    string L3STspeakingCharactersCount { get; set; } //e.g. 1, 2, 3, more than 3
+    string LanguageSources { get; set; }
 
     //Calculatable from L3STinstances//
 
