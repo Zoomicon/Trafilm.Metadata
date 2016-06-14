@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadataFacets.cs
-//Version: 20160606
+//Version: 20160614
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -40,6 +40,8 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_REPRESENTATIONS_VISUAL = "L3ST represented: visual";
 
     public const string FACET_L3ST_FUNCTIONS = "L3ST functions";
+
+    public const string FACET_L3ST_SOURCES = "L3ST sources";
 
     //Calculatable from L3TTinstances//
 
@@ -84,6 +86,8 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_REPRESENTATIONS_VISUAL, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_FUNCTIONS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //Calculatable from L3TTinstances//
 

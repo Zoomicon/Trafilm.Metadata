@@ -8,11 +8,11 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IFilm">
-    <Position X="4" Y="9.5" Width="2.75" />
+    <Position X="4" Y="10" Width="2.75" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IFilmMetadata" FixedToPoint="true">
       <Path>
         <Point X="5.25" Y="7.925" />
-        <Point X="5.25" Y="9.5" />
+        <Point X="5.25" Y="10" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -21,11 +21,11 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IConversation">
-    <Position X="7" Y="9.5" Width="2.75" />
+    <Position X="7" Y="10" Width="2.75" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IConversationMetadata" FixedToPoint="true">
       <Path>
-        <Point X="8.25" Y="7.348" />
-        <Point X="8.25" Y="9.5" />
+        <Point X="8.25" Y="6.771" />
+        <Point X="8.25" Y="10" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -34,11 +34,11 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IL3STinstance">
-    <Position X="10" Y="9.5" Width="2.75" />
+    <Position X="10" Y="10" Width="2.75" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IL3STinstanceMetadata" FixedToPoint="true">
       <Path>
-        <Point X="11.25" Y="8.502" />
-        <Point X="11.25" Y="9.5" />
+        <Point X="11.25" Y="8.694" />
+        <Point X="11.25" Y="10" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -55,14 +55,14 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AEAQAAAAEAACAAIgAACAAAAAKAAAAAAAhAACAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAEACCAAAgAAAAAAAAKAAAAAAAgAACAAAAAAA=</HashCode>
       <FileName>Metadata\Conversation\IConversationMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IL3STinstanceMetadata">
     <Position X="10" Y="4" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAASAAAEFACCAAAAAhAgIAAAIAgAAAAJAogAAAAAAAA=</HashCode>
+      <HashCode>AAASAAAEFACCAAAAAhAgIAAAIAgAAAAJAogAAAIAAAA=</HashCode>
       <FileName>Metadata\L3STinstance\IL3STinstanceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -78,13 +78,7 @@
     <TypeIdentifier />
   </Interface>
   <Interface Name="Trafilm.Metadata.Models.IL3TTinstance">
-    <Position X="13.25" Y="9.5" Width="2" />
-    <InheritanceLine Type="Trafilm.Metadata.Models.IL3TTinstanceMetadata" FixedToPoint="true">
-      <Path>
-        <Point X="14.25" Y="9.271" />
-        <Point X="14.25" Y="9.5" />
-      </Path>
-    </InheritanceLine>
+    <Position X="13.25" Y="10" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LinkedData\L3TTinstance\IL3TTinstance.cs</FileName>
@@ -93,7 +87,7 @@
   <Interface Name="Trafilm.Metadata.Models.IL3TTinstanceMetadata">
     <Position X="13" Y="4" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>BAECAAAkFACAAAAAAhEhIAAAAAgIAAAZAIgAACAAAAA=</HashCode>
+      <HashCode>BAECAAAkFACAAAAAAhEhIAAAAAgMAAAZAIgAACIAAAA=</HashCode>
       <FileName>Metadata\L3TTinstance\IL3TTinstanceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>

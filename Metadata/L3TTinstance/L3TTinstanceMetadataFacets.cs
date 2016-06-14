@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadataFacets.cs
-//Version: 20160606
+//Version: 20160614
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -44,11 +44,14 @@ namespace Trafilm.Metadata
 
     public const string FACET_L3TT_FUNCTIONS = "L3TT functions";
 
+    public const string FACET_L3TT_SOURCES = "L3TT sources";
+
     //Calculatable from L3STinstance//
 
     public const string FACET_L3ST_LANGUAGE_TYPE_CHANGE = "L3ST language type change";
     public const string FACET_L3ST_MODE_CHANGE = "L3ST mode change";
     public const string FACET_L3ST_FUNCTIONS_CHANGE = "L3ST functions change";
+    public const string FACET_L3ST_SOURCES_CHANGE = "L3ST sources change";
 
     #endregion
 
@@ -93,11 +96,14 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_FUNCTIONS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
       //Calculatable from L3STinstance//
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_MODE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_SOURCES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //
 

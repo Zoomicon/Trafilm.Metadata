@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3STinstanceMetadata.cs
-//Version: 20160530
+//Version: 20160614
 
 using System;
 
@@ -38,6 +38,8 @@ namespace Trafilm.Metadata.Models
     string[] L3STrepresentationsVisual { get; set; }
 
     string[] L3STfunctions { get; set; }
+
+    string L3STsources { get; set; }
 
     //Calculatable from L3TTinstances//
 
