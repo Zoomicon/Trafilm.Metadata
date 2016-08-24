@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadataFacets.cs
-//Version: 20160614
+//Version: 20160824
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -34,12 +34,12 @@ namespace Trafilm.Metadata
     public const string FACET_L3TT_MESSAGE_UNDERSTANDING = "L3TT required for understanding";
     public const string FACET_L3TT_MEANING_DECIPHERABLE = "L3TT meaning decipherable";
 
-    public const string FACET_L3TT_SPEAKER_PERFORMANCE = "L3TT speaker performance";
+    public const string FACET_L3TT_SPEAKER_PERFORMANCE = "Quality of L3TT speaker performance";
 
-    public const string FACET_L3TT_MODE = "L3TT mode";
+    public const string FACET_L3TT_MODE = "L3TT mode, written/spoken, diegetic";
 
-    public const string FACET_L3TT_REPRESENTED = "L3TT represented";
-    public const string FACET_L3TT_REPRESENTATIONS_ORAL = "L3TT represented: oral";
+    public const string FACET_L3TT_REPRESENTED = "L3TT merely represented";
+    public const string FACET_L3TT_REPRESENTATIONS_ORAL = "L3TT merely represented orally";
     public const string FACET_L3TT_REPRESENTATIONS_VISUAL = "L3TT represented: visual";
 
     public const string FACET_L3TT_FUNCTIONS = "L3TT functions";

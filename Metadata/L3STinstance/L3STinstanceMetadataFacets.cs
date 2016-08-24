@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadataFacets.cs
-//Version: 20160614
+//Version: 20160824
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -31,12 +31,12 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_MESSAGE_UNDERSTANDING = "L3ST required for understanding";
     public const string FACET_L3ST_MEANING_DECIPHERABLE = "L3ST meaning decipherable";
 
-    public const string FACET_L3ST_SPEAKER_PERFORMANCE = "L3ST speaker performance";
+    public const string FACET_L3ST_SPEAKER_PERFORMANCE = "Quality of L3ST speaker performance";
 
-    public const string FACET_L3ST_MODE = "L3ST mode";
+    public const string FACET_L3ST_MODE = "L3ST mode, written/spoken, diegetic";
 
-    public const string FACET_L3ST_REPRESENTED = "L3ST represented";
-    public const string FACET_L3ST_REPRESENTATIONS_ORAL = "L3ST represented: oral";
+    public const string FACET_L3ST_REPRESENTED = "L3ST merely represented";
+    public const string FACET_L3ST_REPRESENTATIONS_ORAL = "L3ST merely represented orally";
     public const string FACET_L3ST_REPRESENTATIONS_VISUAL = "L3ST represented: visual";
 
     public const string FACET_L3ST_FUNCTIONS = "L3ST functions";
