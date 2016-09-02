@@ -4,7 +4,7 @@
 
   <metadata>
     <id>Trafilm.Metadata</id>
-    <version>10.0.1</version>
+    <version>10.1.0</version>
     <title>Trafilm.Metadata</title>
     <authors>birbilis</authors>
     <owners>birbilis</owners>
@@ -15,7 +15,10 @@
     <developmentDependency>true</developmentDependency>
     <description>Library for manipulating Trafilm (http://Trafilm.net) Gallery Metadata in Collection XML (CXML) format (as defined for PivotViewer control)</description>
     <releaseNotes>
-    Updates to Medata Facets
+    Renamed "Keywords" to "Tags"
+    Renamed "L1 language" to "Main (L1) language"
+    Renamed "L3ST required for understanding" to "L3ST message required for understanding"
+    Renamed "L3TT required for understanding" to "L3TT message required for understanding"
     </releaseNotes>
     <copyright>Copyright 2013-2016</copyright>
     <tags>Trafilm Gallery Metadata CXML PivotViewer</tags>

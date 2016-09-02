@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadataFacets.cs
-//Version: 20160824
+//Version: 20160902
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace Trafilm.Metadata
     public const string FACET_START_TIME = "Start time (h:m:s)";
     public const string FACET_DURATION = "Duration (h:m:s)";
 
-    public const string FACET_L1_LANGUAGE = "L1 language"; //Calculatable from Film
+    public const string FACET_L1_LANGUAGE = "Main (L1) language"; //Calculatable from Film
 
     public const string FACET_L3ST_LANGUAGE_TYPE = "L3ST language type"; //e.g. real, constructed, variety (real dialect, slang or other)
     public const string FACET_L3ST_LANGUAGE = "L3ST language";
@@ -28,7 +28,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_CONSTRUCTED_BASED_ON = "L3ST constructed based on";
 
     public const string FACET_L3ST_AUDIENCE_UNDERSTANDING = "L3ST meant to be understood";
-    public const string FACET_L3ST_MESSAGE_UNDERSTANDING = "L3ST required for understanding";
+    public const string FACET_L3ST_MESSAGE_UNDERSTANDING = "L3ST message required for understanding";
     public const string FACET_L3ST_MEANING_DECIPHERABLE = "L3ST meaning decipherable";
 
     public const string FACET_L3ST_SPEAKER_PERFORMANCE = "Quality of L3ST speaker performance";
