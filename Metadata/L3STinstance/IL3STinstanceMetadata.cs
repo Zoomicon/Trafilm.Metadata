@@ -38,6 +38,7 @@ namespace Trafilm.Metadata.Models
     string[] L3STrepresentationsVisual { get; set; }
 
     string[] L3STfunctions { get; set; }
+    string[] L3STtypesFeatures { get; set; }
 
     string L3STsources { get; set; }
 

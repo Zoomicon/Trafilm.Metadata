@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadataFacets.cs
-//Version: 20160902
+//Version: 20160906
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -43,6 +43,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3TT_REPRESENTATIONS_VISUAL = "L3TT represented: visual";
 
     public const string FACET_L3TT_FUNCTIONS = "L3TT functions";
+    public const string FACET_L3TT_TYPES_FEATURES = "Types/features related to L3TT";
 
     public const string FACET_L3TT_SOURCES = "L3TT sources";
 
@@ -51,6 +52,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_LANGUAGE_TYPE_CHANGE = "L3ST language type change";
     public const string FACET_L3ST_MODE_CHANGE = "L3ST mode change";
     public const string FACET_L3ST_FUNCTIONS_CHANGE = "L3ST functions change";
+    public const string FACET_L3ST_TYPES_FEATURES_CHANGE = "Types/features related to L3ST change";
     public const string FACET_L3ST_SOURCES_CHANGE = "L3ST sources change";
 
     #endregion

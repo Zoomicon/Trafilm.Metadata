@@ -40,6 +40,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_REPRESENTATIONS_VISUAL = "L3ST represented: visual";
 
     public const string FACET_L3ST_FUNCTIONS = "L3ST functions";
+    public const string FACET_L3ST_TYPES_FEATURES = "Types/features related to L3ST";
 
     public const string FACET_L3ST_SOURCES = "L3ST sources";
 
