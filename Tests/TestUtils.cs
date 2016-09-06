@@ -2,11 +2,9 @@
 //Filename: TestConversation.cs
 //Version: 20160516
 
-using Trafilm.Metadata.Models;
 using Trafilm.Metadata.Utils;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Xml;
 
 namespace Trafilm.Metadata.Tests
 {

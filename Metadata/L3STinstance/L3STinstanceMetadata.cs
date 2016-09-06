@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadata.cs
-//Version: 20160614
+//Version: 20160906
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -8,7 +8,6 @@ using Trafilm.Metadata.Utils;
 
 using System.Collections.Generic;
 using System.Xml.Linq;
-using System;
 
 namespace Trafilm.Metadata
 {
@@ -16,20 +15,13 @@ namespace Trafilm.Metadata
   public class L3STinstanceMetadata : TrafilmMetadata, IL3STinstanceMetadata
   {
 
-    #region --- Constants ---
-
-    public const string DEFAULT_POSITION_FORMAT = "g";
-    public const string DEFAULT_DURATION_FORMAT = "g";
-
-    #endregion
-
     #region --- Properties ---
 
     public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
     public virtual string ConversationReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
 
-    public TimeSpan? StartTime { get; set; }
-    public TimeSpan? Duration { get; set; }
+    public int? StartTime { get; set; } //in minutes
+    public int? Duration { get; set; } //in minutes
 
     public string L1language { get; set; } //Calculatable from Film
 
@@ -123,8 +115,8 @@ namespace Trafilm.Metadata
       FilmReferenceId = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_FILM_REFERENCE_ID);
       ConversationReferenceId = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID);
 
-      StartTime = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_START_TIME).ToNullableTimeSpan(DEFAULT_POSITION_FORMAT);
-      Duration = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_DURATION_FORMAT);
+      StartTime = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_START_TIME).ToNullableInt();
+      Duration = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_DURATION).ToNullableInt();
 
       L1language = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE); //Calculatable from Film
 
@@ -171,8 +163,8 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, ConversationReferenceId));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_START_TIME, StartTime.ToString(DEFAULT_POSITION_FORMAT)));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_DURATION_FORMAT)));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_START_TIME, StartTime.ToString()));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_DURATION, Duration.ToString()));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L1_LANGUAGE, L1language)); //Calculatable from Film
 

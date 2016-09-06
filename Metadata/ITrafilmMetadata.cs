@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ITrafilmMetadata.cs
-//Version: 20160902
+//Version: 20160906
 
 using Metadata.CXML;
 
