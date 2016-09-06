@@ -4,7 +4,7 @@
 
   <metadata>
     <id>Trafilm.Metadata</id>
-    <version>11.0.0</version>
+    <version>11.1.0</version>
     <title>Trafilm.Metadata</title>
     <authors>birbilis</authors>
     <owners>birbilis</owners>
@@ -15,7 +15,7 @@
     <developmentDependency>true</developmentDependency>
     <description>Library for manipulating Trafilm (http://Trafilm.net) Gallery Metadata in Collection XML (CXML) format (as defined for PivotViewer control)</description>
     <releaseNotes>
-    Not using TimeSpan anymore for Start/Duration (time) facets, using Integer (time in minutes) instead (with no fractional part to avoid confusion with localized decimal separators)
+    Time-related facets now have (min) instead (h:m:s) in their name
     </releaseNotes>
     <copyright>Copyright 2013-2016</copyright>
     <tags>Trafilm Gallery Metadata CXML PivotViewer</tags>

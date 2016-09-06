@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160902
+//Version: 20160906
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace Trafilm.Metadata
     public const string FACET_TITLE_CA = "Title in Catalan";
     //...
 
-    public const string FACET_DURATION = "Duration (h:m:s)";
+    public const string FACET_DURATION = "Duration (min)";
 
     public const string FACET_DIRECTORS = "Director(s)";
     public const string FACET_SCRIPTWRITERS = "Scriptwriter(s)";
@@ -41,7 +41,7 @@ namespace Trafilm.Metadata
     //Calculatable from Conversations//
 
     public const string FACET_CONVERSATION_COUNT = "Conversations: count";
-    public const string FACET_CONVERSATIONS_DURATION = "Conversations: duration (h:m:s)";
+    public const string FACET_CONVERSATIONS_DURATION = "Conversations: duration (min)";
 
     #endregion
 
