@@ -1,10 +1,9 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadata.cs
-//Version: 20160906
+//Version: 20160907
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
-using Trafilm.Metadata.Utils;
 
 using System.Collections.Generic;
 using System.Xml.Linq;
@@ -117,8 +116,8 @@ namespace Trafilm.Metadata
       FilmReferenceId = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_FILM_REFERENCE_ID);
       ConversationReferenceId = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID);
 
-      StartTime = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_START_TIME).ToNullableInt();
-      Duration = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_DURATION).ToNullableInt();
+      StartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_START_TIME);
+      Duration = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_DURATION);
 
       L1language = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE); //Calculatable from Film
 
@@ -146,7 +145,7 @@ namespace Trafilm.Metadata
 
       //Calculatable from L3STinstances//
 
-      L3TTinstanceCount = int.Parse(facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3TT_INSTANCE_COUNT));
+      L3TTinstanceCount = (int)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_L3TT_INSTANCE_COUNT);
 
       return this;
     }
@@ -166,8 +165,8 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, ConversationReferenceId));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_START_TIME, StartTime.ToString()));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_DURATION, Duration.ToString()));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_START_TIME, StartTime));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_DURATION, Duration));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L1_LANGUAGE, L1language)); //Calculatable from Film
 
@@ -195,7 +194,7 @@ namespace Trafilm.Metadata
 
       //Calculatable from L3TTinstances//
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3TT_INSTANCE_COUNT, L3TTinstanceCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_L3TT_INSTANCE_COUNT, L3TTinstanceCount));
 
       return facets;
     }

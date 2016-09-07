@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadataFacets.cs
-//Version: 20160906
+//Version: 20160907
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -17,6 +17,9 @@ namespace Trafilm.Metadata
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
     public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";
     public const string FACET_L3ST_INSTANCE_REFERENCE_ID = "L3ST-instance Reference Id";
+
+    //public int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
+    //public int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
 
     public const string FACET_L2_LANGUAGE = "L2 language";
     public const string FACET_L2_MODE = "L2 mode"; //dubbed, subtitled
