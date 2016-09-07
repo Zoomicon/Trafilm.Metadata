@@ -97,6 +97,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_REPRESENTATIONS_VISUAL, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_FUNCTIONS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_TYPES_FEATURES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
@@ -105,6 +106,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_MODE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_TYPES_FEATURES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_SOURCES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //

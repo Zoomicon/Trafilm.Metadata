@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadata.cs
-//Version: 20160906
+//Version: 20160907
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -106,7 +106,7 @@ namespace Trafilm.Metadata
       ProductionCompanies = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES);
 
       BoxOffice = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_BOX_OFFICE);
-      YearSTreleased = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_YEAR_ST_RELEASED).ToNullableInt();
+      YearSTreleased = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_YEAR_ST_RELEASED);
 
       L1language = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_L1_LANGUAGE);
 
@@ -150,7 +150,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES, ProductionCompanies));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_BOX_OFFICE, BoxOffice));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, YearSTreleased.ToString())); //for nullable types, ToString() method returns "" if HasValue is false
+      AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, YearSTreleased));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_L1_LANGUAGE, L1language));
 

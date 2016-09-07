@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160906
+//Version: 20160907
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -70,7 +70,7 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_BOX_OFFICE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L1_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_YEAR_TT_RELEASED_SPAIN, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
