@@ -18,6 +18,10 @@ namespace Trafilm.Metadata
     public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";
     public const string FACET_L3ST_INSTANCE_REFERENCE_ID = "L3ST-instance Reference Id";
 
+    public const string FACET_FILM_TITLE_TT = "Film Title TT";
+    public const string FACET_YEAR_TT_RELEASED = "Year TT released";
+    //public const string FACET_BOX_OFFICE_TT = "Box office TT";
+
     public const string FACET_START_TIME = "Start time (min)"; //Calculatable from L3STinstance
     public const string FACET_DURATION = "Duration (min)"; //Calculatable from L3STinstance
 
@@ -74,6 +78,10 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_INSTANCE_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_FILM_TITLE_TT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      //result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_BOX_OFFICE_TT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from L3STinstance
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from L3STinstance

@@ -14,6 +14,10 @@ namespace Trafilm.Metadata.Models
     string ConversationReferenceId { get; set; }
     string L3STinstanceReferenceId { get; set; }
 
+    string FilmTitleTT { get; set; }
+    int? YearTTreleased { get; set; }
+    //string BoxOfficeTT { get; set; }
+
     int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
     int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
 

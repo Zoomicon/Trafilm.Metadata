@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadata.cs
-//Version: 20160907
+//Version: 20160908
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -54,10 +54,6 @@ namespace Trafilm.Metadata
     {
       base.Clear();
 
-      Title_es = "";
-      Title_ca = "";
-      //...
-
       Duration = null;
 
       Directors = new string[] { };
@@ -70,8 +66,6 @@ namespace Trafilm.Metadata
       YearSTreleased = null;
 
       L1language = "";
-
-      YearTTreleased_Spain = null;
 
       //note: don't call ClearCalculated here, has been called by base.Clear() already
     }
@@ -93,10 +87,6 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
-      Title_es = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_ES);
-      Title_ca = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TITLE_CA);
-      //...
-
       Duration = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_DURATION);
 
       Directors = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DIRECTORS);
@@ -109,8 +99,6 @@ namespace Trafilm.Metadata
       YearSTreleased = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_YEAR_ST_RELEASED);
 
       L1language = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_L1_LANGUAGE);
-
-      YearTTreleased_Spain = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_YEAR_TT_RELEASED_SPAIN);
 
       //Calculatable from Conversations.L3STinstances.L3TTinstances//
 
@@ -137,10 +125,6 @@ namespace Trafilm.Metadata
 
       base.GetCXMLFacets(facets);
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_ES, Title_es));
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TITLE_CA, Title_ca));
-      //...
-
       AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_DURATION, Duration));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTORS, Directors));
@@ -153,8 +137,6 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, YearSTreleased));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_L1_LANGUAGE, L1language));
-
-      AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_YEAR_TT_RELEASED_SPAIN, YearTTreleased_Spain));
 
       //Calculatable from Conversations.L3STinstances.L3TTinstances//
 

@@ -20,6 +20,10 @@ namespace Trafilm.Metadata
     public virtual string ConversationReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
     public virtual string L3STinstanceReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
 
+    public string FilmTitleTT { get; set; }
+    public int? YearTTreleased { get; set; }
+    //public string BoxOfficeTT { get; set; }
+
     public int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
     public int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
 
@@ -71,6 +75,10 @@ namespace Trafilm.Metadata
       FilmReferenceId = "";
       ConversationReferenceId = "";
       L3STinstanceReferenceId = "";
+
+      FilmTitleTT = "";
+      YearTTreleased = null;
+      //BoxOfficeTT = "";
 
       L2language = "";
       L2mode = "";
@@ -126,6 +134,10 @@ namespace Trafilm.Metadata
       FilmReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_FILM_REFERENCE_ID);
       ConversationReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID);
       L3STinstanceReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3ST_INSTANCE_REFERENCE_ID);
+
+      FilmTitleTT = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_FILM_TITLE_TT);
+      YearTTreleased = (int?)facets.CXMLFacetNumberValue(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED);
+      //BoxOfficeTT = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_BOX_OFFICE_TT);
 
       StartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_START_TIME); //Calculatable from L3STinstance
       Duration = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_DURATION); //Calculatable from L3STinstance
@@ -185,6 +197,10 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, ConversationReferenceId));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_INSTANCE_REFERENCE_ID, L3STinstanceReferenceId));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_FILM_TITLE_TT, FilmTitleTT));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED, YearTTreleased));
+      //AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_BOX_OFFICE_TT, BoxOfficeTT));
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_START_TIME, StartTime));
       AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_DURATION, Duration));
