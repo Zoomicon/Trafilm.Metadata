@@ -82,13 +82,13 @@
   <Class Name="Trafilm.Metadata.L3TTinstanceMetadata">
     <Position X="12" Y="5.25" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>BAEGgAAkFBCCAAwAAhEhIAEAIAgMACAZAIgAACJAAiA=</HashCode>
+      <HashCode>BAEGgAAkFBCCAAwAAhEhIAEAIAgMACAZAIgQACJAAiA=</HashCode>
       <FileName>Metadata\L3TTinstance\L3TTinstanceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="1.913" />
   </Class>
   <Class Name="Trafilm.Metadata.L3TTinstance">
-    <Position X="12.5" Y="13" Width="2.5" />
+    <Position X="12.5" Y="13.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LinkedData\L3TTinstance\L3TTinstance.cs</FileName>

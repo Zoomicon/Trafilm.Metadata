@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3TTinstanceMetadata.cs
-//Version: 20160908
+//Version: 20160909
 
 namespace Trafilm.Metadata.Models
 {
@@ -15,11 +15,13 @@ namespace Trafilm.Metadata.Models
     string L3STinstanceReferenceId { get; set; }
 
     string FilmTitleTT { get; set; }
-    int? YearTTreleased { get; set; }
-    string BlockbusterTT { get; set; }
 
     string L2language { get; set; }
     string L2mode { get; set; } //dubbed, subtitled
+
+    string[] DistributionCountriesTT { get; set; }
+    int? YearTTreleased { get; set; }
+    string BlockbusterTT { get; set; }
 
     int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
     int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
