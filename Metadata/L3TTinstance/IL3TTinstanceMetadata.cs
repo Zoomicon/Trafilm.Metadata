@@ -16,7 +16,7 @@ namespace Trafilm.Metadata.Models
 
     string FilmTitleTT { get; set; }
     int? YearTTreleased { get; set; }
-    //string BoxOfficeTT { get; set; }
+    string BlockbusterTT { get; set; }
 
     string L2language { get; set; }
     string L2mode { get; set; } //dubbed, subtitled

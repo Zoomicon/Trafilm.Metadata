@@ -29,7 +29,7 @@ namespace Trafilm.Metadata
     public string[] ProductionCountries { get; set; }
     public string[] ProductionCompanies { get; set; }
 
-    public string BoxOffice { get; set; }
+    public string Blockbuster { get; set; }
     public int? YearSTreleased { get; set; }
 
     public string L1language { get; set; }
@@ -62,7 +62,7 @@ namespace Trafilm.Metadata
       ProductionCountries = new string[] { };
       ProductionCompanies = new string[] { };
 
-      BoxOffice = "";
+      Blockbuster = "";
       YearSTreleased = null;
 
       L1language = "";
@@ -95,7 +95,7 @@ namespace Trafilm.Metadata
       ProductionCountries = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_PRODUCTION_COUNTRIES);
       ProductionCompanies = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES);
 
-      BoxOffice = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_BOX_OFFICE);
+      Blockbuster = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_BLOCKBUSTER);
       YearSTreleased = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_YEAR_ST_RELEASED);
 
       L1language = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_L1_LANGUAGE);
@@ -133,7 +133,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COUNTRIES, ProductionCountries));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_PRODUCTION_COMPANIES, ProductionCompanies));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_BOX_OFFICE, BoxOffice));
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_BLOCKBUSTER, Blockbuster));
       AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, YearSTreleased));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_L1_LANGUAGE, L1language));

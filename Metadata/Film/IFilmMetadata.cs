@@ -20,7 +20,7 @@ namespace Trafilm.Metadata.Models
     string[] ProductionCountries { get; set; }
     string[] ProductionCompanies { get; set; }
 
-    string BoxOffice { get; set; }
+    string Blockbuster { get; set; }
     int? YearSTreleased { get; set; }
 
     string L1language { get; set; }

@@ -20,7 +20,7 @@ namespace Trafilm.Metadata
 
     public const string FACET_FILM_TITLE_TT = "Film Title TT";
     public const string FACET_YEAR_TT_RELEASED = "Year TT released";
-    //public const string FACET_BOX_OFFICE_TT = "Box office TT";
+    public const string FACET_BLOCKBUSTER_TT = "Film TT Blockbuster";
 
     public const string FACET_L2_LANGUAGE = "L2 language";
     public const string FACET_L2_MODE = "L2 mode"; //dubbed, subtitled
@@ -81,7 +81,7 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_FILM_TITLE_TT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      //result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_BOX_OFFICE_TT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_BLOCKBUSTER_TT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L2_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L2_MODE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
