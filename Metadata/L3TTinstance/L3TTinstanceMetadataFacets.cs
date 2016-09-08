@@ -22,11 +22,11 @@ namespace Trafilm.Metadata
     public const string FACET_YEAR_TT_RELEASED = "Year TT released";
     //public const string FACET_BOX_OFFICE_TT = "Box office TT";
 
-    public const string FACET_START_TIME = "Start time (min)"; //Calculatable from L3STinstance
-    public const string FACET_DURATION = "Duration (min)"; //Calculatable from L3STinstance
-
     public const string FACET_L2_LANGUAGE = "L2 language";
     public const string FACET_L2_MODE = "L2 mode"; //dubbed, subtitled
+
+    public const string FACET_START_TIME = "Start time (min)"; //Calculatable from L3STinstance
+    public const string FACET_DURATION = "Duration (min)"; //Calculatable from L3STinstance
 
     public const string FACET_L2_SAME_AS_L3ST = "L2 same as L3ST"; //TODO: maybe this can be autocalculated using (L2language == L3STinstance.L3STlanguage) ?
 
@@ -83,11 +83,11 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       //result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_BOX_OFFICE_TT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
-      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from L3STinstance
-      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from L3STinstance
-
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L2_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L2_MODE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from L3STinstance
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from L3STinstance
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 

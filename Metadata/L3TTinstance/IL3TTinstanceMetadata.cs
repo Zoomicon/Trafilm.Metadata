@@ -18,11 +18,11 @@ namespace Trafilm.Metadata.Models
     int? YearTTreleased { get; set; }
     //string BoxOfficeTT { get; set; }
 
-    int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
-    int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
-
     string L2language { get; set; }
     string L2mode { get; set; } //dubbed, subtitled
+
+    int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
+    int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
 
     string L2sameAsL3ST { get; set; }
 
