@@ -52,6 +52,7 @@ namespace Trafilm.Metadata
 
         if (value != null)
         {
+          Image = value.Image;
           Description = value.Description;
           StartTime = value.StartTime;
           Duration = value.Duration;
