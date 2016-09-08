@@ -1,12 +1,11 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadata.cs
-//Version: 20160614
+//Version: 20160907
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
 using Trafilm.Metadata.Utils;
 
-using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
@@ -16,19 +15,12 @@ namespace Trafilm.Metadata
   public class ConversationMetadata : TrafilmMetadata, IConversationMetadata
   {
 
-    #region --- Constants ---
-
-    public const string DEFAULT_POSITION_FORMAT = "g";
-    public const string DEFAULT_DURATION_FORMAT = "g";
-
-    #endregion
-
     #region --- Properties ---
 
     public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
 
-    public TimeSpan? StartTime { get; set; }
-    public TimeSpan? Duration { get; set; }
+    public int? StartTime { get; set; } //in minutes
+    public int? Duration { get; set; } //in minutes
 
     public string LanguageSources { get; set; }
 
@@ -81,20 +73,20 @@ namespace Trafilm.Metadata
 
       FilmReferenceId = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID);
 
-      StartTime = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_START_TIME).ToNullableTimeSpan(DEFAULT_POSITION_FORMAT);
-      Duration = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_DURATION).ToNullableTimeSpan(DEFAULT_DURATION_FORMAT);
+      StartTime = (int?)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_START_TIME);
+      Duration = (int?)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_DURATION);
 
       LanguageSources = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES);
 
       //Calculatable from L3STinstances//
 
-      L3STlanguagesCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT));
+      L3STlanguagesCount = (int)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT);
       L3STlanguages = facets.CXMLFacetStringValues(ConversationMetadataFacets.FACET_L3ST_LANGUAGES);
 
-      L3STlanguageTypesCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT));
+      L3STlanguageTypesCount = (int)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT);
       L3STlanguageTypes = facets.CXMLFacetStringValues(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES);
 
-      L3STinstanceCount = int.Parse(facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT));
+      L3STinstanceCount = (int)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT);
 
       return this;
     }
@@ -113,20 +105,20 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_START_TIME, StartTime.ToString(DEFAULT_POSITION_FORMAT)));
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_DURATION, Duration.ToString(DEFAULT_DURATION_FORMAT)));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_START_TIME, StartTime));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_DURATION, Duration));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES, LanguageSources));
 
       //Calculatable from L3STinstances//
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT, L3STlanguagesCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT, L3STlanguagesCount));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGES, L3STlanguages));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT, L3STlanguageTypesCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT, L3STlanguageTypesCount));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES, L3STlanguageTypes));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT, L3STinstanceCount.ToString()));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT, L3STinstanceCount));
 
       return facets;
     }

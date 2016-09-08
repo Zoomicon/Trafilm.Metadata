@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TrafilmMetadtata.cs
-//Version: 20160609
+//Version: 20160902
 
 using Metadata.CXML;
 
@@ -50,7 +50,7 @@ namespace Trafilm.Metadata
 
     public string Transcription { get; set; }
 
-    public string[] Keywords { get; set; }
+    public string[] Tags { get; set; }
 
     public string Remarks { get; set; }
 
@@ -81,7 +81,7 @@ namespace Trafilm.Metadata
 
       Transcription = "";
 
-      Keywords = new string[] { };
+      Tags = new string[] { };
 
       Remarks = "";
 
@@ -108,7 +108,7 @@ namespace Trafilm.Metadata
 
       Transcription = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_TRANSCRIPTION);
 
-      Keywords = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_KEYWORDS);
+      Tags = facets.CXMLFacetStringValues(TrafilmMetadataFacets.FACET_TAGS);
 
       Remarks = facets.CXMLFacetStringValue(TrafilmMetadataFacets.FACET_REMARKS);
 
@@ -155,7 +155,7 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_TRANSCRIPTION, Transcription));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_KEYWORDS, Keywords));
+      AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_TAGS, Tags));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(TrafilmMetadataFacets.FACET_REMARKS, Remarks));
 

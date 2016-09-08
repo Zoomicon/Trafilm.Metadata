@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3STinstanceMetadata.cs
-//Version: 20160614
+//Version: 20160908
 
 using System;
 
@@ -15,8 +15,8 @@ namespace Trafilm.Metadata.Models
     string FilmReferenceId { get; set; }
     string ConversationReferenceId { get; set; }
 
-    TimeSpan? StartTime { get; set; }
-    TimeSpan? Duration { get; set; }
+    int? StartTime { get; set; } //in minutes //Calculatable from Conversation
+    int? Duration { get; set; } //in minutes //Calculatable from Conversation
 
     string L1language { get; set; } //Calculatable from Film
 
@@ -38,6 +38,7 @@ namespace Trafilm.Metadata.Models
     string[] L3STrepresentationsVisual { get; set; }
 
     string[] L3STfunctions { get; set; }
+    string[] L3STtypesFeatures { get; set; }
 
     string L3STsources { get; set; }
 

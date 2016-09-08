@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TrafilmMetadataFacets.cs
-//Version: 20160608
+//Version: 20160902
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace Trafilm.Metadata
 
     public const string FACET_TRANSCRIPTION = "Transcription";
 
-    public const string FACET_KEYWORDS = "Keywords";
+    public const string FACET_TAGS = "Tags";
 
     public const string FACET_REMARKS = "Remarks";
 
@@ -48,7 +48,7 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_TRANSCRIPTION, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_KEYWORDS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_TAGS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(TrafilmMetadataFacets.FACET_REMARKS, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: true, isWordWheelVisible: true));
 

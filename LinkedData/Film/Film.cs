@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Film.cs
-//Version: 20160609
+//Version: 20160906
 
 using Trafilm.Metadata.Models;
 
@@ -54,7 +54,7 @@ namespace Trafilm.Metadata
         if (value != null)
         {
           ConversationCount = value.Count();
-          ConversationsDuration = value.Aggregate(TimeSpan.Zero, (total, next) => total.Add(next.Duration ?? TimeSpan.Zero));
+          ConversationsDuration = value.Aggregate(0, (total, next) => total += next.Duration ?? 0);
 
           //Calculated from Conversations.L3STinstances.L3TTinstances//
 

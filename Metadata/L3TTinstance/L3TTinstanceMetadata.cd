@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="Trafilm.Metadata.TrafilmMetadata">
-    <Position X="4" Y="6.75" Width="4" />
+    <Position X="4" Y="7.75" Width="4" />
     <TypeIdentifier>
-      <HashCode>ABAAgAAAAJAEBAiAAAoAAAAAAAAEAAAAAAAAAABAgDA=</HashCode>
+      <HashCode>ABAAgAAAAJAEBAiAAAoAAAAAAAAEAEAAAAAAAABAADA=</HashCode>
       <FileName>Metadata\TrafilmMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Metadata.CXML.CXMLMetadata">
-    <Position X="0.5" Y="6.75" Width="3.25" />
+    <Position X="0.5" Y="7.75" Width="3.25" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -22,16 +22,16 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Trafilm.Metadata.L3TTinstanceMetadataFacets">
-    <Position X="12.25" Y="6.75" Width="3.75" />
+    <Position X="12.25" Y="7.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CFiAAAAAAAAAAAgBAEA0EAIBCAAAAABkAAAgQAIAIAo=</HashCode>
+      <HashCode>CFiAgAAAAAAAAIgBAEA0EgIhCAAAAABkAAAgQAIAIAo=</HashCode>
       <FileName>Metadata\L3TTinstance\L3TTinstanceMetadataFacets.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Trafilm.Metadata.L3TTinstanceMetadata">
-    <Position X="8.25" Y="6.75" Width="3.75" />
+    <Position X="8.25" Y="7.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>BAECgAAkFBCAAAgAAhEhIAAAAAgMAAAZAIgAACJAACA=</HashCode>
+      <HashCode>BAEGgAAkFBCCAAgAAhEhIAAAIAgMACAZAIgAACJAACA=</HashCode>
       <FileName>Metadata\L3TTinstance\L3TTinstanceMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -39,14 +39,14 @@
   <Interface Name="Trafilm.Metadata.Models.IL3TTinstanceMetadata">
     <Position X="9" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>BAECAAAkFACAAAAAAhEhIAAAAAgMAAAZAIgAACIAAAA=</HashCode>
+      <HashCode>BAEGAAAkFACCAAAAAhEhIAAAIAgMACAZAIgAACIAAAA=</HashCode>
       <FileName>Metadata\L3TTinstance\IL3TTinstanceMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Trafilm.Metadata.ITrafilmMetadata">
     <Position X="5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAIAAAAAAAAoAAAAAAAAEAAAAAAAAAAAAgDA=</HashCode>
+      <HashCode>ABAAAAAAAIAAAAAAAAoAAAAAAAAEAEAAAAAAAAAAADA=</HashCode>
       <FileName>Metadata\ITrafilmMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -1,9 +1,8 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TestConversation.cs
-//Version: 20160516
+//Version: 20160906
 
 using Trafilm.Metadata.Models;
-using Trafilm.Metadata.Utils;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;
@@ -28,8 +27,8 @@ namespace Trafilm.Metadata.Tests
       metadata.Id = "22";
       metadata.ReferenceId = "testFilm.testConversation";
       metadata.FilmReferenceId = "testFilm";
-      metadata.StartTime = "10:20:30.12".ToNullableTimeSpan(ConversationMetadata.DEFAULT_POSITION_FORMAT);
-      metadata.Duration = "2:5.12".ToNullableTimeSpan(ConversationMetadata.DEFAULT_DURATION_FORMAT);
+      metadata.StartTime = 10;
+      metadata.Duration = 20;
       using (XmlWriter writer = Helpers.CreateXmlWriter(@"testFilm.testConversation.cxml"))
         metadata.Save(writer);
     }
@@ -43,8 +42,8 @@ namespace Trafilm.Metadata.Tests
         IConversation metadata = (IConversation)new Conversation().Load("testFilm.testConversation", reader, null);
         Assert.AreEqual("testFilm", metadata.FilmReferenceId);
         Assert.AreEqual("testFilm.testConversation", metadata.ReferenceId);
-        Assert.AreEqual("10:20:30.12", metadata.StartTime.ToString(ConversationMetadata.DEFAULT_POSITION_FORMAT));
-        Assert.AreEqual("0:02:05.12", metadata.Duration.ToString(ConversationMetadata.DEFAULT_DURATION_FORMAT));
+        Assert.AreEqual(10, metadata.StartTime);
+        Assert.AreEqual(20, metadata.Duration);
       }
     }
 

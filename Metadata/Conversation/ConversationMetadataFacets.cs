@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadataFacets.cs
-//Version: 20160614
+//Version: 20160907
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -16,8 +16,8 @@ namespace Trafilm.Metadata
 
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
 
-    public const string FACET_START_TIME = "Start time (h:m:s)";
-    public const string FACET_DURATION = "Duration (h:m:s)";
+    public const string FACET_START_TIME = "Start time (min)";
+    public const string FACET_DURATION = "Duration (min)";
 
     public const string FACET_LANGUAGE_SOURCES = "Language sources";
 
@@ -46,20 +46,20 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_START_TIME, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //Calculatable from L3STinstances//
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES_COUNT, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       //
 

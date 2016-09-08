@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3TTinstanceMetadata.cs
-//Version: 20160614
+//Version: 20160908
 
 namespace Trafilm.Metadata.Models
 {
@@ -13,6 +13,9 @@ namespace Trafilm.Metadata.Models
     string FilmReferenceId { get; set; }
     string ConversationReferenceId { get; set; }
     string L3STinstanceReferenceId { get; set; }
+
+    int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
+    int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
 
     string L2language { get; set; }
     string L2mode { get; set; } //dubbed, subtitled
@@ -39,6 +42,7 @@ namespace Trafilm.Metadata.Models
     string[] L3TTrepresentationsVisual { get; set; }
 
     string[] L3TTfunctions { get; set; }
+    string[] L3TTtypesFeatures { get; set; }
 
     string L3TTsources { get; set; }
 
@@ -47,6 +51,7 @@ namespace Trafilm.Metadata.Models
     string[] L3STlanguageTypeChange { get; set; }
     string[] L3STmodeChange { get; set;  }
     string[] L3STfunctionsChange { get; set; }
+    string[] L3STtypesFeaturesChange { get; set; }
     string[] L3STsourcesChange { get; set; }
 
     #endregion

@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadataFacets.cs
-//Version: 20160824
+//Version: 20160908
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -18,6 +18,9 @@ namespace Trafilm.Metadata
     public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";
     public const string FACET_L3ST_INSTANCE_REFERENCE_ID = "L3ST-instance Reference Id";
 
+    public const string FACET_START_TIME = "Start time (min)"; //Calculatable from L3STinstance
+    public const string FACET_DURATION = "Duration (min)"; //Calculatable from L3STinstance
+
     public const string FACET_L2_LANGUAGE = "L2 language";
     public const string FACET_L2_MODE = "L2 mode"; //dubbed, subtitled
 
@@ -31,7 +34,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3TT_CONSTRUCTED_BASED_ON = "L3TT constructed based on";
 
     public const string FACET_L3TT_AUDIENCE_UNDERSTANDING = "L3TT meant to be understood";
-    public const string FACET_L3TT_MESSAGE_UNDERSTANDING = "L3TT required for understanding";
+    public const string FACET_L3TT_MESSAGE_UNDERSTANDING = "L3TT message required for understanding";
     public const string FACET_L3TT_MEANING_DECIPHERABLE = "L3TT meaning decipherable";
 
     public const string FACET_L3TT_SPEAKER_PERFORMANCE = "Quality of L3TT speaker performance";
@@ -43,6 +46,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3TT_REPRESENTATIONS_VISUAL = "L3TT represented: visual";
 
     public const string FACET_L3TT_FUNCTIONS = "L3TT functions";
+    public const string FACET_L3TT_TYPES_FEATURES = "Types/features related to L3TT";
 
     public const string FACET_L3TT_SOURCES = "L3TT sources";
 
@@ -51,6 +55,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_LANGUAGE_TYPE_CHANGE = "L3ST language type change";
     public const string FACET_L3ST_MODE_CHANGE = "L3ST mode change";
     public const string FACET_L3ST_FUNCTIONS_CHANGE = "L3ST functions change";
+    public const string FACET_L3ST_TYPES_FEATURES_CHANGE = "Types/features related to L3ST change";
     public const string FACET_L3ST_SOURCES_CHANGE = "L3ST sources change";
 
     #endregion
@@ -69,6 +74,9 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_INSTANCE_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from L3STinstance
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from L3STinstance
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L2_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L2_MODE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
@@ -95,6 +103,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_REPRESENTATIONS_VISUAL, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_FUNCTIONS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_TYPES_FEATURES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
@@ -103,6 +112,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_MODE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_TYPES_FEATURES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_SOURCES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //
