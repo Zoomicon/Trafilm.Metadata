@@ -88,6 +88,17 @@ namespace Trafilm.Metadata
       {
         conversation = value;
 
+        //Calculated from Conversation//
+
+        if (value != null)
+        {
+          StartTime = value.StartTime;
+          Duration = value.Duration;
+          //...
+        }
+        else
+          ClearCalculatedFromConversation(); //don't call ClearCalculated() here, since we also calculate facet values at "L3TTinstances" property
+
         //Calculated from Film//
 
         if ((value != null) && (value.Film != null))
@@ -96,7 +107,7 @@ namespace Trafilm.Metadata
           //...
         }
         else
-          ClearCalculatedFromFilm(); //con't call ClearCalculated() here, since we also calculate facet values at "L3TTinstances" property
+          ClearCalculatedFromFilm(); //don't call ClearCalculated() here, since we also calculate facet values at "L3TTinstances" property
       }
     }
 
@@ -119,7 +130,7 @@ namespace Trafilm.Metadata
           //...
         }
         else
-          ClearCalculatedFromL3TTinstances(); //con't call ClearCalculated() here, since we also calculate facet values at "Conversation" property
+          ClearCalculatedFromL3TTinstances(); //don't call ClearCalculated() here, since we also calculate facet values at "Conversation" property
       }
     }
 

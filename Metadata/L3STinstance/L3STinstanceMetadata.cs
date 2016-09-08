@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadata.cs
-//Version: 20160907
+//Version: 20160908
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -19,8 +19,8 @@ namespace Trafilm.Metadata
     public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
     public virtual string ConversationReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
 
-    public int? StartTime { get; set; } //in minutes
-    public int? Duration { get; set; } //in minutes
+    public int? StartTime { get; set; } //in minutes //Calculatable from Conversation
+    public int? Duration { get; set; } //in minutes //Calculatable from Conversation
 
     public string L1language { get; set; } //Calculatable from Film
 
@@ -61,9 +61,6 @@ namespace Trafilm.Metadata
       FilmReferenceId = "";
       ConversationReferenceId = "";
 
-      StartTime = null;
-      Duration = null;
-
       L3STlanguageType = "";
       L3STlanguage = "";
 
@@ -94,12 +91,19 @@ namespace Trafilm.Metadata
       base.ClearCalculated();
 
       ClearCalculatedFromFilm();
+      ClearCalculatedFromConversation();
       ClearCalculatedFromL3TTinstances();
     }
 
     public void ClearCalculatedFromFilm()
     {
       L1language = "";
+    }
+
+    public void ClearCalculatedFromConversation()
+    {
+      StartTime = null;
+      Duration = null;
     }
 
     public void ClearCalculatedFromL3TTinstances()
@@ -116,8 +120,8 @@ namespace Trafilm.Metadata
       FilmReferenceId = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_FILM_REFERENCE_ID);
       ConversationReferenceId = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID);
 
-      StartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_START_TIME);
-      Duration = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_DURATION);
+      StartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_START_TIME); //Calculatable from Conversation
+      Duration = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_DURATION); //Calculatable from Conversation
 
       L1language = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE); //Calculatable from Film
 
@@ -143,7 +147,7 @@ namespace Trafilm.Metadata
 
       L3STsources = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_SOURCES);
 
-      //Calculatable from L3STinstances//
+      //Calculatable from L3TTinstances//
 
       L3TTinstanceCount = (int)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_L3TT_INSTANCE_COUNT);
 
@@ -170,8 +174,8 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L1_LANGUAGE, L1language)); //Calculatable from Film
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE, L3STlanguageType));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE, L3STlanguage));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE, L3STlanguageType)); //Calculatable from Conversation
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE, L3STlanguage)); //Calculatable from Conversation
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_CONSTRUCTED_BASED_ON, L3STconstructedBasedOn));
 
