@@ -4,7 +4,7 @@
 
   <metadata>
     <id>Trafilm.Metadata</id>
-    <version>11.9.0</version>
+    <version>11.10.0</version>
     <title>Trafilm.Metadata</title>
     <authors>birbilis</authors>
     <owners>birbilis</owners>
@@ -15,7 +15,7 @@
     <developmentDependency>true</developmentDependency>
     <description>Library for manipulating Trafilm (http://Trafilm.net) Gallery Metadata in Collection XML (CXML) format (as defined for PivotViewer control)</description>
     <releaseNotes>
-      L3STinstance's StartTime/Duration are now calculatable from Conversation (parent)
+      Added StartTime/Duration to L3TTinstance, calculatable from L3STinstance (parent)
     </releaseNotes>
     <copyright>Copyright 2013-2016</copyright>
     <tags>Trafilm Gallery Metadata CXML PivotViewer</tags>

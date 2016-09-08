@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadataFacets.cs
-//Version: 20160907
+//Version: 20160908
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -17,8 +17,8 @@ namespace Trafilm.Metadata
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
     public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";
 
-    public const string FACET_START_TIME = "Start time (min)";
-    public const string FACET_DURATION = "Duration (min)";
+    public const string FACET_START_TIME = "Start time (min)"; //Calculatable from Conversation
+    public const string FACET_DURATION = "Duration (min)"; //Calculatable from Conversation
 
     public const string FACET_L1_LANGUAGE = "Main (L1) language"; //Calculatable from Film
 
@@ -64,8 +64,8 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from Conversaton
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from Conversation
 
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L1_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true)); //Calculatable from Film
 
