@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IFilmMetadata.cs
-//Version: 20160906
+//Version: 20160908
 
 using System;
 
@@ -12,10 +12,6 @@ namespace Trafilm.Metadata.Models
 
     #region --- Properties ---
 
-    string Title_es { get; set; }
-    string Title_ca { get; set; }
-    //...
-
     int? Duration { get; set; } //in minutes
 
     string[] Directors { get; set; }
@@ -24,12 +20,10 @@ namespace Trafilm.Metadata.Models
     string[] ProductionCountries { get; set; }
     string[] ProductionCompanies { get; set; }
 
-    string BoxOffice { get; set; }
+    string Blockbuster { get; set; }
     int? YearSTreleased { get; set; }
 
     string L1language { get; set; }
-
-    int? YearTTreleased_Spain { get; set; }
 
     //Calculatable from Conversations.L3STinstances.L3TTinstances//
 
