@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadata.cs
-//Version: 20160909
+//Version: 20160912
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -54,17 +54,17 @@ namespace Trafilm.Metadata
     public string[] L3TTrepresentationsVisual { get; set; }
 
     public string[] L3TTfunctions { get; set; }
-    public string[] L3TTtypesFeatures { get; set; }
+    public string[] L3TTconversationFeatures { get; set; }
 
     public string L3TTsources { get; set; }
 
     //Calculatable from L3STinstance//
 
-    public string[] L3STlanguageTypeChange { get; set; }
-    public string[] L3STmodeChange { get; set; }
-    public string[] L3STfunctionsChange { get; set; }
-    public string[] L3STtypesFeaturesChange { get; set; }
-    public string[] L3STsourcesChange { get; set; }
+    public string[] L3languageTypeChange { get; set; }
+    public string[] L3modeChange { get; set; }
+    public string[] L3functionsChange { get; set; }
+    public string[] L3conversationFeaturesChange { get; set; }
+    public string[] L3sourcesChange { get; set; }
 
     #endregion
 
@@ -109,7 +109,7 @@ namespace Trafilm.Metadata
       L3TTrepresentationsVisual = new string[] { };
 
       L3TTfunctions = new string[] { };
-      L3TTtypesFeatures = new string[] { };
+      L3TTconversationFeatures = new string[] { };
 
       L3TTsources = "";
 
@@ -125,11 +125,11 @@ namespace Trafilm.Metadata
       StartTime = null;
       Duration = null;
 
-      L3STlanguageTypeChange = new string[] { };
-      L3STmodeChange = new string[] { };
-      L3STfunctionsChange = new string[] { };
-      L3STtypesFeaturesChange = new string[] { };
-      L3STsourcesChange = new string[] { };
+      L3languageTypeChange = new string[] { };
+      L3modeChange = new string[] { };
+      L3functionsChange = new string[] { };
+      L3conversationFeaturesChange = new string[] { };
+      L3sourcesChange = new string[] { };
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -176,17 +176,17 @@ namespace Trafilm.Metadata
       L3TTrepresentationsVisual = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3TT_REPRESENTATIONS_VISUAL);
 
       L3TTfunctions = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3TT_FUNCTIONS);
-      L3TTtypesFeatures = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3TT_TYPES_FEATURES);
+      L3TTconversationFeatures = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3TT_CONVERSATION_FEATURES);
 
       L3TTsources = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES);
 
       //Calculatable from L3STinstance//
 
-      L3STlanguageTypeChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE);
-      L3STmodeChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_MODE_CHANGE); 
-      L3STfunctionsChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE);
-      L3STtypesFeaturesChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_TYPES_FEATURES_CHANGE);
-      L3STsourcesChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3ST_SOURCES_CHANGE);
+      L3languageTypeChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_LANGUAGE_TYPE_CHANGE);
+      L3modeChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_MODE_CHANGE); 
+      L3functionsChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_FUNCTIONS_CHANGE);
+      L3conversationFeaturesChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_CONVERSATION_FEATURES_CHANGE);
+      L3sourcesChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_SOURCES_CHANGE);
 
       return this;
     }
@@ -241,17 +241,17 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_REPRESENTATIONS_VISUAL, L3TTrepresentationsVisual));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_FUNCTIONS, L3TTfunctions));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_TYPES_FEATURES, L3TTtypesFeatures));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_CONVERSATION_FEATURES, L3TTconversationFeatures));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES, L3TTsources));
 
       //Calculatable from L3STinstance//
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE, L3STlanguageTypeChange));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_MODE_CHANGE, L3STmodeChange));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE, L3STfunctionsChange));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_TYPES_FEATURES_CHANGE, L3STtypesFeaturesChange));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_SOURCES_CHANGE, L3STsourcesChange));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_LANGUAGE_TYPE_CHANGE, L3languageTypeChange));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_MODE_CHANGE, L3modeChange));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_FUNCTIONS_CHANGE, L3functionsChange));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_CONVERSATION_FEATURES_CHANGE, L3conversationFeaturesChange));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_SOURCES_CHANGE, L3sourcesChange));
 
       return facets;
     }
