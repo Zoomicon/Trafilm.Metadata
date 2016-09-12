@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadata.cs
-//Version: 20160908
+//Version: 20160912
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -42,7 +42,7 @@ namespace Trafilm.Metadata
     public string[] L3STrepresentationsVisual { get; set; }
 
     public string[] L3STfunctions { get; set; }
-    public string[] L3STtypesFeatures { get; set; }
+    public string[] L3STconversationFeatures { get; set; }
 
     public string L3STsources { get; set; }
 
@@ -79,7 +79,7 @@ namespace Trafilm.Metadata
       L3STrepresentationsVisual = new string[] { };
 
       L3STfunctions = new string[] { };
-      L3STtypesFeatures = new string[] { };
+      L3STconversationFeatures = new string[] { };
 
       L3STsources = "";
 
@@ -143,7 +143,7 @@ namespace Trafilm.Metadata
       L3STrepresentationsVisual = facets.CXMLFacetStringValues(L3STinstanceMetadataFacets.FACET_L3ST_REPRESENTATIONS_VISUAL);
 
       L3STfunctions = facets.CXMLFacetStringValues(L3STinstanceMetadataFacets.FACET_L3ST_FUNCTIONS);
-      L3STtypesFeatures = facets.CXMLFacetStringValues(L3STinstanceMetadataFacets.FACET_L3ST_TYPES_FEATURES);
+      L3STconversationFeatures = facets.CXMLFacetStringValues(L3STinstanceMetadataFacets.FACET_L3ST_CONVERSATION_FEATURES);
 
       L3STsources = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_SOURCES);
 
@@ -192,7 +192,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_REPRESENTATIONS_VISUAL, L3STrepresentationsVisual));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_FUNCTIONS, L3STfunctions));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_TYPES_FEATURES, L3STtypesFeatures));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_CONVERSATION_FEATURES, L3STconversationFeatures));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_L3ST_SOURCES, L3STsources));
 

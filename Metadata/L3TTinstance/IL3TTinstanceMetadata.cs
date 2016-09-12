@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3TTinstanceMetadata.cs
-//Version: 20160909
+//Version: 20160912
 
 namespace Trafilm.Metadata.Models
 {
@@ -48,17 +48,17 @@ namespace Trafilm.Metadata.Models
     string[] L3TTrepresentationsVisual { get; set; }
 
     string[] L3TTfunctions { get; set; }
-    string[] L3TTtypesFeatures { get; set; }
+    string[] L3TTconversationFeatures { get; set; }
 
     string L3TTsources { get; set; }
 
     //Calculatable from L3STinstance//
 
-    string[] L3STlanguageTypeChange { get; set; }
-    string[] L3STmodeChange { get; set;  }
-    string[] L3STfunctionsChange { get; set; }
-    string[] L3STtypesFeaturesChange { get; set; }
-    string[] L3STsourcesChange { get; set; }
+    string[] L3languageTypeChange { get; set; }
+    string[] L3modeChange { get; set;  }
+    string[] L3functionsChange { get; set; }
+    string[] L3conversationFeaturesChange { get; set; }
+    string[] L3sourcesChange { get; set; }
 
     #endregion
 

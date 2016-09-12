@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadataFacets.cs
-//Version: 20160909
+//Version: 20160912
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -53,17 +53,17 @@ namespace Trafilm.Metadata
     public const string FACET_L3TT_REPRESENTATIONS_VISUAL = "L3TT represented: visual";
 
     public const string FACET_L3TT_FUNCTIONS = "L3TT functions";
-    public const string FACET_L3TT_TYPES_FEATURES = "Types/features related to L3TT";
+    public const string FACET_L3TT_CONVERSATION_FEATURES = "Conversation features for L3TT-instance";
 
     public const string FACET_L3TT_SOURCES = "L3TT sources";
 
     //Calculatable from L3STinstance//
 
-    public const string FACET_L3ST_LANGUAGE_TYPE_CHANGE = "L3ST language type change";
-    public const string FACET_L3ST_MODE_CHANGE = "L3ST mode change";
-    public const string FACET_L3ST_FUNCTIONS_CHANGE = "L3ST functions change";
-    public const string FACET_L3ST_TYPES_FEATURES_CHANGE = "Types/features related to L3ST change";
-    public const string FACET_L3ST_SOURCES_CHANGE = "L3ST sources change";
+    public const string FACET_L3_LANGUAGE_TYPE_CHANGE = "L3 language type change";
+    public const string FACET_L3_MODE_CHANGE = "L3 mode change";
+    public const string FACET_L3_FUNCTIONS_CHANGE = "L3 functions change";
+    public const string FACET_L3_CONVERSATION_FEATURES_CHANGE = "Conversation features for L3-instance change";
+    public const string FACET_L3_SOURCES_CHANGE = "L3 sources change";
 
     #endregion
 
@@ -116,17 +116,17 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_REPRESENTATIONS_VISUAL, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_FUNCTIONS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_TYPES_FEATURES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_CONVERSATION_FEATURES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //Calculatable from L3STinstance//
 
-      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_MODE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_FUNCTIONS_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_TYPES_FEATURES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3ST_SOURCES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3_LANGUAGE_TYPE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3_MODE_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3_FUNCTIONS_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3_CONVERSATION_FEATURES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3TTinstanceMetadataFacets.FACET_L3_SOURCES_CHANGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       //
 

@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadataFacets.cs
-//Version: 20160908
+//Version: 20160912
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -40,7 +40,7 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_REPRESENTATIONS_VISUAL = "L3ST represented: visual";
 
     public const string FACET_L3ST_FUNCTIONS = "L3ST functions";
-    public const string FACET_L3ST_TYPES_FEATURES = "Types/features related to L3ST";
+    public const string FACET_L3ST_CONVERSATION_FEATURES = "Conversation features for L3ST-instance";
 
     public const string FACET_L3ST_SOURCES = "L3ST sources";
 
@@ -87,7 +87,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_REPRESENTATIONS_VISUAL, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_FUNCTIONS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_TYPES_FEATURES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_CONVERSATION_FEATURES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
