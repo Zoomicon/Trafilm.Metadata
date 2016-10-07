@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadata.cs
-//Version: 20160912
+//Version: 20161007
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -29,8 +29,8 @@ namespace Trafilm.Metadata
     public int? YearTTreleased { get; set; }
     public string BlockbusterTT { get; set; }
 
-    public int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
-    public int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
+    public int? ConversationStartTime { get; set; } //in min //Calculatable from L3STinstance
+    public string ConversationDuration { get; set; } //in sec spans //Calculatable from L3STinstance
 
     public string L2sameAsL3ST { get; set; }
 
@@ -122,8 +122,8 @@ namespace Trafilm.Metadata
 
       Description = ""; //Calculated from L3STinstance
 
-      StartTime = null;
-      Duration = null;
+      ConversationStartTime = null;
+      ConversationDuration = "";
 
       L3languageTypeChange = new string[] { };
       L3modeChange = new string[] { };
@@ -151,8 +151,8 @@ namespace Trafilm.Metadata
       YearTTreleased = (int?)facets.CXMLFacetNumberValue(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED);
       BlockbusterTT = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_BLOCKBUSTER_TT);
 
-      StartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_START_TIME); //Calculatable from L3STinstance
-      Duration = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_DURATION); //Calculatable from L3STinstance
+      ConversationStartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_START_TIME); //Calculatable from L3STinstance
+      ConversationDuration = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_DURATION); //Calculatable from L3STinstance
 
       L2sameAsL3ST = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST);
 
@@ -216,8 +216,8 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeNumberFacet(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED, YearTTreleased));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_BLOCKBUSTER_TT, BlockbusterTT));
 
-      AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_START_TIME, StartTime));
-      AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_DURATION, Duration));
+      AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_CONVERSATION_START_TIME, ConversationStartTime));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_CONVERSATION_DURATION, ConversationDuration));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST, L2sameAsL3ST));
 

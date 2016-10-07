@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TestFilm.cs
-//Version: 20160906
+//Version: 20161007
 
 using Trafilm.Metadata.Models;
 
@@ -9,6 +9,9 @@ using System.Xml;
 
 namespace Trafilm.Metadata.Tests
 {
+
+  #region --- Methods ---
+
   [TestClass]
   public class TestFilm
   {
@@ -42,6 +45,8 @@ namespace Trafilm.Metadata.Tests
         Assert.AreEqual(120, metadata.Duration);
       }
     }
+
+    #endregion
 
   }
 }

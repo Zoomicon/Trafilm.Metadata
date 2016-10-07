@@ -1,10 +1,9 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadata.cs
-//Version: 20160907
+//Version: 20161007
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
-using Trafilm.Metadata.Utils;
 
 using System.Collections.Generic;
 using System.Xml.Linq;
@@ -19,8 +18,8 @@ namespace Trafilm.Metadata
 
     public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
 
-    public int? StartTime { get; set; } //in minutes
-    public int? Duration { get; set; } //in minutes
+    public int? StartTime { get; set; } //in min
+    public string Duration { get; set; } //in sec spans
 
     public string LanguageSources { get; set; }
 
@@ -45,7 +44,7 @@ namespace Trafilm.Metadata
       FilmReferenceId = "";
 
       StartTime = null;
-      Duration = null;
+      Duration = "";
 
       LanguageSources = "";
 
@@ -74,7 +73,7 @@ namespace Trafilm.Metadata
       FilmReferenceId = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID);
 
       StartTime = (int?)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_START_TIME);
-      Duration = (int?)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_DURATION);
+      Duration = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_DURATION);
 
       LanguageSources = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES);
 
@@ -106,7 +105,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_START_TIME, StartTime));
-      AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_DURATION, Duration));
+      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_DURATION, Duration));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES, LanguageSources));
 

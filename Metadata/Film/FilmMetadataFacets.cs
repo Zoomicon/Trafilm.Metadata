@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20160909
+//Version: 20161007
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -35,7 +35,6 @@ namespace Trafilm.Metadata
     //Calculatable from Conversations//
 
     public const string FACET_CONVERSATION_COUNT = "Conversations: count";
-    public const string FACET_CONVERSATIONS_DURATION = "Conversations: duration (min)";
 
     #endregion
 
@@ -71,7 +70,6 @@ namespace Trafilm.Metadata
       //Calculatable from Conversations//
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_CONVERSATION_COUNT, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_CONVERSATIONS_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
       //
 
