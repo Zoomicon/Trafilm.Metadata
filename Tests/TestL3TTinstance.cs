@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: TestL3TTinstance.cs
-//Version: 20160530
+//Version: 20161007
 
 using Trafilm.Metadata.Models;
 
@@ -12,6 +12,9 @@ namespace Trafilm.Metadata.Tests
   [TestClass]
   public class TestL3TTinstance
   {
+
+    #region --- Methods ---
+
     [TestMethod]
     public void CreateL3TTinstance()
     {
@@ -46,6 +49,8 @@ namespace Trafilm.Metadata.Tests
         Assert.AreEqual("testFilm.testConversation.testL3STinstance.testL3TTinstance", metadata.ReferenceId);
       }
     }
+
+    #endregion
 
   }
 }

@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstance.cs
-//Version: 20160908
+//Version: 20161007
 
 using Trafilm.Metadata.Models;
 using Trafilm.Metadata.Utils;
@@ -54,8 +54,8 @@ namespace Trafilm.Metadata
         {
           Image = value.Image;
           Description = value.Description;
-          StartTime = value.StartTime;
-          Duration = value.Duration;
+          ConversationStartTime = value.ConversationStartTime;
+          ConversationDuration = value.ConversationDuration;
 
           L3languageTypeChange = Diff.GetDifferences(value.L3STlanguageType, L3TTlanguageType);
           L3modeChange = Diff.GetDifferences(value.L3STmode, L3TTmode);

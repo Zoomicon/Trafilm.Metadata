@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstance.cs
-//Version: 20160609
+//Version: 20161007
 
 using System.Collections.Generic;
 using System.Linq;
@@ -92,8 +92,8 @@ namespace Trafilm.Metadata
 
         if (value != null)
         {
-          StartTime = value.StartTime;
-          Duration = value.Duration;
+          ConversationStartTime = value.StartTime;
+          ConversationDuration = value.Duration;
           //...
         }
         else

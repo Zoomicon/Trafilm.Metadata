@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3TTinstanceMetadata.cs
-//Version: 20160912
+//Version: 20161007
 
 namespace Trafilm.Metadata.Models
 {
@@ -23,8 +23,8 @@ namespace Trafilm.Metadata.Models
     int? YearTTreleased { get; set; }
     string BlockbusterTT { get; set; }
 
-    int? StartTime { get; set; } //in minutes //Calculatable from L3STinstance
-    int? Duration { get; set; } //in minutes //Calculatable from L3STinstance
+    int? ConversationStartTime { get; set; } //in min //Calculatable from L3STinstance
+    string ConversationDuration { get; set; } //in sec spans //Calculatable from L3STinstance
 
     string L2sameAsL3ST { get; set; }
 

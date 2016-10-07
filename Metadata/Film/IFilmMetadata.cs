@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IFilmMetadata.cs
-//Version: 20160908
+//Version: 20161007
 
 using System;
 
@@ -12,7 +12,7 @@ namespace Trafilm.Metadata.Models
 
     #region --- Properties ---
 
-    int? Duration { get; set; } //in minutes
+    int? Duration { get; set; } //in min
 
     string[] Directors { get; set; }
     string[] Scriptwriters { get; set; }
@@ -33,7 +33,6 @@ namespace Trafilm.Metadata.Models
     //Calculatable from Conversations//
 
     int ConversationCount { get; set; }
-    int? ConversationsDuration { get; set; } //in minutes
 
     #endregion
 

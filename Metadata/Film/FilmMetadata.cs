@@ -1,10 +1,9 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadata.cs
-//Version: 20160908
+//Version: 20161007
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
-using Trafilm.Metadata.Utils;
 
 using System.Collections.Generic;
 using System.Xml.Linq;
@@ -21,7 +20,7 @@ namespace Trafilm.Metadata
     public string Title_ca { get; set; }
     //...
 
-    public int? Duration { get; set; }
+    public int? Duration { get; set; } //in min
 
     public string[] Directors { get; set; }
     public string[] Scriptwriters { get; set; }
@@ -44,7 +43,6 @@ namespace Trafilm.Metadata
     //Calculatable from Conversations//
 
     public int ConversationCount { get; set; }
-    public int? ConversationsDuration { get; set; } //in minutes
 
     #endregion
 
@@ -78,7 +76,6 @@ namespace Trafilm.Metadata
       L2subtitledLanguages = new string[] { };
 
       ConversationCount = 0;
-      ConversationsDuration = 0;
     }
 
     public override ICXMLMetadata Load(XElement item)
@@ -108,7 +105,6 @@ namespace Trafilm.Metadata
       //Calculatable from Conversations//
 
       ConversationCount = (int)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_CONVERSATION_COUNT);
-      ConversationsDuration = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_CONVERSATIONS_DURATION);
 
       return this;
     }
@@ -146,7 +142,6 @@ namespace Trafilm.Metadata
       //Calculatable from Conversations//
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_CONVERSATION_COUNT, ConversationCount));
-      AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_CONVERSATIONS_DURATION, ConversationsDuration));
 
       return facets;
     }
