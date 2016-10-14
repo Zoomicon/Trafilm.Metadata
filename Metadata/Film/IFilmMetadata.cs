@@ -14,6 +14,8 @@ namespace Trafilm.Metadata.Models
 
     string Series { get; set; }
 
+    string Type { get; set; }
+
     int? Duration { get; set; } //in min
 
     string[] Directors { get; set; }

@@ -16,7 +16,9 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public string Series { get; set; }   
+    public string Series { get; set; }
+
+    public string Type { get; set; }
 
     public int? Duration { get; set; } //in min
 
@@ -52,6 +54,8 @@ namespace Trafilm.Metadata
 
       Series = "";
 
+      Type = "";
+
       Duration = null;
 
       Directors = new string[] { };
@@ -85,6 +89,8 @@ namespace Trafilm.Metadata
       IEnumerable<XElement> facets = FindFacets(item);
 
       Series = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SERIES);
+
+      Type = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TYPE);
 
       Duration = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_DURATION);
 
@@ -124,6 +130,8 @@ namespace Trafilm.Metadata
       base.GetCXMLFacets(facets);
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SERIES, Series));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TYPE, Type));
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_DURATION, Duration));
 

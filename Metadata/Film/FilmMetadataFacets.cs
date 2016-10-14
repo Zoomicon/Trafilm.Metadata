@@ -16,6 +16,8 @@ namespace Trafilm.Metadata
 
     public const string FACET_SERIES = "Series";
 
+    public const string FACET_TYPE = "Type"; //Feature film, Short film, TV film, TV series
+
     public const string FACET_DURATION = "Duration (min)";
 
     public const string FACET_DIRECTORS = "Director(s)";
@@ -51,6 +53,8 @@ namespace Trafilm.Metadata
 
       //
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SERIES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
