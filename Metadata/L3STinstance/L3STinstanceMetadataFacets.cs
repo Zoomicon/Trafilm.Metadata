@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadataFacets.cs
-//Version: 20161007
+//Version: 20161014
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -9,10 +9,13 @@ using System.Xml.Linq;
 namespace Trafilm.Metadata
 {
 
+  //TODO: add "FilmTitle" (calculatable from Conversation)
+  //TODO: add "SeriesEpisodeName" (calculatable from Conversation)
+
   public static class L3STinstanceMetadataFacets
   {
 
-    #region --- Properties ---
+    #region --- Constants ---
 
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
     public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";

@@ -12,11 +12,11 @@ namespace Trafilm.Metadata.Models
 
     #region --- Properties ---
 
-    string Series { get; set; }
-
     string Type { get; set; }
 
     int? Duration { get; set; } //in min
+
+    string Series { get; set; }
 
     string[] Directors { get; set; }
     string[] Scriptwriters { get; set; }

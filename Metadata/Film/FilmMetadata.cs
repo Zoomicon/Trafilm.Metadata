@@ -16,11 +16,11 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public string Series { get; set; }
-
     public string Type { get; set; }
 
     public int? Duration { get; set; } //in min
+
+    public string Series { get; set; }
 
     public string[] Directors { get; set; }
     public string[] Scriptwriters { get; set; }
@@ -52,11 +52,11 @@ namespace Trafilm.Metadata
     {
       base.Clear();
 
-      Series = "";
-
       Type = "";
 
       Duration = null;
+
+      Series = "";
 
       Directors = new string[] { };
       Scriptwriters = new string[] { };
@@ -88,11 +88,11 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
-      Series = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SERIES);
-
       Type = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TYPE);
 
       Duration = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_DURATION);
+
+      Series = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SERIES);
 
       Directors = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DIRECTORS);
       Scriptwriters = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SCRIPTWRITERS);
@@ -129,11 +129,11 @@ namespace Trafilm.Metadata
 
       base.GetCXMLFacets(facets);
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SERIES, Series));
-
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TYPE, Type));
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_DURATION, Duration));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SERIES, Series));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTORS, Directors));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCRIPTWRITERS, Scriptwriters));

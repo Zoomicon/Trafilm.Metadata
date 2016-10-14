@@ -9,6 +9,8 @@ using System.Xml.Linq;
 namespace Trafilm.Metadata
 {
 
+  //TODO: add "SeriesEpisodeName_TT"
+
   public static class L3TTinstanceMetadataFacets
   {
 

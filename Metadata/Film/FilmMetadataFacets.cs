@@ -12,13 +12,13 @@ namespace Trafilm.Metadata
   public static class FilmMetadataFacets
   {
 
-    #region --- Properties ---
-
-    public const string FACET_SERIES = "Series";
+    #region --- Constants ---
 
     public const string FACET_TYPE = "Type"; //Feature film, Short film, TV film, TV series
 
     public const string FACET_DURATION = "Duration (min)";
+
+    public const string FACET_SERIES = "Series";
 
     public const string FACET_DIRECTORS = "Director(s)";
     public const string FACET_SCRIPTWRITERS = "Scriptwriter(s)";
@@ -52,11 +52,12 @@ namespace Trafilm.Metadata
       TrafilmMetadataFacets.GetCXMLFacetCategories_Header(result);
 
       //
-      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SERIES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SERIES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DIRECTORS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SCRIPTWRITERS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
