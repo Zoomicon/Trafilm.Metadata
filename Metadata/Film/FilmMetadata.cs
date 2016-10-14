@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadata.cs
-//Version: 20161007
+//Version: 20161014
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -16,11 +16,11 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public string Title_es { get; set; }
-    public string Title_ca { get; set; }
-    //...
+    public string Type { get; set; }
 
     public int? Duration { get; set; } //in min
+
+    public string Series { get; set; }
 
     public string[] Directors { get; set; }
     public string[] Scriptwriters { get; set; }
@@ -52,7 +52,11 @@ namespace Trafilm.Metadata
     {
       base.Clear();
 
+      Type = "";
+
       Duration = null;
+
+      Series = "";
 
       Directors = new string[] { };
       Scriptwriters = new string[] { };
@@ -84,7 +88,11 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
+      Type = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TYPE);
+
       Duration = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_DURATION);
+
+      Series = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SERIES);
 
       Directors = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_DIRECTORS);
       Scriptwriters = facets.CXMLFacetStringValues(FilmMetadataFacets.FACET_SCRIPTWRITERS);
@@ -121,7 +129,11 @@ namespace Trafilm.Metadata
 
       base.GetCXMLFacets(facets);
 
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_TYPE, Type));
+
       AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_DURATION, Duration));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SERIES, Series));
 
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_DIRECTORS, Directors));
       AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SCRIPTWRITERS, Scriptwriters));

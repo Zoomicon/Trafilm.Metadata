@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadataFacets.cs
-//Version: 20161007
+//Version: 20161014
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -8,6 +8,9 @@ using System.Xml.Linq;
 
 namespace Trafilm.Metadata
 {
+
+  //TODO: add "FilmTitle" (calculatable from Film)
+  //TODO: add "SeriesEpisodeName"
 
   public static class ConversationMetadataFacets
   {

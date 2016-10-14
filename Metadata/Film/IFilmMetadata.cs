@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IFilmMetadata.cs
-//Version: 20161007
+//Version: 20161014
 
 using System;
 
@@ -12,7 +12,11 @@ namespace Trafilm.Metadata.Models
 
     #region --- Properties ---
 
+    string Type { get; set; }
+
     int? Duration { get; set; } //in min
+
+    string Series { get; set; }
 
     string[] Directors { get; set; }
     string[] Scriptwriters { get; set; }

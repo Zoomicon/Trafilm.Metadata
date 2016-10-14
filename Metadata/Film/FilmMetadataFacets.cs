@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20161007
+//Version: 20161014
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -12,9 +12,13 @@ namespace Trafilm.Metadata
   public static class FilmMetadataFacets
   {
 
-    #region --- Properties ---
+    #region --- Constants ---
+
+    public const string FACET_TYPE = "Type"; //Feature film, Short film, TV film, TV series
 
     public const string FACET_DURATION = "Duration (min)";
+
+    public const string FACET_SERIES = "Series";
 
     public const string FACET_DIRECTORS = "Director(s)";
     public const string FACET_SCRIPTWRITERS = "Scriptwriter(s)";
@@ -49,7 +53,11 @@ namespace Trafilm.Metadata
 
       //
 
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SERIES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DIRECTORS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SCRIPTWRITERS, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));

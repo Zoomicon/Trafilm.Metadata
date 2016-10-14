@@ -4,7 +4,7 @@
 
   <metadata>
     <id>Trafilm.Metadata</id>
-    <version>15.0.0</version>
+    <version>15.0.1</version>
     <title>Trafilm.Metadata</title>
     <authors>birbilis</authors>
     <owners>birbilis</owners>
@@ -15,10 +15,7 @@
     <developmentDependency>true</developmentDependency>
     <description>Library for manipulating Trafilm (http://Trafilm.net) Gallery Metadata in Collection XML (CXML) format (as defined for PivotViewer control)</description>
     <releaseNotes>
-      - renamed "Duration (min)" to "Duration (sec)" at Conversation and made a string (holds a sec span value)
-      - renamed "Start time (min)" to "Conversation start time (min)" at L3STinstance/L3TTinstance
-      - renamed "Duration (min)" to "Conversation duration (sec)" and made a string (holds a sec span value) at L3STinstance/L3TTinstance
-      - removed "ConversationsDuration" facet (was being calculated when duration was in min) from Film
+      - added Genre and Type facets to Film
    </releaseNotes>
     <copyright>Copyright 2013-2016</copyright>
     <tags>Trafilm Gallery Metadata CXML PivotViewer</tags>

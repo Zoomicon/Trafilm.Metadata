@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadataFacets.cs
-//Version: 20161007
+//Version: 20161014
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -8,6 +8,8 @@ using System.Xml.Linq;
 
 namespace Trafilm.Metadata
 {
+
+  //TODO: add "SeriesEpisodeName_TT"
 
   public static class L3TTinstanceMetadataFacets
   {
@@ -19,7 +21,6 @@ namespace Trafilm.Metadata
     public const string FACET_L3ST_INSTANCE_REFERENCE_ID = "L3ST-instance Reference Id";
 
     public const string FACET_FILM_TITLE_TT = "Film Title TT";
-    public const string FACET_PRODUCTION_COUNTRIES = "Production countries";
 
     public const string FACET_L2_LANGUAGE = "L2 language";
     public const string FACET_L2_MODE = "L2 mode"; //dubbed, subtitled
