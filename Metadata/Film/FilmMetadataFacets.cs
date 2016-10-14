@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20161007
+//Version: 20161014
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -13,6 +13,8 @@ namespace Trafilm.Metadata
   {
 
     #region --- Properties ---
+
+    public const string FACET_SERIES = "Series";
 
     public const string FACET_DURATION = "Duration (min)";
 
@@ -48,6 +50,7 @@ namespace Trafilm.Metadata
       TrafilmMetadataFacets.GetCXMLFacetCategories_Header(result);
 
       //
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_SERIES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_DURATION, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 

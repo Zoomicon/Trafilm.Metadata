@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadata.cs
-//Version: 20161007
+//Version: 20161014
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -16,9 +16,7 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public string Title_es { get; set; }
-    public string Title_ca { get; set; }
-    //...
+    public string Series { get; set; }   
 
     public int? Duration { get; set; } //in min
 
@@ -52,6 +50,8 @@ namespace Trafilm.Metadata
     {
       base.Clear();
 
+      Series = "";
+
       Duration = null;
 
       Directors = new string[] { };
@@ -83,6 +83,8 @@ namespace Trafilm.Metadata
       base.Load(item);
 
       IEnumerable<XElement> facets = FindFacets(item);
+
+      Series = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_SERIES);
 
       Duration = (int?)facets.CXMLFacetNumberValue(FilmMetadataFacets.FACET_DURATION);
 
@@ -120,6 +122,8 @@ namespace Trafilm.Metadata
         facets = new List<XElement>();
 
       base.GetCXMLFacets(facets);
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(FilmMetadataFacets.FACET_SERIES, Series));
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(FilmMetadataFacets.FACET_DURATION, Duration));
 
