@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstance.cs
-//Version: 20161007
+//Version: 20161017
 
 using System.Collections.Generic;
 using System.Linq;
@@ -127,7 +127,16 @@ namespace Trafilm.Metadata
         if (value != null)
         {
           L3TTinstanceCount = value.Count();
-          //...
+
+          foreach (IL3TTinstance l3TTinstance in value)
+            if (l3TTinstance != null)
+            {
+              l3TTinstance.FilmReferenceId = FilmReferenceId; 
+              l3TTinstance.ConversationReferenceId = ConversationReferenceId;
+              l3TTinstance.L3STinstanceReferenceId = ReferenceId;
+
+              //...
+            }
         }
         else
           ClearCalculatedFromL3TTinstances(); //don't call ClearCalculated() here, since we also calculate facet values at "Conversation" property

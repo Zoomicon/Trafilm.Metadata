@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IConversationMetadata.cs
-//Version: 20161007
+//Version: 20161017
 
 using System;
 
@@ -13,6 +13,9 @@ namespace Trafilm.Metadata.Models
     #region --- Properties ---
 
     string FilmReferenceId { get; set; }
+
+    string FilmOrSeasonTitle { get; set; } //Calculatable from Film
+    string SeasonEpisodeName { get; set; }
 
     int? StartTime { get; set; } //in min
     string Duration { get; set; } //in sec spans
