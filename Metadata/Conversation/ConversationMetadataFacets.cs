@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadataFacets.cs
-//Version: 20161017
+//Version: 20161019
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -48,7 +48,7 @@ namespace Trafilm.Metadata
 
       //
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
 
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_FILM_OR_SEASON_TITLE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true)); //Calculatable from Film
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_SEASON_EPISODE_NAME, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
