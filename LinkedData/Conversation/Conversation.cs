@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Conversation.cs
-//Version: 20160609
+//Version: 20160617
 
 using Trafilm.Metadata.Models;
 
@@ -15,6 +15,7 @@ namespace Trafilm.Metadata
 
     #region --- Fields ---
 
+    protected IFilm film; //=null
     protected IEnumerable<IL3STinstance> l3STInstances; //=null
 
     #endregion
@@ -60,7 +61,23 @@ namespace Trafilm.Metadata
       }
     }
 
-    public IFilm Film { get; set; }
+    public IFilm Film
+    {
+      get
+      {
+        return film;
+      }
+
+      set
+      {
+        film = value;
+
+        //Calculated from Film//
+
+        if (value != null)
+          FilmOrSeasonTitle = value.Title;
+      }
+    }
 
     public IEnumerable<IL3STinstance> L3STinstances
     {
@@ -84,6 +101,9 @@ namespace Trafilm.Metadata
           foreach (IL3STinstance l3STinstance in value)
             if (l3STinstance != null)
             {
+              l3STinstance.FilmReferenceId = FilmReferenceId; //this changes FilmReferenceId at L3TTinstance children (if they're set) too
+              l3STinstance.ConversationReferenceId = ReferenceId; //this changes ConversationReferenceId at L3TTinstance children (if they're set) too
+
               string language = l3STinstance.L3STlanguage;
               if (!string.IsNullOrEmpty(language) &&
                   !languages.Contains(language))

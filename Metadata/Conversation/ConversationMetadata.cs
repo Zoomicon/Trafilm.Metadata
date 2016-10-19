@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadata.cs
-//Version: 20161007
+//Version: 20161017
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -17,6 +17,9 @@ namespace Trafilm.Metadata
     #region --- Properties ---
 
     public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+
+    public string FilmOrSeasonTitle { get; set; } //Calculatable from Film
+    public string SeasonEpisodeName { get; set; }
 
     public int? StartTime { get; set; } //in min
     public string Duration { get; set; } //in sec spans
@@ -43,6 +46,8 @@ namespace Trafilm.Metadata
 
       FilmReferenceId = "";
 
+      SeasonEpisodeName = "";
+
       StartTime = null;
       Duration = "";
 
@@ -54,6 +59,8 @@ namespace Trafilm.Metadata
     public override void ClearCalculated()
     {
       base.ClearCalculated();
+
+      FilmOrSeasonTitle = "";
 
       L3STlanguagesCount = 0;
       L3STlanguages = new string[] { };
@@ -71,6 +78,9 @@ namespace Trafilm.Metadata
       IEnumerable<XElement> facets = FindFacets(item);
 
       FilmReferenceId = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID);
+
+      FilmOrSeasonTitle = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_FILM_OR_SEASON_TITLE); //Calculatable from Film
+      SeasonEpisodeName = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_SEASON_EPISODE_NAME);
 
       StartTime = (int?)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_START_TIME);
       Duration = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_DURATION);
@@ -103,6 +113,9 @@ namespace Trafilm.Metadata
       base.GetCXMLFacets(facets);
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_FILM_OR_SEASON_TITLE, FilmOrSeasonTitle));
+      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_SEASON_EPISODE_NAME, SeasonEpisodeName));
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_START_TIME, StartTime));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_DURATION, Duration));

@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadataFacets.cs
-//Version: 20161014
+//Version: 20161019
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -9,15 +9,16 @@ using System.Xml.Linq;
 namespace Trafilm.Metadata
 {
 
-  //TODO: add "FilmTitle" (calculatable from Film)
-  //TODO: add "SeriesEpisodeName"
-
   public static class ConversationMetadataFacets
   {
 
     #region --- Constants ---
 
     public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
+
+    public const string FACET_FILM_OR_SEASON_TITLE = "Film/Season title";
+
+    public const string FACET_SEASON_EPISODE_NAME = "Season episode name";
 
     public const string FACET_START_TIME = "Start time (min)";
     public const string FACET_DURATION = "Duration (sec)";
@@ -47,7 +48,10 @@ namespace Trafilm.Metadata
 
       //
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: false, isMetadataVisible: false, isWordWheelVisible: false));
+
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_FILM_OR_SEASON_TITLE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true)); //Calculatable from Film
+      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_SEASON_EPISODE_NAME, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));

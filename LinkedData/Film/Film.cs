@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: Film.cs
-//Version: 20161007
+//Version: 20161017
 
 using Trafilm.Metadata.Models;
 
@@ -59,28 +59,31 @@ namespace Trafilm.Metadata
           IList<string> dubbed = new List<string>();
           IList<string> subtitled = new List<string>();
           foreach (IConversation conversation in value)
-            if ((conversation != null) && (conversation.L3STinstances != null))
+            if (conversation != null)
+            {
+              conversation.FilmReferenceId = ReferenceId; //this changes FilmReferenceId at conversation L3STinstance children and L3TTinstance grandchildren (if they're set) too
 
-              foreach (IL3STinstance l3STinstance in conversation.L3STinstances)
-                if ((l3STinstance != null) && (l3STinstance.L3TTinstances != null))
-
-                  foreach (IL3TTinstance l3TTinstance in l3STinstance.L3TTinstances)
-                    if (l3TTinstance != null)
-                    {
-                      string l2language = l3TTinstance.L2language;
-                      if (!string.IsNullOrEmpty(l2language))
-                        switch (l3TTinstance.L2mode)
-                        {
-                          case "Dubbed":
-                            if (!dubbed.Contains(l2language))
-                              dubbed.Add(l2language);
-                            break;
-                          case "Subtitled":
-                            if (!subtitled.Contains(l2language))
-                              subtitled.Add(l2language);
-                            break;
-                        }
-                    }
+              if (conversation.L3STinstances != null)
+                foreach (IL3STinstance l3STinstance in conversation.L3STinstances)
+                  if ((l3STinstance != null) && (l3STinstance.L3TTinstances != null))
+                    foreach (IL3TTinstance l3TTinstance in l3STinstance.L3TTinstances)
+                      if (l3TTinstance != null)
+                      {
+                        string l2language = l3TTinstance.L2language;
+                        if (!string.IsNullOrEmpty(l2language))
+                          switch (l3TTinstance.L2mode)
+                          {
+                            case "Dubbed":
+                              if (!dubbed.Contains(l2language))
+                                dubbed.Add(l2language);
+                              break;
+                            case "Subtitled":
+                              if (!subtitled.Contains(l2language))
+                                subtitled.Add(l2language);
+                              break;
+                          }
+                      }
+            }
           L2dubbedLanguages = dubbed.ToArray();
           L2subtitledLanguages = subtitled.ToArray();
 
