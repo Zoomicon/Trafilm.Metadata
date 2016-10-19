@@ -82,7 +82,7 @@ namespace Trafilm.Metadata
     {
       base.ClearCalculated();
 
-      FilmOrSeasonTitle = "";
+      //do not clear FilmOrSeasonTitle facet here, it is an alias for the CXMLMetadata Title property (Name attribute in CXML), it is not a calculated facet
 
       L2dubbedLanguages = new string[] { };
       L2subtitledLanguages = new string[] { };
@@ -96,7 +96,7 @@ namespace Trafilm.Metadata
 
       IEnumerable<XElement> facets = FindFacets(item);
 
-      FilmOrSeasonTitle = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_FILM_OR_SEASON_TITLE); //Alias for CXMLMetadata Title
+      //do not load FilmOrSeasonTitle facet here, it is an alias for the CXMLMetadata Title property (Name attribute in CXML)
 
       Type = facets.CXMLFacetStringValue(FilmMetadataFacets.FACET_TYPE);
 

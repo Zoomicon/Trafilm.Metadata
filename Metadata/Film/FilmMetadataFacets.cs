@@ -14,7 +14,7 @@ namespace Trafilm.Metadata
 
     #region --- Constants ---
 
-    public const string FACET_FILM_OR_SEASON_TITLE = "Film/Season title"; //Alias for CXMLMetadata Title attribute
+    public const string FACET_FILM_OR_SEASON_TITLE = "Film/Season title"; //Alias for CXMLMetadata Title property (Name attribute in CXML)
 
     public const string FACET_TYPE = "Type"; //Feature film, Short film, TV film, TV series
 
