@@ -15,7 +15,8 @@
     <developmentDependency>true</developmentDependency>
     <description>Library for manipulating Trafilm (http://Trafilm.net) Gallery Metadata in Collection XML (CXML) format (as defined for PivotViewer control)</description>
     <releaseNotes>
-      - not showing "Film reference id" facet anymore at conversation, since more readable "Film/Season title" facet is available
+      - added "Film/Season title" facet to Film, aliasing its Title attribute, so that filter and sort by it is available in PivotViewer
+      - not showing "Film reference id" facet anymore at Conversation, since more readable "Film/Season title" facet is available
     </releaseNotes>
     <copyright>Copyright 2013-2016</copyright>
     <tags>Trafilm Gallery Metadata CXML PivotViewer</tags>

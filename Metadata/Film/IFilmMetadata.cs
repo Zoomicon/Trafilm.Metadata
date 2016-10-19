@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IFilmMetadata.cs
-//Version: 20161014
+//Version: 20161019
 
 using System;
 
@@ -11,6 +11,8 @@ namespace Trafilm.Metadata.Models
   {
 
     #region --- Properties ---
+
+    string FilmOrSeasonTitle { get; set; } //Alias for CXMLMetadata Title
 
     string Type { get; set; }
 

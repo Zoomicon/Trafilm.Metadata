@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20161014
+//Version: 20161019
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -13,6 +13,8 @@ namespace Trafilm.Metadata
   {
 
     #region --- Constants ---
+
+    public const string FACET_FILM_OR_SEASON_TITLE = "Film/Season title"; //Alias for CXMLMetadata Title attribute
 
     public const string FACET_TYPE = "Type"; //Feature film, Short film, TV film, TV series
 
@@ -52,6 +54,8 @@ namespace Trafilm.Metadata
       TrafilmMetadataFacets.GetCXMLFacetCategories_Header(result);
 
       //
+
+      result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_FILM_OR_SEASON_TITLE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true)); //Calculatable from Film
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
