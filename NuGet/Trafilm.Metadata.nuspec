@@ -4,7 +4,7 @@
 
   <metadata>
     <id>Trafilm.Metadata</id>
-    <version>15.1.0</version>
+    <version>15.1.1</version>
     <title>Trafilm.Metadata</title>
     <authors>birbilis</authors>
     <owners>birbilis</owners>
@@ -15,7 +15,7 @@
     <developmentDependency>true</developmentDependency>
     <description>Library for manipulating Trafilm (http://Trafilm.net) Gallery Metadata in Collection XML (CXML) format (as defined for PivotViewer control)</description>
     <releaseNotes>
-      - Fix for "Film/Season title" alias facet at Film, not clearing or loading it anymore (just saving it), since it gets its value from the item's "Name" attribute (CXMLMetadata Title property)
+      - Fix for L3STinstance L1language loading from saved data (when not calculating from linked data)
     </releaseNotes>
     <copyright>Copyright 2013-2016</copyright>
     <tags>Trafilm Gallery Metadata CXML PivotViewer</tags>
