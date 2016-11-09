@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadata.cs
-//Version: 20161007
+//Version: 20161101
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -123,7 +123,7 @@ namespace Trafilm.Metadata
       ConversationStartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_START_TIME); //Calculatable from Conversation
       ConversationDuration = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_DURATION); //Calculatable from Conversation
 
-      L1language = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE); //Calculatable from Film
+      L1language = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L1_LANGUAGE); //Calculatable from Film
 
       L3STlanguageType = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE);
       L3STlanguage = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE);
