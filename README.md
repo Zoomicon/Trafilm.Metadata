@@ -42,3 +42,6 @@ Library for manipulating hierarchical Trafilm (http://Trafilm.net) Gallery Metad
 *Class Diagram for Tests:*
 
 ![Class Diagram for Tests](https://github.com/Zoomicon/Trafilm.Metadata/blob/master/Diagrams/Tests.png)
+
+# Using
+Metadata.CXML library - http://github.com/Zoomicon/Metadata.CXML
