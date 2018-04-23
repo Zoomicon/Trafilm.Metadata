@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: FilmMetadataFacets.cs
-//Version: 20161019
+//Version: 20180423
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -13,6 +13,8 @@ namespace Trafilm.Metadata
   {
 
     #region --- Constants ---
+
+    //Film metadata//
 
     public const string FACET_FILM_OR_SEASON_TITLE = "Film/Season title"; //Alias for CXMLMetadata Title property (Name attribute in CXML)
 
@@ -33,12 +35,12 @@ namespace Trafilm.Metadata
 
     public const string FACET_L1_LANGUAGE = "Main language (L1)";
 
-    //Calculatable from Conversations.L3STinstances.L3TTinstances//
+    //Linked Data: Calculatable from Conversations.L3STinstances.L3TTinstances//
 
     public const string FACET_L2_DUBBED_LANGUAGES = "L2-Dubbed languages";
     public const string FACET_L2_SUBTITLED_LANGUAGES = "L2-Subtitled languages";
     
-    //Calculatable from Conversations//
+    //Linked Data: Calculatable from Conversations//
 
     public const string FACET_CONVERSATION_COUNT = "Conversations: count";
 
@@ -51,9 +53,11 @@ namespace Trafilm.Metadata
       if (result == null)
         result = new List<XElement>();
 
+      //Common metadata (header)//
+
       TrafilmMetadataFacets.GetCXMLFacetCategories_Header(result);
 
-      //
+      //Film metadata//
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_FILM_OR_SEASON_TITLE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true)); //Calculatable from Film
 
@@ -74,16 +78,16 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_YEAR_ST_RELEASED, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L1_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      //Calculatable from Conversations.L3STinstances.L3TTinstances//
+      //Linked Data: Calculatable from Conversations.L3STinstances.L3TTinstances//
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L2_DUBBED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_L2_SUBTITLED_LANGUAGES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      //Calculatable from Conversations//
+      //Linked Data: Calculatable from Conversations//
 
       result.Add(CXML.MakeFacetCategory(FilmMetadataFacets.FACET_CONVERSATION_COUNT, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
-      //
+      //Common metadata (footer)//
 
       TrafilmMetadataFacets.GetCXMLFacetCategories_Footer(result);
 

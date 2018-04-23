@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadata.cs
-//Version: 20161017
+//Version: 20180423
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -16,7 +16,7 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+    //Conversation metadata//
 
     public string FilmOrSeasonTitle { get; set; } //Calculatable from Film
     public string SeasonEpisodeName { get; set; }
@@ -26,7 +26,7 @@ namespace Trafilm.Metadata
 
     public string LanguageSources { get; set; }
 
-    //Calculatable from L3STinstances//
+    //Linked Data: Calculatable from L3STinstances//
 
     public int L3STlanguagesCount { get; set; }
     public string[] L3STlanguages { get; set; }
@@ -36,6 +36,9 @@ namespace Trafilm.Metadata
 
     public int L3STinstanceCount { get; set; }
 
+    //Linked Data: References//
+    public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+
     #endregion
 
     #region --- Methods ---
@@ -43,8 +46,6 @@ namespace Trafilm.Metadata
     public override void Clear()
     {
       base.Clear();
-
-      FilmReferenceId = "";
 
       SeasonEpisodeName = "";
 
@@ -54,6 +55,8 @@ namespace Trafilm.Metadata
       LanguageSources = "";
 
       //note: don't call ClearCalculated here, has been called by base.Clear() already
+
+      FilmReferenceId = "";
     }
 
     public override void ClearCalculated()
@@ -73,11 +76,13 @@ namespace Trafilm.Metadata
 
     public override ICXMLMetadata Load(XElement item)
     {
+      //Common metadata//
+
       base.Load(item);
 
-      IEnumerable<XElement> facets = FindFacets(item);
+      //Conversation metadata//
 
-      FilmReferenceId = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID);
+      IEnumerable<XElement> facets = FindFacets(item);
 
       FilmOrSeasonTitle = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_FILM_OR_SEASON_TITLE); //Calculatable from Film
       SeasonEpisodeName = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_SEASON_EPISODE_NAME);
@@ -87,7 +92,7 @@ namespace Trafilm.Metadata
 
       LanguageSources = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES);
 
-      //Calculatable from L3STinstances//
+      //Linked Data: Calculatable from L3STinstances//
 
       L3STlanguagesCount = (int)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT);
       L3STlanguages = facets.CXMLFacetStringValues(ConversationMetadataFacets.FACET_L3ST_LANGUAGES);
@@ -96,6 +101,10 @@ namespace Trafilm.Metadata
       L3STlanguageTypes = facets.CXMLFacetStringValues(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES);
 
       L3STinstanceCount = (int)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT);
+
+      //Linked Data: References//
+
+      FilmReferenceId = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID);
 
       return this;
     }
@@ -110,9 +119,11 @@ namespace Trafilm.Metadata
       if (facets == null)
         facets = new List<XElement>();
 
+      //Common metadata//
+
       base.GetCXMLFacets(facets);
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
+      //Conversation metadata//
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_FILM_OR_SEASON_TITLE, FilmOrSeasonTitle));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_SEASON_EPISODE_NAME, SeasonEpisodeName));
@@ -122,7 +133,7 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES, LanguageSources));
 
-      //Calculatable from L3STinstances//
+      //Linked Data: Calculatable from L3STinstances//
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGES_COUNT, L3STlanguagesCount));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGES, L3STlanguages));
@@ -131,6 +142,10 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_L3ST_LANGUAGE_TYPES, L3STlanguageTypes));
 
       AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_L3ST_INSTANCE_COUNT, L3STinstanceCount));
+
+      //Linked Data: References//
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
 
       return facets;
     }

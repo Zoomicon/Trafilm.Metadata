@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IFilmMetadata.cs
-//Version: 20161019
+//Version: 20180423
 
 using System;
 
@@ -11,6 +11,8 @@ namespace Trafilm.Metadata.Models
   {
 
     #region --- Properties ---
+
+    //Film metadata//
 
     string FilmOrSeasonTitle { get; set; } //Alias for CXMLMetadata Title
 
@@ -31,12 +33,12 @@ namespace Trafilm.Metadata.Models
 
     string L1language { get; set; }
 
-    //Calculatable from Conversations.L3STinstances.L3TTinstances//
+    //Linked Data: Calculatable from Conversations.L3STinstances.L3TTinstances//
 
     string[] L2dubbedLanguages { get; set; }
     string[] L2subtitledLanguages { get; set; }
 
-    //Calculatable from Conversations//
+    //Linked Data: Calculatable from Conversations//
 
     int ConversationCount { get; set; }
 

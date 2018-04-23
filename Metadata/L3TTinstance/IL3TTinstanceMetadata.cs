@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IL3TTinstanceMetadata.cs
-//Version: 20161007
+//Version: 20180423
 
 namespace Trafilm.Metadata.Models
 {
@@ -10,9 +10,7 @@ namespace Trafilm.Metadata.Models
 
     #region --- Properties ---
 
-    string FilmReferenceId { get; set; }
-    string ConversationReferenceId { get; set; }
-    string L3STinstanceReferenceId { get; set; }
+    //L3TTinstance metadata (1/2)//
 
     string FilmTitleTT { get; set; }
 
@@ -23,8 +21,12 @@ namespace Trafilm.Metadata.Models
     int? YearTTreleased { get; set; }
     string BlockbusterTT { get; set; }
 
-    int? ConversationStartTime { get; set; } //in min //Calculatable from L3STinstance
-    string ConversationDuration { get; set; } //in sec spans //Calculatable from L3STinstance
+    //Calculatable from L3STinstance//
+
+    int? ConversationStartTime { get; set; } //in min
+    string ConversationDuration { get; set; } //in sec spans
+
+    //L3TTinstance metadata (2/2)//
 
     string L2sameAsL3ST { get; set; }
 
@@ -52,13 +54,18 @@ namespace Trafilm.Metadata.Models
 
     string L3TTsources { get; set; }
 
-    //Calculatable from L3STinstance//
+    //Linked Data: Calculatable from L3STinstance//
 
     string[] L3languageTypeChange { get; set; }
     string[] L3modeChange { get; set;  }
     string[] L3functionsChange { get; set; }
     string[] L3conversationFeaturesChange { get; set; }
     string[] L3sourcesChange { get; set; }
+
+    //Linked Data: References//
+    string FilmReferenceId { get; set; }
+    string ConversationReferenceId { get; set; }
+    string L3STinstanceReferenceId { get; set; }
 
     #endregion
 

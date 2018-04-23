@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3TTinstanceMetadata.cs
-//Version: 20161007
+//Version: 20180423
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -16,9 +16,7 @@ namespace Trafilm.Metadata
 
     #region --- Properties ---
 
-    public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
-    public virtual string ConversationReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
-    public virtual string L3STinstanceReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+    //L3TTinstance metadata (1/2)//
 
     public string FilmTitleTT { get; set; }
 
@@ -29,8 +27,13 @@ namespace Trafilm.Metadata
     public int? YearTTreleased { get; set; }
     public string BlockbusterTT { get; set; }
 
-    public int? ConversationStartTime { get; set; } //in min //Calculatable from L3STinstance
-    public string ConversationDuration { get; set; } //in sec spans //Calculatable from L3STinstance
+
+    //Linked Data: Calculatable from Conversation (via L3STinstance)//
+
+    public int? ConversationStartTime { get; set; } //in min
+    public string ConversationDuration { get; set; } //in sec spans
+
+    //L3TTinstance metadata (2/2)//
 
     public string L2sameAsL3ST { get; set; }
 
@@ -66,6 +69,12 @@ namespace Trafilm.Metadata
     public string[] L3conversationFeaturesChange { get; set; }
     public string[] L3sourcesChange { get; set; }
 
+    //Linked Data: References//
+
+    public virtual string FilmReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+    public virtual string ConversationReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+    public virtual string L3STinstanceReferenceId { get; set; } //descendents can override this property to propagate change of ReferenceId where needed
+    
     #endregion
 
     #region --- Methods ---
@@ -73,10 +82,6 @@ namespace Trafilm.Metadata
     public override void Clear()
     {
       base.Clear();
-
-      FilmReferenceId = "";
-      ConversationReferenceId = "";
-      L3STinstanceReferenceId = "";
 
       FilmTitleTT = "";
 
@@ -114,6 +119,10 @@ namespace Trafilm.Metadata
       L3TTsources = "";
 
       //note: don't call ClearCalculated here, has been called by base.Clear() already
+
+      FilmReferenceId = "";
+      ConversationReferenceId = "";
+      L3STinstanceReferenceId = "";
     }
 
     public override void ClearCalculated()
@@ -134,13 +143,13 @@ namespace Trafilm.Metadata
 
     public override ICXMLMetadata Load(XElement item)
     {
+      //Common metadata
+
       base.Load(item);
 
       IEnumerable<XElement> facets = FindFacets(item);
 
-      FilmReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_FILM_REFERENCE_ID);
-      ConversationReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID);
-      L3STinstanceReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3ST_INSTANCE_REFERENCE_ID);
+      //L3TTinstance metadata (1/2)//
 
       FilmTitleTT = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_FILM_TITLE_TT);
 
@@ -151,8 +160,12 @@ namespace Trafilm.Metadata
       YearTTreleased = (int?)facets.CXMLFacetNumberValue(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED);
       BlockbusterTT = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_BLOCKBUSTER_TT);
 
-      ConversationStartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_START_TIME); //Calculatable from L3STinstance
-      ConversationDuration = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_DURATION); //Calculatable from L3STinstance
+      //Linked Data: Calculatable from Conversation (via L3STinstance)//
+
+      ConversationStartTime = (int?)facets.CXMLFacetNumberValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_START_TIME);
+      ConversationDuration = facets.CXMLFacetStringValue(L3STinstanceMetadataFacets.FACET_CONVERSATION_DURATION);
+
+      //L3TTinstance metadata (2/2)//
 
       L2sameAsL3ST = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST);
 
@@ -180,13 +193,19 @@ namespace Trafilm.Metadata
 
       L3TTsources = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES);
 
-      //Calculatable from L3STinstance//
+      //Linked Data: Calculatable from L3STinstance//
 
       L3languageTypeChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_LANGUAGE_TYPE_CHANGE);
       L3modeChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_MODE_CHANGE); 
       L3functionsChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_FUNCTIONS_CHANGE);
       L3conversationFeaturesChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_CONVERSATION_FEATURES_CHANGE);
       L3sourcesChange = facets.CXMLFacetStringValues(L3TTinstanceMetadataFacets.FACET_L3_SOURCES_CHANGE);
+
+      //Linked Data: References//
+
+      FilmReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_FILM_REFERENCE_ID);
+      ConversationReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID);
+      L3STinstanceReferenceId = facets.CXMLFacetStringValue(L3TTinstanceMetadataFacets.FACET_L3ST_INSTANCE_REFERENCE_ID);
 
       return this;
     }
@@ -201,11 +220,11 @@ namespace Trafilm.Metadata
       if (facets == null)
         facets = new List<XElement>();
 
+      //Common metadata//
+
       base.GetCXMLFacets(facets);
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, ConversationReferenceId));
-      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_INSTANCE_REFERENCE_ID, L3STinstanceReferenceId));
+      //L3TTinstance metadata (1/2)
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_FILM_TITLE_TT, FilmTitleTT));
 
@@ -216,8 +235,12 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeNumberFacet(L3TTinstanceMetadataFacets.FACET_YEAR_TT_RELEASED, YearTTreleased));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_BLOCKBUSTER_TT, BlockbusterTT));
 
+      //Linked Data: Calculatable from Conversation (via L3STinstance)
+
       AddNonNullToList(facets, CXML.MakeNumberFacet(L3STinstanceMetadataFacets.FACET_CONVERSATION_START_TIME, ConversationStartTime));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3STinstanceMetadataFacets.FACET_CONVERSATION_DURATION, ConversationDuration));
+
+      //L3TTinstance metadata (2/2)//
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L2_SAME_AS_L3ST, L2sameAsL3ST));
 
@@ -245,13 +268,19 @@ namespace Trafilm.Metadata
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3TT_SOURCES, L3TTsources));
 
-      //Calculatable from L3STinstance//
+      //Linked Data: Calculatable from L3STinstance//
 
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_LANGUAGE_TYPE_CHANGE, L3languageTypeChange));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_MODE_CHANGE, L3modeChange));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_FUNCTIONS_CHANGE, L3functionsChange));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_CONVERSATION_FEATURES_CHANGE, L3conversationFeaturesChange));
       AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3_SOURCES_CHANGE, L3sourcesChange));
+
+      //Linked Data: References//
+
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, FilmReferenceId));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, ConversationReferenceId));
+      AddNonNullToList(facets, CXML.MakeStringFacet(L3TTinstanceMetadataFacets.FACET_L3ST_INSTANCE_REFERENCE_ID, L3STinstanceReferenceId));
 
       return facets;
     }

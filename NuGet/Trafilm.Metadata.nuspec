@@ -4,7 +4,7 @@
 
   <metadata>
     <id>Trafilm.Metadata</id>
-    <version>15.1.2</version>
+    <version>15.1.3</version>
     <title>Trafilm.Metadata</title>
     <authors>birbilis</authors>
     <owners>birbilis</owners>
@@ -15,9 +15,9 @@
     <developmentDependency>true</developmentDependency>
     <description>Library for manipulating Trafilm (http://Trafilm.net) Gallery Metadata in Collection XML (CXML) format (as defined for PivotViewer control)</description>
     <releaseNotes>
-      - Transcription and Remarks facet categories are now registered with IsFilterVisible:true to show up on the filter pane (allows to find duplicate values and to filter for "no value")
+      - all CXML collections now have their Reference Id and their parent (and grandparent etc.) Reference Id facets configured as filterable and visible in both word-wheel (search box results) and details views and listed last in CXML facets definition (to show last in filters and details panes of PivotViewer)
     </releaseNotes>
-    <copyright>Copyright 2013-2016</copyright>
+    <copyright>Copyright 2016-2018</copyright>
     <tags>Trafilm Gallery Metadata CXML PivotViewer</tags>
 
     <dependencies>

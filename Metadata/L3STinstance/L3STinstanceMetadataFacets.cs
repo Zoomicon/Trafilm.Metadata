@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: L3STinstanceMetadataFacets.cs
-//Version: 20161014
+//Version: 20180423
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -17,13 +17,16 @@ namespace Trafilm.Metadata
 
     #region --- Constants ---
 
-    public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
-    public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";
+    //Linked Data: Calculatable from Conversation//
 
-    public const string FACET_CONVERSATION_START_TIME = "Conversation start time (min)"; //Calculatable from Conversation
-    public const string FACET_CONVERSATION_DURATION = "Conversation duration (sec)"; //Calculatable from Conversation
+    public const string FACET_CONVERSATION_START_TIME = "Conversation start time (min)";
+    public const string FACET_CONVERSATION_DURATION = "Conversation duration (sec)";
 
-    public const string FACET_L1_LANGUAGE = "Main (L1) language"; //Calculatable from Film
+    //Linked Data: Calculatable from Film//
+
+    public const string FACET_L1_LANGUAGE = "Main (L1) language";
+    
+    //L3STinstance metadata//
 
     public const string FACET_L3ST_LANGUAGE_TYPE = "L3ST language type"; //e.g. real, constructed, variety (real dialect, slang or other)
     public const string FACET_L3ST_LANGUAGE = "L3ST language";
@@ -47,9 +50,14 @@ namespace Trafilm.Metadata
 
     public const string FACET_L3ST_SOURCES = "L3ST sources";
 
-    //Calculatable from L3TTinstances//
+    //Linked Data: Calculatable from L3TTinstances//
 
     public const string FACET_L3TT_INSTANCE_COUNT = "L3TT-instances: count";
+
+    //Linked Data: References//
+
+    public const string FACET_FILM_REFERENCE_ID = "Film Reference Id";
+    public const string FACET_CONVERSATION_REFERENCE_ID = "Conversation Reference Id";
 
     #endregion
 
@@ -60,17 +68,20 @@ namespace Trafilm.Metadata
       if (result == null)
         result = new List<XElement>();
 
+      //Common metadata (header)//
+
       TrafilmMetadataFacets.GetCXMLFacetCategories_Header(result);
 
-      //
+      //Linked Data: Calculatable from Conversation//
 
-      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
-      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_CONVERSATION_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_CONVERSATION_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
-      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_CONVERSATION_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from Conversaton
-      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_CONVERSATION_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false)); //Calculatable from Conversation
+      //Linked Data: Calculatable from Film//
 
-      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L1_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true)); //Calculatable from Film
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L1_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+
+      //L3STinstance metadata//
 
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE_TYPE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_LANGUAGE, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
@@ -94,13 +105,18 @@ namespace Trafilm.Metadata
 
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3ST_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
-      //Calculatable from L3TTinstances//
+      //Linked Data: Calculatable from L3TTinstances//
 
       result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_L3TT_INSTANCE_COUNT, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
-      //
+      //Common metadata (footer)//
 
       TrafilmMetadataFacets.GetCXMLFacetCategories_Footer(result);
+
+      //Linked Data: References//
+
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_FILM_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      result.Add(CXML.MakeFacetCategory(L3STinstanceMetadataFacets.FACET_CONVERSATION_REFERENCE_ID, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
 
       return result;
     }
