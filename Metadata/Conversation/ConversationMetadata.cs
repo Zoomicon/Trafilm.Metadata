@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadata.cs
-//Version: 20180423
+//Version: 20180509
 
 using Metadata.CXML;
 using Trafilm.Metadata.Models;
@@ -24,7 +24,7 @@ namespace Trafilm.Metadata
     public int? StartTime { get; set; } //in min
     public string Duration { get; set; } //in sec spans
 
-    public string LanguageSources { get; set; }
+    //public string LanguageSources { get; set; } //(NOT USED)
 
     //Linked Data: Calculatable from L3STinstances//
 
@@ -52,7 +52,7 @@ namespace Trafilm.Metadata
       StartTime = null;
       Duration = "";
 
-      LanguageSources = "";
+      //LanguageSources = ""; //(NOT USED)
 
       //note: don't call ClearCalculated here, has been called by base.Clear() already
 
@@ -90,7 +90,7 @@ namespace Trafilm.Metadata
       StartTime = (int?)facets.CXMLFacetNumberValue(ConversationMetadataFacets.FACET_START_TIME);
       Duration = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_DURATION);
 
-      LanguageSources = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES);
+      //LanguageSources = facets.CXMLFacetStringValue(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES); //(NOT USED)
 
       //Linked Data: Calculatable from L3STinstances//
 
@@ -131,7 +131,7 @@ namespace Trafilm.Metadata
       AddNonNullToList(facets, CXML.MakeNumberFacet(ConversationMetadataFacets.FACET_START_TIME, StartTime));
       AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_DURATION, Duration));
 
-      AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES, LanguageSources));
+      //AddNonNullToList(facets, CXML.MakeStringFacet(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES, LanguageSources)); //(NOT USED)
 
       //Linked Data: Calculatable from L3STinstances//
 

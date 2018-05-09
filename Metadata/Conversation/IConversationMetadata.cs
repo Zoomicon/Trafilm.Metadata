@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: IConversationMetadata.cs
-//Version: 20180423
+//Version: 20180509
 
 using System;
 
@@ -21,7 +21,7 @@ namespace Trafilm.Metadata.Models
     int? StartTime { get; set; } //in min
     string Duration { get; set; } //in sec spans
 
-    string LanguageSources { get; set; }
+    //string LanguageSources { get; set; } //(NOT USED)
 
     //Linked Data: Calculatable from L3STinstances//
 
