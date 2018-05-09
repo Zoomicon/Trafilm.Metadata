@@ -25,7 +25,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAQgAAAEBCCAAggBAAAAAAAKAAAAAIAgAACAABAACA=</HashCode>
+      <HashCode>AAAQgAAAEBACAAggBAAAAAAAKAAAAAIAgAACAABAACA=</HashCode>
       <FileName>Metadata\Conversation\ConversationMetadata.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="2.039" />
@@ -55,7 +55,7 @@
     <Position X="4.25" Y="12.75" Width="3.25" />
     <InheritanceLine Type="Trafilm.Metadata.ConversationMetadata" FixedFromPoint="true">
       <Path>
-        <Point X="5.875" Y="9.179" />
+        <Point X="5.875" Y="9.015" />
         <Point X="5.875" Y="12.75" />
       </Path>
     </InheritanceLine>

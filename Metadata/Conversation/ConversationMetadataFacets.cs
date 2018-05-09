@@ -1,6 +1,6 @@
 ﻿//Project: Trafilm.Metadata (https://github.com/Zoomicon/Trafilm.Metadata)
 //Filename: ConversationMetadataFacets.cs
-//Version: 20180423
+//Version: 20180510
 
 using Metadata.CXML;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace Trafilm.Metadata
     public const string FACET_START_TIME = "Start time (min)";
     public const string FACET_DURATION = "Duration (sec)";
 
-    public const string FACET_LANGUAGE_SOURCES = "Language sources";
+    //public const string FACET_LANGUAGE_SOURCES = "Language sources"; //NOT USED
 
     //Linked Data: Calculatable from L3STinstances//
 
@@ -60,7 +60,7 @@ namespace Trafilm.Metadata
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_START_TIME, CXML.VALUE_NUMBER, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
       result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_DURATION, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: false));
 
-      result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true));
+      //result.Add(CXML.MakeFacetCategory(ConversationMetadataFacets.FACET_LANGUAGE_SOURCES, CXML.VALUE_STRING, null, isFilterVisible: true, isMetadataVisible: true, isWordWheelVisible: true)); //NOT USED
 
       //Linked Data: Calculatable from L3STinstances//
 

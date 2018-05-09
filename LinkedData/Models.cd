@@ -24,7 +24,7 @@
     <Position X="7" Y="11.25" Width="2.75" />
     <InheritanceLine Type="Trafilm.Metadata.Models.IConversationMetadata" FixedFromPoint="true">
       <Path>
-        <Point X="8.375" Y="7.156" />
+        <Point X="8.375" Y="6.964" />
         <Point X="8.375" Y="11.25" />
       </Path>
     </InheritanceLine>
@@ -55,7 +55,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAQAAAAEACCAAAgBAAAAAAAKAAAAAIAgAACAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAEAACAAAgBAAAAAAAKAAAAAIAgAACAAAAAAA=</HashCode>
       <FileName>Metadata\Conversation\IConversationMetadata.cs</FileName>
     </TypeIdentifier>
   </Interface>
